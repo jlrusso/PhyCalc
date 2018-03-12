@@ -15,25 +15,34 @@ body {
 	font-family: Century Gothic;
 	box-sizing: border-box !important;
 }
+
+::placeholder {
+	color: var(--main-yellow-color);
+	opacity: 0.8;
+}
+
 ::-webkit-scrollbar {
-	display: none;
+		display: none;
     width: 10px;
+}
+
+#search-case-list::-webkit-scrollbar {
+	display: block;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
     background-color: #333;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #F1C40F; 
-    border-radius: 4px;
+    background: #F1C40F;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #F1C40F; 
+    background: #F1C40F;
 }
 ul {
 	list-style-type: none;
@@ -151,12 +160,12 @@ nav {
 	top: 100%;
 	left: 50%;
 	transform: translateX(-50%);
-	min-width: 50%;
-	height: 290px;
+	width: 70%;
+	height: 230px;
 	padding: 10px;
 	overflow-y: auto;
-   	background-color: #333;
-    border-radius:0 0 5px 5px;
+ 	background-color: #333;
+  border-radius:0 0 5px 5px;
 }
 .show {
 	display: block;
@@ -269,7 +278,7 @@ nav {
 	background-color: #F1C40F;
 	border-radius: 10px;
 }
-#hamburger-menu:before, 
+#hamburger-menu:before,
 #hamburger-menu:after {
 	content: "";
 	position: absolute;
@@ -434,6 +443,7 @@ nav {
 	border-bottom: 4px solid #F1C40F;
 	margin-bottom: 5px;
 }
+
 .row {
 	width: 90%;
 	margin:auto;
@@ -447,9 +457,9 @@ nav {
 	height: 300px;
 	padding: 0 !important;
 	margin:10px 0;
-	box-sizing: border-box !important; 
+	box-sizing: border-box !important;
 	overflow: hidden !important;
-	border-radius: 10px;
+	border-radius: 5px;
 	border: 1px solid rgba(0,0,0,0.2);
 	padding: 5px 10px 10px 10px;
 	transition: 0.5s;
@@ -484,7 +494,7 @@ nav {
 	transition: 0.5s;
 }
 .card:hover {
-	box-shadow: 0 0 50px #333 !important;
+	box-shadow: 0 0 20px #333;
 }
 .caption h4 {
 	font-weight: bold;
@@ -528,12 +538,72 @@ nav {
 .col-sm-4 img {
 	margin-bottom: 30px;
 }
+
+.col-sm-4 p {
+	width: 80%;
+	margin: auto;
+}
 /*--- End of How It Works Section ---*/
 
+/*--- Start of Conversion Section ---*/
+	#conversion-section {
+		padding: 50px;
+		background-color: var(--main-black-color);
+	}
+  #conversion-container {
+    position: relative;
+    width: 380px;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #333;
+    text-align: center;
+  }
+  #conversion-heading {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #F1C40F;
+    font-size: 1.7rem;
+    font-family: Verdana, sans-serif;
+  }
+  .input-option-input {
+    width: 100%;
+    display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 7px;
+  }
+  #unit-converter {
+    width: 100%;
+		max-height: 200px;
+    margin:0 2px;
+    padding: 8px;
+    border: 0;
+    background-color: #F1C40F;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    outline: none;
+  }
 
+  .input-option-input input {
+    width: 100%;
+    padding: 9px;
+    border-radius: 3px;
+    border: 2px solid #F1C40F;
+    color: #F1C40F;
+    background-color: #333;
+    font-size: 1.4rem;
+    outline: none;
+  }
+/*--- End of Conversion Section ---*/
 
-/*--- Email list section ---*/
-.email-list-section {
+/*--- Start of Contact form ---*/
+#contact-container {
 	width:100%;
 	height:auto;
 	position: relative;
@@ -542,68 +612,62 @@ nav {
 	background-position: center 100px;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	padding:50px;
+	padding:0 50px 50px;
 	text-align: center;
 }
-.email-list-section span {
-	font-size: 450%;
-	color: rgba(0,0,0,0.8);
-}
-.email-list-form {
-	width:40%;
-	margin:auto;
-	overflow: auto;
-}
-.email-list-section h2 {
-	width: 450px;
-	margin: 0 auto 20px;
-	color: #F1C40F;
-	background-color: rgba(0,0,0,0.8);
-	padding: 2px;
-	border-radius: 4px;
-}
-.email-list-form .form-control {
-	margin:10px 0;
-}
-#user-name {
-	background-color:rgba(0,0,0,0.8);
-	padding: 10px;
-	color: #F1C40F;
-	font-size: 1.5rem;
-	border: 0;
-}
-#email-input {
-	background-color:rgba(0,0,0,0.8);
-	padding: 10px;
-	color: #F1C40F;
-	font-size: 1.5rem;
-	border: 0;
-}
-#email-input:focus {
-	outline: none !important;
-	box-shadow: none;
-}
-#email-submit {
-	padding: 5px 8px !important;
-	background-color: #F1C40F;
-	color:black;
-	border: 1.5px solid transparent;
-	font-size: 1.5rem;
+
+#contact-container h2 {
+  margin: 0 auto 10px;
+  text-align: center;
+  padding: 20px 0 10px;
+	font-weight: bold;
 }
 
-#email-submit:hover {
-	background: #333;
-	color: #F1C40F;
-	border: 1.5px solid #F1C40F;
+#contact-container form {
+  width: 45%;
+  margin: auto;
 }
-#email-submit:focus {
-	outline: none !important;
-	box-shadow: none;
+
+#contact-container input:not(#contact-submit-btn),
+#contact-container textarea {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 3px;
 }
-/*--- Email list section ---*/
+
+#contact-container input:not(#contact-submit-btn),
+#contact-container textarea {
+  margin-bottom: 10px;
+  background-color: rgba(33, 47, 61, 0.9);
+	color: var(--main-yellow-color);
+}
+
+#contact-submit-btn {
+	width: 100%;
+  border: 2px solid var(--main-yellow-color);
+	border-radius: 3px;
+  background-color: transparent;
+  padding: 10px;
+	font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-yellow-color);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#contact-submit-btn:hover {
+  background-color: var(--main-yellow-color);
+  color: var(--main-black-color) !important;
+}
+
+#contact-username {
+  display: none;
+}
+/*--- End of Contact Form ---*/
 
 
-/*--- Credits Section ---*/	
+/*--- Credits Section ---*/
 #credits-section {
 	width: 100%;
 	background-color: black;
@@ -629,39 +693,26 @@ nav {
 	font-weight: bold;
 	color:#F1C40F;
 }
-.modal-closer {
-	float: right;
+
+.modal-footer {
 	text-align: center;
-	color: #F1C40F;
-	background-color: #333;
-	padding: 0 8px;
-	border: 0;
-	border-radius: 50%;
-	font-size: 150%;
-	font-weight: bold;
+}
+
+.glyphicon-remove {
+	width: 100%;
+	margin: auto;
+	cursor: pointer;
+	background-color: transparent;
+	border: 2px solid var(--main-black-color);
+	font-size: 1.5rem;
+	color: var(--main-black-color);
+	text-align: center;
 	transition: 0.2s;
 }
-.modal-closer:hover {
-	background-color:#F1C40F;
-	color: #333;
-}
-.modal-footer-btn {
-  background-color: #F1C40F;
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  border-radius: 8px;
-  outline: none;
-  color:black;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.modal-footer-btn:active  {
-  transform:translateY(4px);
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  outline: none !important;
-}
-.modal-footer-btn:focus {
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  outline: none;
+
+.glyphicon-remove:hover {
+	background-color: var(--main-black-color);
+	color: var(--main-yellow-color);
 }
 
 /*--- Calculator Modal ---*/
@@ -683,7 +734,7 @@ nav {
 	color: #F1C40F;
 	font-size: 3rem;
 }
-.calc-row {
+.calculator-whole .row {
     width: 100%;
 }
 .calc-row:after {
@@ -708,17 +759,17 @@ nav {
 }
 .calculator-whole button {
     width: 100%;
-	height: 30px;
+		height: 40px;
     border: 1px solid #F1C40F;
     padding: 4px;
     border-radius: 5px;
     background-color: #333;
-	outline: none;
-	cursor: pointer;
+		outline: none;
+		cursor: pointer;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: #F1C40F;
-	transition: 0.3s;
+		transition: 0.3s;
 }
 .calculator-whole button:hover {
 	background-color: #F1C40F;
@@ -743,33 +794,32 @@ nav {
 	left: 10px;
 }
 .mode-indicator {
-	background-color: #2ECC71 !important; 
+	background-color: #2ECC71 !important;
 }
-#pi-btn:hover:after {
+
+#sig-fig-field {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #F1C40F;
+	border-radius: 5px;
+	padding: 4.5px 4.5px 4.5px 20px;
+	background-color: #333;
+	outline: none;
+	font-size: 1.5rem;
+	color: #F1C40F;
+}
+
+#calculator-tooltip {
+	opacity: 0;
+	text-align: center;
+	transition: 0.3s;
 	width: 200px;
-	content:"Use * if multiplying by π";
-	padding: 5px;
-	position: absolute;
-	top: 101%;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: rgba(236, 112, 99, 0.4);
-	border-radius: 5px;
-	border: 1px solid rgb(236, 112, 99);
-}
-#square-root-btn:hover:after, 
-#ten-power:hover:after, 
-.trig-btn:hover:after {
-	width: 250px;
-	content: "Closing ')' required";
-	padding: 5px;
-	position: absolute;
-	top: 101%;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: rgba(236, 112, 99, 0.4);
-	border-radius: 5px;
-	border: 1px solid rgb(236, 112, 99);
+	margin: 5px auto 0;
+	border: 2px solid rgb(192, 57, 43);
+	border-radius: 4px;
+	background-color: rgba(192, 57, 43, 0.5);
+	font-weight: bold;
+	color: var(--main-black-color);
 }
 /*--- End of Calculator ---*/
 
@@ -794,7 +844,7 @@ nav {
 		padding: 5px;
 	}
 	.email-list-form {
-		width: 60%;	
+		width: 60%;
 	}
 }
 
@@ -807,6 +857,15 @@ nav {
 	}
 	.card img {
 		height: 110px;
+	}
+}
+
+@media screen and (max-width:1000px) {
+	.calculator-field {
+		padding:10px !important;
+	}
+	#search-case-list {
+		width: 85%;
 	}
 }
 
@@ -840,12 +899,31 @@ nav {
 	}
 }
 
+@media screen and (max-width: 800px){
+	#contact-container form {
+		width: 80%;
+	}
+	#search-case-list {
+		width: 100%;
+		left: 0;
+		transform: translateX(0);
+	}
+	.modal-dialog {
+		width: 85%;
+		margin: 15px auto 0;
+	}
+}
+
 @media screen and (max-width: 765px){
 	#banner-heading{
 		font-size: 3.5rem;
 	}
 	#email-list-section input {
 		width: 400px !important;
+	}
+	.hiw-caption p {
+		text-align: center;
+		margin: 10px auto 30px;
 	}
 
 }
@@ -858,6 +936,13 @@ nav {
 	}
 	.how-it-works-section .col-sm-4:not(:last-child) {
 		margin-bottom: 20px;
+	}
+	.card {
+		height: 355px;
+	}
+	.card img {
+		width: 200px;
+		height: 200px;
 	}
 }
 @media screen and (max-width: 650px){
@@ -881,12 +966,21 @@ nav {
 	#search-form {
 		left: 42%;
 	}
+	#banner-heading {
+		padding: 0 15px;
+	}
+
+	.col-md-3 {
+		width: 95%;
+		margin: auto !important;
+	}
+
 	.card img {
-		width: 200px;
-		height: 200px;
+		width: 150px;
+		height: 150px;
 	}
 	.card {
-		height: 330px;
+		height: 290px;
 	}
 	.button-to-page {
 		font-size: 2.2rem;
@@ -894,14 +988,61 @@ nav {
 	.card li {
 		font-size: 1.6rem;
 	}
+	#conversion-section {
+		padding: 15px;
+	}
+	#conversion-container {
+		width: 90%;
+	}
 }
 
-@media screen and (max-width: 440px){
+@media screen and (max-width: 500px){
+	.how-it-works-section {
+		padding: 40px 20px;
+	}
+	.card h4 {
+		font-size: 2rem;
+	}
+	.modal-dialog {
+		width: 100%;
+		transform: translateX(0);
+		margin: 0;
+	}
+	.modal-content {
+		border-radius: 0;
+	}
+	#sig-fig-field {
+		padding-left: 10px;
+	}
+}
+
+@media screen and (max-width: 450px){
 	#search-bar {
 		width: 300px;
 	}
 	#get-started-btn {
-		font-size: 2rem; 
+		font-size: 2rem;
+	}
+	#featured-topic-heading {
+		font-size: 3rem;
+	}
+	.main-content {
+		padding: 50px 25px;
+	}
+	.input-option-input {
+		display: block;
+	}
+	.input-option-input input,
+	#unit-converter {
+		width: 100%;
+		margin: 0 0 7px 0;
+	}
+	#contact-container {
+		padding: 0px 10px 50px;
+	}
+	#contact-container form {
+		width: 95%;
+		margin: auto;
 	}
 }
 @media screen and (max-width: 400px){
@@ -911,16 +1052,77 @@ nav {
 	#search-bar {
 		width: 260px;
 	}
+
+	.card {
+		height: 260px;
+	}
+
+	.card img {
+		width: 120px;
+		height: 120px;
+	}
 }
-@media screen and (max-width: 340px){
+@media screen and (max-width: 350px){
 	#get-started-btn {
 		top: 70%;
 		font-size: 1.5rem;
 	}
+	#search-bar {
+		width: 235px;
+	}
+	.card {
+		height: 235px;
+	}
+	.button-to-page {
+		font-size: 1.6rem;
+	}
+	.card li {
+		font-size: 1.3rem;
+	}
 }
-@media screen and (max-width:1000px) {
-	.calculator-field {
-		padding:10px !important;
+
+@media screen and (max-width: 300px){
+	.nav-logo a {
+		font-size: 120%;
+		padding: 0 0 0 10px;
+		line-height: 50px;
+	}
+	#search-bar {
+		width: 190px;
+	}
+	#banner-heading {
+		font-size: 2.3rem;
+	}
+	#get-started-btn {
+		width: 150px;
+		text-align: center;
+		padding: 10px 15px;
+	}
+	.how-it-works-section {
+		padding: 40px 0;
+	}
+	.col-sm-4 {
+		padding: 0;
+	}
+	.col-sm-4 img {
+		width: 110px;
+		height: 110px;
+	}
+	.main-content {
+		padding: 50px 5px;
+	}
+	.card {
+		height: 220px;
+	}
+	.card h4 {
+		font-size: 1.7rem;
+	}
+	.card img {
+		width: 100px;
+		height: 100px;
+	}
+	.button-to-page {
+		1.2rem;
 	}
 }
 /*--- End of Media Queries ---*/
