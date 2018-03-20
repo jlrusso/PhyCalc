@@ -1,33 +1,24 @@
-
-<!-- CTRL + Shift + L turns group selection into multi line selection -->
-<!-- Alt + Shift + W adds a wrapping tag to the selected line -->
-<!-- Shift + Right Click Drag allows multiline typeability -->
-<!-- CTRL + Shift + Arroow key to move a line of text up or down-->
-<!-- CTRL + Shift + D to copy a line of code and duplicate it below -->
-<!-- CTRL + Shift + K will delete focused line of code -->
-<!-- CTRL + [ will shift line of code one tab to the left, CTRL + ] tab right -->
-<!-- add if !event for search case list to remove on click away -->
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PhyCalc | Physics Calculators</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+	<link rel="stylesheet" href="phyCalc.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="phyCalc.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="phyCalc.css">
 </head>
 <body>
 		<nav class="clearfix">
-			<div class="nav-logo animated fadeInRight"><a href="../html/phyCalc.html">PhyCalc</a></div>
+			<div class="nav-logo animated fadeInRight"><a href="phyCalc.php">PhyCalc</a></div>
 			<div class="navigation animated fadeInLeft">
 				<ul class="horizontal-nav">
 					<li><a href="#" id="contact-btn">Contact</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
+					<li><a href="#" id="calculator-btn">Calculator</a></li>
 					<li><a href="#" id="conversion-btn">Conversions</a></li>
 					<li><a href="#" id="horizontal-search-btn"><i class="glyphicon glyphicon-search"></i></a></li>
 				</ul>
@@ -38,7 +29,7 @@
 					<div class="vertical-nav">
 						<ul>
 							<li><a href="#" id="vert-contact-btn">Contact</a></li>
-							<li><a data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
+							<li><a href="#" id="vert-calculator-btn">Calculator</a></li>
 							<li><a href="#" id="vert-conversion-btn">Conversions</a></li>
 						</ul>
 					</div>
@@ -46,9 +37,9 @@
 			</div>
 		</nav>
 
-		<div id="search-section">
+		<div id="search-container">
 			<div id="search-form">
-				<input type="text" id="search-bar" placeholder="search.."/>
+				<input type="text" id="search-bar"/>
 				<div id="search-btn"><i class="glyphicon glyphicon-search"></i></div>
 			</div>
 			<div id="close-search-btn">
@@ -56,21 +47,21 @@
 				<span id="close-bar-two"></span>
 			</div>
 			<div id="search-case-list">
-				<a href="../html/displacement.html">displacement</a>
-				<a href="../html/displacement.html">initial position</a>
-				<a href="../html/displacement.html">final position</a>
-				<a href="../html/vectorDisplacement.html">vectors</a>
-				<a href="../html/vectorDisplacement.html">vector displacement</a>
-				<a href="../html/velocity.html">velocity</a>
-				<a href="../html/velocity.html">time interval</a>
-				<a href="../html/velocity.html">displacement for velocity</a>
-				<a href="../html/velocity.html">acceleration</a>
+				<a href="displacement.html">displacement</a>
+				<a href="displacement.html">initial position</a>
+				<a href="displacement.html">final position</a>
+				<a href="vectorDisplacement.html">vectors</a>
+				<a href="vectorDisplacement.html">vector displacement</a>
+				<a href="velocity.html">velocity</a>
+				<a href="velocity.html">time interval</a>
+				<a href="velocity.html">displacement for velocity</a>
+				<a href="velocity.html">acceleration</a>
 			</div>
 		</div>
 
 		<div class="banner">
 			<div id="banner-inner">
-				<p id="banner-heading">Physics problems? We have solutions.</p>
+				<p id="banner-heading">Physics problems? Find solutions.</p>
 				<span id="get-started-btn">Get Started</span>
 			</div>
 		</div>
@@ -104,8 +95,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-3">
-					<a href="../html/displacement.html">
-						<div class="card" href="../html/displacement.html">
+					<a href="displacement.html">
+						<div class="card" href="displacement.html">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-displacement.png" class="responsive">
 							<div class="caption">
@@ -121,7 +112,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<a href="../html/vectorDisplacement.html">
+					<a href="vectorDisplacement.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/2d-displacement.png" class="img-responsive">
@@ -138,7 +129,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<a href="../html/velocity.html">
+					<a href="velocity.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-velocity.png" class="img-responsive">
@@ -155,7 +146,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<a href="../html/kinematicsBigFive.html">
+					<a href="kinematicsBigFive.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-motion-2d.png" class="img-responsive">
@@ -174,7 +165,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-3">
-					<a href="../html/acceleration.html">
+					<a href="acceleration.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-acceleration.png" class="img-responsive">
@@ -191,7 +182,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<a href="../html/circularMotion.html">
+					<a href="circularMotion.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-circular.png" class="img-responsive">
@@ -208,7 +199,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<a href="../html/oneDimensionalForces.html">
+					<a href="oneDimensionalForces.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-force.png" class="img-responsive">
@@ -225,7 +216,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<a href="../html/gravitationalForces.html">
+					<a href="gravitationalForces.html">
 						<div class="card">
 							<div class="button-to-page">View Topic</div>
 							<img src="../img/home-angle-force.png" class="img-responsive">
@@ -281,6 +272,139 @@
 			</div>
 		</div>
 
+		<div id="calculator-container">
+			<div class="calculator-whole">
+				<input type="text" id="input-field">
+				<div class="row">
+					<div class="col-half">
+						<div id="radians-container">
+							<button type="button" id="radians-btn">Radians</button>
+							<span id="radians-indicator"></span>
+						</div>
+					</div>
+					<div class="col-half">
+						<div id="degrees-container">
+							<button type="button" id="degrees-btn">Degrees</button>
+							<span id="degrees-indicator"></span>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" class="trig-btn">sin</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="trig-btn">cos</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="trig-btn">tan</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button pi-btn" class="reg-btn">&pi;</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" class="trig-btn">sin<sup>-1</sup></button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="trig-btn">cos<sup>-1</sup></button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="trig-btn">tan<sup>-1</sup></button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">/</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">7</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">8</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">9</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn"><b>*</b></button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">4</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">5</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">6</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">-</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">1</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">2</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">3</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">+</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">0</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn"><b>.</b></button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" id="square-btn">x<sup>2</sup></button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" id="nth-power">x<sup>n</sup></button>
+					</div>
+				</div>
+			 	<div class="row">
+					<div class="col-fourth">
+						<button type="button" id="square-root-btn">&radic;</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">(</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" class="reg-btn">)</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" id="ten-power">EE</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-fourth">
+						<button type="button" id="calculator-calculate-btn">=</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" id="calculator-clear-btn">Clear</button>
+					</div>
+					<div class="col-fourth">
+						<button type="button" id="delete-btn">Del</button>
+					</div>
+					<div class="col-fourth">
+						<input type="number" id="sig-fig-field" placeholder="sigfigs"/>
+					</div>
+				</div>
+			</div>
+			<div id="calculator-tooltip"></div>
+		</div>
+
 
 		<div id="contact-container">
 			<h2>Get in Touch</h2>
@@ -288,22 +412,15 @@
 				<?php
 					if(isset($_GET['fullname'])){
 						echo "<input type='text' name='fullname' placeholder='Full name' value='" . $_GET['fullname'] . "' maxlength='30' required='required'/>";
+						echo "<input type='email' name='email' placeholder='Email' required='required'/>";
 					} else {
 						echo "<input type='text' name='fullname' placeholder='Full name' maxlength='30' required='required'/>";
+						echo "<input type='email' name='email' placeholder='Email' required='required'/>";
 					}
-				?>
-				<input type="text" name="email" placeholder="Email" maxlength="30"  required="required"/>
-				<?php
 					if(isset($_GET['subject'])){
 						echo "<input type='text' name='subject' placeholder='Subject' maxlength='30' value='" . $_GET['subject'] . "'/>";
 					} else {
 						echo "<input type='text' name='subject' placeholder='Subject' maxlength='30'/>";
-					}
-				?>
-
-				<?php
-					if(isset($_SESSION['user_username'])){
-						echo "<input type='text' name='username' value='" . $_SESSION['user_username'] . "' id='contact-username'/>";
 					}
 					if(isset($_GET['message'])){
 						echo "<textarea name='message' rows='8' cols='80' placeholder='Message' maxlength='500'>" . $_GET['message'] . "</textarea>";
@@ -319,155 +436,9 @@
 			<div class="credits-inner text-center">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 		</div>
 
-	<!-- Calculator Modal -->
-			<div class="modal fade" id="calculator-modal" role="dialog">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="text-center">Calculator</h4>
-						</div>
-							<div class="modal-body">
-
-								<div class="calculator-whole">
-					        <input type="text" id="input-field">
-					        <div class="row">
-					            <div class="col-half">
-					                <div id="radians-container">
-					                    <button type="button" id="radians-btn">Radians</button>
-					                    <span id="radians-indicator"></span>
-					                </div>
-					            </div>
-					            <div class="col-half">
-					                <div id="degrees-container">
-					                    <button type="button" id="degrees-btn">Degrees</button>
-					                    <span id="degrees-indicator"></span>
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" class="trig-btn">sin</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="trig-btn">cos</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="trig-btn">tan</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" id="pi-btn" class="reg-btn">&pi;</button>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" class="trig-btn">sin<sup>-1</sup></button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="trig-btn">cos<sup>-1</sup></button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="trig-btn">tan<sup>-1</sup></button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">/</button>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">7</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">8</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">9</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn"><b>*</b></button>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">4</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">5</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">6</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">-</button>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">1</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">2</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">3</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">+</button>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">0</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn"><b>.</b></button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" id="square-btn">x<sup>2</sup></button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" id="nth-power">x<sup>n</sup></button>
-					            </div>
-					        </div>
-					         <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" id="square-root-btn">&radic;</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">(</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" class="reg-btn">)</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" id="ten-power">EE</button>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-fourth">
-					                <button type="button" id="calculate-btn">=</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" id="clear-btn">Clear</button>
-					            </div>
-					            <div class="col-fourth">
-					                <button type="button" id="delete-btn">Del</button>
-					            </div>
-					            <div class="col-fourth">
-					                <input type="number" id="sig-fig-field" placeholder="sigfigs"/>
-					            </div>
-					        </div>
-					    </div>
-									<div id="calculator-tooltip"></div>
-							</div>
-							<div class="modal-footer text-center">
-								<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			<!-- End of Calculator Modal -->
 
 	<script type="text/javascript" src="jsCalculator.js"></script>
 	<script type="text/javascript" src="phyCalc.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </html>
