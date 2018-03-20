@@ -300,7 +300,7 @@
 						<button type="button" class="trig-btn">tan</button>
 					</div>
 					<div class="col-fourth">
-						<button type="button pi-btn" class="reg-btn">&pi;</button>
+						<button type="button" class="reg-btn pi-btn">&pi;</button>
 					</div>
 				</div>
 				<div class="row">
