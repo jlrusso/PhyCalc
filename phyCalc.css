@@ -12,7 +12,7 @@ body {
 	position: relative;
 }
 * {
-	font-family: Century Gothic;
+	font-family: 'Titillium Web', sans-serif;
 	box-sizing: border-box !important;
 }
 
@@ -79,7 +79,7 @@ nav {
 .nav-logo a:hover {
 	text-shadow: 0 0 3px #F1C40F;
 }
-#search-section {
+#search-container {
 	position: absolute;
 	top: -100px;
 	width: 100%;
@@ -89,7 +89,7 @@ nav {
 	transition: 0.5s;
 	z-index: 1;
 }
-#search-section.active-search {
+#search-container.active-search {
 	top: 50px;
 }
 #search-form {
@@ -104,7 +104,7 @@ nav {
 	color: #F1C40F;
 	border: 1px solid #F1C40F;
 	border-radius: 3px;
-	padding: 5px 10px;
+	padding: 5px 10px 5px 40px;
 	font-size: 2rem;
 	z-index: 2 !important;
 }
@@ -114,14 +114,15 @@ nav {
 }
 #search-btn {
 	background-color: #333;
-	padding: 8px 10px 4px;
+	padding: 8px 10px 5px;
 	color: #F1C40F;
-	font-size: 1.75rem;
+	font-size: 1.5rem;
 	position: absolute;
 	border: 0;
 	border-radius: 3px;
-	top: 1px;
-	right: 1px;
+	top: 50%;
+	left: 1px;
+	transform:translateY(-50%);
 	z-index: 0;
 }
 
@@ -405,10 +406,10 @@ nav {
 	top: 60%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	border: 2px solid #333;
+	border: 2px solid var(--main-black-color);
 	border-radius: 5px;
-	background-color: #333;
-	color: #F1C40F;
+	background-color: transparent;
+	color: var(--main-black-color);
 	padding: 10px 30px;
 	font-size: 1.5rem;
 	font-weight: bold;
@@ -416,8 +417,8 @@ nav {
 	transition: 0.3s;
 }
 #get-started-btn:hover {
-	background-color: transparent;
-	color: #333;
+	background-color: var(--main-black-color);
+	color: var(--main-yellow-color);
 }
 /*--- End of banner section ---*/
 .main-content {
@@ -552,7 +553,8 @@ nav {
 	}
   #conversion-container {
     position: relative;
-    width: 380px;
+    width: 520px;
+		max-width: 100%;
     height: auto;
     margin: auto;
     padding: 10px;
@@ -676,11 +678,6 @@ nav {
 	color: #F1C40F;
 }
 /*--- End of Credits ---*/
-
-
-
-
-
 .modal {
 	z-index: 20000 !important
 }
@@ -715,7 +712,11 @@ nav {
 	color: var(--main-yellow-color);
 }
 
-/*--- Calculator Modal ---*/
+/*--- Calculator ---*/
+#calculator-container {
+	background-color: var(--main-black-color);
+	padding: 0px 45px 45px;
+}
 .calculator-whole {
 	max-width: 500px;
 	margin: auto;
