@@ -1,30 +1,30 @@
 window.onload = function(){
 	var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
 		verticalSearchBtn = document.getElementById("vertical-search-btn"),
-		searchSection = document.getElementById("search-section"),
+		searchContainer  = document.getElementById("search-container"),
 		searchBar = document.getElementById("search-bar"),
 		closeSearchBtn = document.getElementById("close-search-btn"),
 		caseList = document.getElementById("search-case-list");
 
-	horizontalSearchBtn.addEventListener("click", openSearchSection);
-	verticalSearchBtn.addEventListener("click", openSearchSection);
+	horizontalSearchBtn.addEventListener("click", openSearchContainer);
+	verticalSearchBtn.addEventListener("click", openSearchContainer);
 	searchBar.addEventListener("input", showList);
-	closeSearchBtn.addEventListener("click", closeSearchSection);
+	closeSearchBtn.addEventListener("click", closeSearchContainer);
 
-	function openSearchSection(){
-		if(!searchSection.classList.contains("active-search")){
-			searchSection.classList.toggle("active-search");
+	function openSearchContainer(){
+		if(!searchContainer.classList.contains("active-search")){
+			searchContainer.classList.toggle("active-search");
 			searchBar.focus();
 		} else {
-			searchSection.classList.remove("active-search");
+			searchContainer.classList.remove("active-search");
 			caseList.classList.remove("show");
 			searchBar.value = "";
 		}
 	}
 
-	function closeSearchSection(){
-		if(searchSection.classList.contains("active-search")){
-			searchSection.classList.remove("active-search");
+	function closeSearchContainer(){
+		if(searchContainer.classList.contains("active-search")){
+			searchContainer.classList.remove("active-search");
 			caseList.classList.remove("show");
 			searchBar.value  = "";
 		}
@@ -93,6 +93,18 @@ $(document).ready(function(){
 		$("html, body").animate({
 			scrollTop: $("#contact-container").offset().top
 		}, "slow")
+	})
+
+	$("#calculator-btn").click(function(){
+		$("html, body").animate({
+			scrollTop: $("#calculator-container").offset().top - 30
+		}, "slow");
+	})
+
+	$("#vert-calculator-btn").click(function(){
+		$("html, body").animate({
+			scrollTop: $("#calculator-container").offset().top - 30
+		}, "slow");
 	})
 
 	$("#conversion-btn").click(function(){
