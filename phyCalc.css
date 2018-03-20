@@ -222,7 +222,7 @@ nav {
 	display: block;
 	padding: 6px 15px;
 	border: 1.5px solid transparent;
-	border-radius: 20px;
+	border-radius: 4px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #F1C40F !important;
@@ -232,7 +232,6 @@ nav {
 
 .horizontal-nav li a:hover {
 	border: 1.5px solid #F1C40F;
-	border-radius: 20px;
 	margin: 8px 5px 0 0;
 }
 .vertical-nav li a {
@@ -548,7 +547,7 @@ nav {
 
 /*--- Start of Conversion Section ---*/
 	#conversion-section {
-		padding: 50px;
+		padding: 45px;
 		background-color: var(--main-black-color);
 	}
   #conversion-container {
@@ -647,13 +646,13 @@ nav {
 
 #contact-submit-btn {
 	width: 100%;
-  border: 2px solid var(--main-yellow-color);
+  border: 2px solid var(--main-black-color);
 	border-radius: 3px;
   background-color: transparent;
   padding: 10px;
 	font-size: 1.5rem;
   font-weight: bold;
-  color: var(--main-yellow-color);
+  color: var(--main-black-color);
   cursor: pointer;
   transition: 0.2s;
 }
@@ -714,6 +713,7 @@ nav {
 
 /*--- Calculator ---*/
 #calculator-container {
+	position:relative;
 	background-color: var(--main-black-color);
 	padding: 0px 45px 45px;
 }
@@ -811,6 +811,10 @@ nav {
 }
 
 #calculator-tooltip {
+	position:absolute;
+	bottom:10px;
+	left:50%;
+	transform:translateX(-50%);
 	opacity: 0;
 	text-align: center;
 	transition: 0.3s;
@@ -819,8 +823,10 @@ nav {
 	border: 2px solid rgb(192, 57, 43);
 	border-radius: 4px;
 	background-color: rgba(192, 57, 43, 0.5);
+	font-size: 1.5rem;
 	font-weight: bold;
-	color: var(--main-black-color);
+	letter-spacing:1px;
+	color: white;
 }
 /*--- End of Calculator ---*/
 
