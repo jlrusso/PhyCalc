@@ -68,19 +68,19 @@
 
 		<div class="how-it-works-section">
 			<div class="row text-center">
-				<div class="col-sm-4">
+				<div class="col-md-4">
 					<img src="../img/search-icon.png" alt="Search Icon"/>
 					<div class="hiw-caption">
 						<p>Search our database by topic or topic-related terms</p>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-md-4">
 					<img src="../img/review-icon.png" alt="Review Icon"/>
 					<div class="hiw-caption">
 						<p>Review practice problems and step by step solutions</p>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-md-4">
 					<img src="../img/solution-icon.png" alt="Solution Icon"/>
 					<div class="hiw-caption">
 						<p>Solve your own problems by inputing given variables</p>
@@ -89,11 +89,11 @@
 			</div>
 		</div>
 
-		<div class="main-content">
+		<div id="main-content">
 			<div id="features-heading-container">
 				<div class="animated fadeInLeftBig" id="featured-topic-heading">Featured Topics</div>
 			</div>
-			<div class="row">
+			<div class="row card-row">
 				<div class="col-md-3">
 					<a href="displacement.html">
 						<div class="card" href="displacement.html">
@@ -163,7 +163,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row card-row">
 				<div class="col-md-3">
 					<a href="acceleration.html">
 						<div class="card">
@@ -432,13 +432,18 @@
 			</form>
 		</div>
 
+		<!-- Go back to top -->
+		<div id="go-up-container">
+			<button type="button" id="go-up-btn"><span class="glyphicon glyphicon-chevron-up"></span></button>
+		</div>
+
 		<div id="credits-section">
 			<div class="credits-inner text-center">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 		</div>
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript" src="jsCalculator.js"></script>
 	<script type="text/javascript" src="phyCalc.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 </html>
