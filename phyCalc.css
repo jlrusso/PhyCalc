@@ -92,13 +92,12 @@ nav {
 	top: 50px;
 }
 #search-form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	position: relative;
+	width: 500px;
+	margin: auto;
 }
 #search-bar {
-	width: 500px;
+	width: 100%;
 	background-color: #333;
 	color: #F1C40F;
 	border: 1px solid #F1C40F;
@@ -171,6 +170,7 @@ nav {
 }
 #search-case-list a {
 	width: 500px;
+	max-width: 100%;
 	margin: auto;
   display:block;
   padding: 15px;
@@ -529,7 +529,7 @@ nav {
 .how-it-works-section {
 	width:100%;
 	height: auto;
-	padding: 75px;
+	padding: 85px;
 	background-color: #333;
 	color: white;
 }
@@ -540,9 +540,9 @@ nav {
 .col-md-4 img {
 	margin-bottom: 10px;
 }
-
 .col-sm-4 p {
 	width: 100%;
+	margin-bottom: 15px;
 }
 /*--- End of How It Works Section ---*/
 
@@ -591,7 +591,6 @@ nav {
     font-weight: bold;
     outline: none;
   }
-
   .input-option-input input {
     width: 100%;
     padding: 9px;
@@ -893,9 +892,6 @@ nav {
 	.calculator-field {
 		padding:10px !important;
 	}
-	#search-case-list {
-		width: 85%;
-	}
 }
 
 @media screen and (max-width: 992px){
@@ -961,8 +957,11 @@ nav {
 	}
 }
 @media screen and (max-width: 715px){
-	#search-bar {
-		width: 350px;
+	#search-form {
+		margin-left: 0;
+	}
+	#search-case-list a {
+		margin-left: 0;
 	}
 	#banner-heading{
 		font-size: 2.7rem;
@@ -993,9 +992,6 @@ nav {
 	}
 }
 @media screen and (max-width: 600px){
-	#search-form {
-		left: 42%;
-	}
 	#banner-heading {
 		padding: 0 15px;
 	}
@@ -1026,6 +1022,13 @@ nav {
 	}
 }
 
+@media screen and (max-width: 580px){
+	#search-form,
+	#search-case-list a {
+		width: 400px;
+	}
+}
+
 @media screen and (max-width: 500px){
 	.how-it-works-section {
 		padding: 40px 20px;
@@ -1043,6 +1046,12 @@ nav {
 	}
 	#sig-fig-field {
 		padding-left: 10px;
+	}
+}
+@media screen and (max-width: 470px){
+	#search-form,
+	#search-case-list a {
+		width: 300px;
 	}
 }
 
@@ -1086,9 +1095,6 @@ nav {
 	#how-it-works-section {
 		width: 95%;
 	}
-	#search-bar {
-		width: 260px;
-	}
 	.col-md-3 {
 		padding-right: 0;
 		padding-left: 0;
@@ -1098,23 +1104,23 @@ nav {
 		margin-right: 0;
 		margin-left: 0;
 	}
-/*
-	.card {
-		height: 260px;
-	}
-
-	.card img {
-		width: 120px;
-		height: 120px;
-	} */
 }
+
+@media screen and (max-width: 370px){
+	#search-bar,
+	#search-case-list a {
+		width: 250px;
+	}
+}
+
 @media screen and (max-width: 350px){
+	#search-form,
+	#search-case-list a {
+		width: 250px;
+	}
 	#get-started-btn {
 		top: 70%;
 		font-size: 1.5rem;
-	}
-	#search-bar {
-		width: 235px;
 	}
 	.button-to-page {
 		font-size: 1.6rem;
@@ -1134,15 +1140,14 @@ nav {
 	}
 }
 
+@media screen and (max-width: 320px){
+	#search-bar,
+	#search-case-list a {
+		width: 230px;
+	}
+}
+
 @media screen and (max-width: 300px){
-	.nav-logo a {
-		font-size: 120%;
-		padding: 0 0 0 10px;
-		line-height: 50px;
-	}
-	#search-bar {
-		width: 190px;
-	}
 	#banner-heading {
 		font-size: 2.3rem;
 	}
