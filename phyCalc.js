@@ -1,10 +1,14 @@
 window.onload = function(){
-	var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
+var navBar = document.getElementsByTagName("nav")[0],
+		horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
 		verticalSearchBtn = document.getElementById("vertical-search-btn"),
 		searchContainer  = document.getElementById("search-container"),
 		searchBar = document.getElementById("search-bar"),
 		closeSearchBtn = document.getElementById("close-search-btn"),
-		caseList = document.getElementById("search-case-list");
+		caseList = document.getElementById("search-case-list"),
+		banner = document.getElementsByClassName("banner")[0],
+		hiwSection = document.getElementsByClassName("how-it-works-section")[0],
+		mainContent = document.getElementById("main-content");
 
 	horizontalSearchBtn.addEventListener("click", openSearchContainer);
 	verticalSearchBtn.addEventListener("click", openSearchContainer);
@@ -30,6 +34,7 @@ window.onload = function(){
 		}
 	}
 
+
 	function showList() {
 		if (searchBar.value.length > 0){
 			caseList.classList.add('show');
@@ -52,7 +57,14 @@ window.onload = function(){
 			}
 		}
 	}
-
+	var searchClosers = [searchContainer, banner, hiwSection, mainContent];
+	for(let i = 0; i < searchClosers.length; i++){
+		searchClosers[i].addEventListener("click", function(e){
+			if(!e.target.matches("#search-bar")){
+				closeSearchContainer();
+			}
+		})
+	}
 
 	/*--- Toggle Hamburger Menu ---*/
 	var icon = document.getElementById("icon");
@@ -64,18 +76,20 @@ window.onload = function(){
 		icon.classList.toggle("active");
 		verticalNav.classList.toggle("show-vertical-nav");
 	}
-
 	window.onclick = function(e){
-		if(!e.target.matches("#click-box")){
-			if(icon.classList.contains("active")){
-				icon.classList.remove("active");
-				verticalNav.classList.remove("show-vertical-nav");
+		if(window.innerWidth < 650){
+			if(!e.target.matches("#click-box")){
+				if(icon.classList.contains("active")){
+					icon.classList.remove("active");
+					verticalNav.classList.remove("show-vertical-nav");
+				}
 			}
 		}
 	}
 }; //closing bracket for onload function
 
 
+/*--- Scroll to page section on click ---*/
 $(document).ready(function(){
 	$("#get-started-btn").click(function() {
 	    $('html,body').animate({
@@ -119,7 +133,24 @@ $(document).ready(function(){
 		}, "slow")
 	})
 
+	$("#go-up-btn").click(function(){
+		$("html, body").animate({
+			scrollTop: 0
+		}, "slow")
+	});
+
+	$(window).scroll(function(){
+		if($(window).scrollTop() > 600){
+			$("#go-up-container").css("opacity", "1");
+		} else {
+			$("#go-up-container").css("opacity", "0");
+		}
+	})
+
 });
+/*--- end of scroll to page section ---*/
+
+
 
 
 /*--- Conversion Table JS ---*/

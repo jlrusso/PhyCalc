@@ -4,7 +4,6 @@
 }
 html, body {
 	height:100%;
-	overflow-x: hidden;
 	margin:0;
 	padding:0;
 }
@@ -93,13 +92,12 @@ nav {
 	top: 50px;
 }
 #search-form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	position: relative;
+	width: 500px;
+	margin: auto;
 }
 #search-bar {
-	width: 500px;
+	width: 100%;
 	background-color: #333;
 	color: #F1C40F;
 	border: 1px solid #F1C40F;
@@ -159,9 +157,8 @@ nav {
 	display: none;
 	position: absolute;
 	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 70%;
+	left: 0;
+	width: 100%;
 	height: 230px;
 	padding: 10px;
 	overflow-y: auto;
@@ -172,13 +169,16 @@ nav {
 	display: block;
 }
 #search-case-list a {
-    display:block;
-    padding: 15px;
-    color:#F1C40F;
-    text-decoration:none;
-    font-size: 1.7rem;
-    font-weight: bold;
-    border-left: 4px solid transparent;
+	width: 500px;
+	max-width: 100%;
+	margin: auto;
+  display:block;
+  padding: 15px;
+  color:#F1C40F;
+  text-decoration:none;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border-left: 4px solid transparent;
 }
 #search-case-list a:hover {
 	background-color: rgba(241, 196, 15, 0.1);
@@ -222,7 +222,7 @@ nav {
 	display: block;
 	padding: 6px 15px;
 	border: 1.5px solid transparent;
-	border-radius: 20px;
+	border-radius: 4px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #F1C40F !important;
@@ -232,8 +232,10 @@ nav {
 
 .horizontal-nav li a:hover {
 	border: 1.5px solid #F1C40F;
-	border-radius: 20px;
 	margin: 8px 5px 0 0;
+}
+.vertical-nav {
+	display: none;
 }
 .vertical-nav li a {
 	display: block;
@@ -307,7 +309,6 @@ nav {
 	transform: rotate(135deg);
 }
 .vertical-nav {
-	opacity: 0;
 	position: absolute;
 	top: 135%;
 	right: -200px;
@@ -357,7 +358,7 @@ nav {
 	border-left: 3px solid #F1C40F;
 }
 .show-vertical-nav {
-	opacity: 1;
+	display:block;
 	right: -10px;
 }
 #click-box {
@@ -421,7 +422,7 @@ nav {
 	color: var(--main-yellow-color);
 }
 /*--- End of banner section ---*/
-.main-content {
+#main-content {
 	padding:50px 60px;
 	height:auto;
 	background-color:#EAECEE;
@@ -528,7 +529,7 @@ nav {
 .how-it-works-section {
 	width:100%;
 	height: auto;
-	padding: 75px;
+	padding: 85px;
 	background-color: #333;
 	color: white;
 }
@@ -536,28 +537,27 @@ nav {
 	font-size: 1.5rem;
 	font-weight: bold;
 }
-.col-sm-4 img {
-	margin-bottom: 30px;
+.col-md-4 img {
+	margin-bottom: 10px;
 }
-
 .col-sm-4 p {
-	width: 80%;
-	margin: auto;
+	width: 100%;
+	margin-bottom: 15px;
 }
 /*--- End of How It Works Section ---*/
 
 /*--- Start of Conversion Section ---*/
 	#conversion-section {
-		padding: 50px;
+		padding: 45px;
 		background-color: var(--main-black-color);
 	}
   #conversion-container {
     position: relative;
-    width: 520px;
+    width: 500px;
 		max-width: 100%;
     height: auto;
     margin: auto;
-    padding: 10px;
+    padding: 10px 0;
     border-radius: 3px;
     background-color: #333;
     text-align: center;
@@ -591,7 +591,6 @@ nav {
     font-weight: bold;
     outline: none;
   }
-
   .input-option-input input {
     width: 100%;
     padding: 9px;
@@ -627,6 +626,7 @@ nav {
 
 #contact-container form {
   width: 45%;
+	height: 100%;
   margin: auto;
 }
 
@@ -647,13 +647,13 @@ nav {
 
 #contact-submit-btn {
 	width: 100%;
-  border: 2px solid var(--main-yellow-color);
+  border: 2px solid var(--main-black-color);
 	border-radius: 3px;
   background-color: transparent;
   padding: 10px;
 	font-size: 1.5rem;
   font-weight: bold;
-  color: var(--main-yellow-color);
+  color: var(--main-black-color);
   cursor: pointer;
   transition: 0.2s;
 }
@@ -714,6 +714,7 @@ nav {
 
 /*--- Calculator ---*/
 #calculator-container {
+	position:relative;
 	background-color: var(--main-black-color);
 	padding: 0px 45px 45px;
 }
@@ -811,6 +812,10 @@ nav {
 }
 
 #calculator-tooltip {
+	position:absolute;
+	bottom:10px;
+	left:50%;
+	transform:translateX(-50%);
 	opacity: 0;
 	text-align: center;
 	transition: 0.3s;
@@ -819,10 +824,32 @@ nav {
 	border: 2px solid rgb(192, 57, 43);
 	border-radius: 4px;
 	background-color: rgba(192, 57, 43, 0.5);
+	font-size: 1.5rem;
 	font-weight: bold;
-	color: var(--main-black-color);
+	letter-spacing:1px;
+	color: white;
 }
 /*--- End of Calculator ---*/
+
+#go-up-container {
+	opacity: 0;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	transition: 0.4s;
+}
+#go-up-container button {
+	background-color: var(--main-black-color);
+	border: 0;
+	border-radius: 4px;
+	color: var(--main-yellow-color);
+	padding: 10px 15px;
+	font-size: 1.5rem;
+}
+
+#go-up-container button:focus {
+	outline: none;
+}
 
 
 
@@ -865,17 +892,23 @@ nav {
 	.calculator-field {
 		padding:10px !important;
 	}
-	#search-case-list {
-		width: 85%;
-	}
 }
 
 @media screen and (max-width: 992px){
+	.how-it-works-section .col-md-4:not(:last-child) {
+		margin-bottom: 40px;
+	}
+	.how-it-works-section .hiw-caption {
+		padding: 20px 0 0;
+	}
 	#features-heading-container {
 		text-align: center;
 	}
 	#featured-topic-heading {
 		float: none;
+	}
+	.card-row .card:last-child {
+		margin-bottom: 0;
 	}
 	.col-md-3 {
 		width: 80%;
@@ -922,21 +955,16 @@ nav {
 	#email-list-section input {
 		width: 400px !important;
 	}
-	.hiw-caption p {
-		text-align: center;
-		margin: 10px auto 30px;
-	}
-
 }
 @media screen and (max-width: 715px){
-	#search-bar {
-		width: 350px;
+	#search-form {
+		margin-left: 0;
+	}
+	#search-case-list a {
+		margin-left: 0;
 	}
 	#banner-heading{
 		font-size: 2.7rem;
-	}
-	.how-it-works-section .col-sm-4:not(:last-child) {
-		margin-bottom: 20px;
 	}
 	.card {
 		height: 355px;
@@ -964,9 +992,6 @@ nav {
 	}
 }
 @media screen and (max-width: 600px){
-	#search-form {
-		left: 42%;
-	}
 	#banner-heading {
 		padding: 0 15px;
 	}
@@ -997,6 +1022,13 @@ nav {
 	}
 }
 
+@media screen and (max-width: 580px){
+	#search-form,
+	#search-case-list a {
+		width: 400px;
+	}
+}
+
 @media screen and (max-width: 500px){
 	.how-it-works-section {
 		padding: 40px 20px;
@@ -1016,6 +1048,12 @@ nav {
 		padding-left: 10px;
 	}
 }
+@media screen and (max-width: 470px){
+	#search-form,
+	#search-case-list a {
+		width: 300px;
+	}
+}
 
 @media screen and (max-width: 450px){
 	#search-bar {
@@ -1027,7 +1065,7 @@ nav {
 	#featured-topic-heading {
 		font-size: 3rem;
 	}
-	.main-content {
+	#main-content {
 		padding: 50px 25px;
 	}
 	.input-option-input {
@@ -1037,6 +1075,13 @@ nav {
 	#unit-converter {
 		width: 100%;
 		margin: 0 0 7px 0;
+	}
+	#calculator-container {
+		padding: 0 30px 40px;
+	}
+	.calculator-whole button,
+	#sig-fig-field {
+		height: 35px;
 	}
 	#contact-container {
 		padding: 0px 10px 50px;
@@ -1050,47 +1095,59 @@ nav {
 	#how-it-works-section {
 		width: 95%;
 	}
-	#search-bar {
-		width: 260px;
+	.col-md-3 {
+		padding-right: 0;
+		padding-left: 0;
 	}
-
-	.card {
-		height: 260px;
-	}
-
-	.card img {
-		width: 120px;
-		height: 120px;
+	.card-row {
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
+
+@media screen and (max-width: 370px){
+	#search-bar,
+	#search-case-list a {
+		width: 250px;
+	}
+}
+
 @media screen and (max-width: 350px){
+	#search-form,
+	#search-case-list a {
+		width: 250px;
+	}
 	#get-started-btn {
 		top: 70%;
 		font-size: 1.5rem;
 	}
-	#search-bar {
-		width: 235px;
-	}
-	.card {
-		height: 235px;
-	}
 	.button-to-page {
 		font-size: 1.6rem;
 	}
-	.card li {
-		font-size: 1.3rem;
+	.calculator-whole button,
+	#sig-fig-field {
+		font-size: 1.4rem;
+	}
+	#contact-container {
+		background-position: center;
+	}
+	#contact-submit-btn {
+		color: var(--main-yellow-color);
+	}
+	#contact-submit-btn:focus {
+		color: var(--main-black-color);
+	}
+}
+
+@media screen and (max-width: 320px){
+	#search-bar,
+	#search-case-list a {
+		width: 230px;
 	}
 }
 
 @media screen and (max-width: 300px){
-	.nav-logo a {
-		font-size: 120%;
-		padding: 0 0 0 10px;
-		line-height: 50px;
-	}
-	#search-bar {
-		width: 190px;
-	}
 	#banner-heading {
 		font-size: 2.3rem;
 	}
@@ -1109,7 +1166,7 @@ nav {
 		width: 110px;
 		height: 110px;
 	}
-	.main-content {
+	#main-content {
 		padding: 50px 5px;
 	}
 	.card {

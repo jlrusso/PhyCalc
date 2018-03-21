@@ -541,8 +541,6 @@
 		var $mileUnit = $("#mile-btn").attr("units");
 
 
-
-
 		window.addEventListener("resize", function(){
 			if(window.innerWidth < 992){
 				$(window).scroll(function(){

@@ -6,8 +6,8 @@ var squareBtn = document.getElementById('square-btn');
 var squareRootBtn = document.getElementById("square-root-btn");
 var nthPowerBtn = document.getElementById('nth-power');
 var tenPowerBtn = document.getElementById("ten-power");
-var calculateBtn = document.getElementById('calculate-btn');
-var clearBtn = document.getElementById('clear-btn');
+var calculateBtn = document.getElementById('calculator-calculate-btn');
+var clearBtn = document.getElementById('calculator-clear-btn');
 var deleteBtn = document.getElementById('delete-btn');
 var sigFigField = document.getElementById("sig-fig-field");
 
@@ -107,13 +107,12 @@ var trigs = ["sin(", "cos(", "tan(", "sin-1(", "cos-1(", "tan-1("],
     radTrigs = ["Math.sin(", "Math.cos(", "Math.tan(", "Math.asin(", "Math.acos(", "Math.atan("];
 //evaluate the expression inside input field
 function calculateInput(){
-        //change pi symbol to number value before evaluating
-    if (inputField.value.indexOf('π') > -1) {
-        //replaces all instances of pi symbol with pi value
-        while (inputField.value.indexOf('π') > -1){
-            inputField.value = inputField.value.replace('π', Math.PI);
-        }
-    } else if (inputField.value.indexOf('^2') > -1){
+    //change pi symbol to number value before evaluating
+    while (inputField.value.indexOf('π') > -1){
+      console.log("pi");
+        inputField.value = inputField.value.replace('π', Math.PI);
+    }
+    if (inputField.value.indexOf('^2') > -1){
         inputField.value = inputField.value.replace('^2', "**2");
     } else if (inputField.value.indexOf('^') > -1){
         inputField.value = inputField.value.replace('^', "**");
@@ -179,12 +178,10 @@ function deleteInput(){
     inputField.value = valMinusOne;
 }
 
-
-
-/*--- When user clicks Square root btn ---*/
+/*--- Show Tool on some Calculator Btn mouseover ---*/
 var calculatorTooltip = document.getElementById("calculator-tooltip");
 calculatorTooltip.textContent = " ";
-var piBtn = document.getElementById("pi-btn");
+var piBtns = document.getElementsByClassName("pi-btn");
 
 squareRootBtn.addEventListener("mouseover", function(){
   calculatorTooltip.textContent = "Closing ')' required";
@@ -195,14 +192,17 @@ squareRootBtn.addEventListener("mouseout", function(){
   calculatorTooltip.style.opacity = "0";
 })
 
-piBtn.addEventListener("mouseover", function(){
-  calculatorTooltip.textContent = "User '*' to multiply by π";
-  calculatorTooltip.style.opacity = "1";
-})
+for(let i = 0; i < piBtns.length; i++){
+  piBtns[i].addEventListener("mouseover", function(){
+    calculatorTooltip.textContent = "Use '*' to multiply by π";
+    calculatorTooltip.style.opacity = "1";
+  })
 
-piBtn.addEventListener("mouseout", function(){
-  calculatorTooltip.style.opacity = "0";
-})
+  piBtns[i].addEventListener("mouseout", function(){
+    calculatorTooltip.style.opacity = "0";
+  })
+}
+
 
 for(let i = 0; i < trigBtns.length; i++){
   trigBtns[i].addEventListener("mouseover", function(){

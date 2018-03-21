@@ -127,14 +127,13 @@ nav {
 #search-section.active-search {
 	top: 50px;
 }
-#search-bar-btn {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+#search-form {
+	position: relative;
+	width: 500px;
+	margin: auto;
 }
 #search-bar {
-	width: 500px;
+	width: 100%;
 	background-color: #333;
 	color: #F1C40F;
 	border: 1px solid #F1C40F;
@@ -1097,7 +1096,7 @@ button.accordion.active:after {
 	}
 }
 
-@media screen and (max-width: 991px){
+@media screen and (max-width: 993px){
 	#main-panel,
 	#third-panel {
 		height: auto !important;
@@ -1114,21 +1113,38 @@ button.accordion.active:after {
 	}
 
 	#slide-arrow-container {
-		width: 72%;
-		top: -2px;
+		width: 100%;
+		top: -5px;
+	}
+	.slide-arrow-btn {
+		width:150px;
+		padding:8px;
+	}
+	#prev-slide-btn {
+		margin-left:14px;
+	}
+	#next-slide-btn {
+		margin-right:14px;
 	}
 
 	#outer-image-container {
-		width: 75%;
-		margin: 15px auto 15px;
+		width: 100%;
+		height: auto;
+		margin: 30px auto 15px;
 	}
-
+	#inner-image-container {
+		width: 300%;
+	}
+	#slide-bar-indicators {
+		opacity: 1;
+	}
 	#solo-image {
 		padding-bottom: 20px;
 	}
 
 	#solo-image img {
-		width: 75%;
+		width: 100%;
+		height: auto;
 		margin: auto;
 	}
 	.module-section {
@@ -1172,18 +1188,14 @@ button.accordion.active:after {
 		font-size: 1.4rem;
 	}
 }
-@media screen and (max-width: 650px){
-	#search-bar {
-		width: 400px;
-	}
-	#search-bar-btn {
-		left: 10px;
-		transform: translate(0, -50%);
+@media screen and (max-width: 715px){
+	#search-form {
+		margin-left: 0;
 	}
 	#search-case-list a {
-		width: 100%;
-	}
+		margin-left: 0;
 }
+
 @media screen and (max-width: 610px){
 	#slide-arrow-container {
 		width: 85%;
@@ -1214,6 +1226,13 @@ button.accordion.active:after {
 	}
 }
 
+@media screen and (max-width: 580px){
+	#search-form,
+	#search-case-list a {
+		width: 400px;
+	}
+}
+
 @media screen and (max-width: 500px){
 	.horizontal-nav {
 		display: none;
@@ -1225,9 +1244,6 @@ button.accordion.active:after {
 	.pager {
 		padding-top: 0;
 		margin: 0 auto 20px;
-	}
-	#search-bar {
-		width: 275px;
 	}
 	.section-heading {
 		float: none;
@@ -1272,6 +1288,13 @@ button.accordion.active:after {
 	}
 }
 
+@media screen and (max-width: 470px){
+	#search-form,
+	#search-case-list a {
+		width: 300px;
+	}
+}
+
 @media screen and (max-width: 450px){
 	#sig-fig-field {
 		padding-left: 5px;
@@ -1301,7 +1324,11 @@ button.accordion.active:after {
 	}
 }
 
-@media screen and (max-width: 365px){
+@media screen and (max-width: 370px){
+	#search-form,
+	#search-case-list a {
+		width: 250px;
+	}
 	.unit-selection,
 	.solve-selection {
 		display: none;
