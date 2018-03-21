@@ -194,7 +194,7 @@ squareRootBtn.addEventListener("mouseout", function(){
 
 for(let i = 0; i < piBtns.length; i++){
   piBtns[i].addEventListener("mouseover", function(){
-    calculatorTooltip.textContent = "User '*' to multiply by π";
+    calculatorTooltip.textContent = "Use '*' to multiply by π";
     calculatorTooltip.style.opacity = "1";
   })
 
