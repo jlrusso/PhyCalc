@@ -1,0 +1,64 @@
+  *
+  {
+    box-sizing: border-box;
+  }
+  html, body
+  {
+    margin: 0;
+    padding: 0;
+  }
+  #conversionContainer
+  {
+    position: relative;
+    width: 380px;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #333;
+    text-align: center;
+  }
+  #conversionHeader
+  {
+    width: 200px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #F1C40F;
+    font-size: 1.3rem;
+    font-family: Verdana, sans-serif;
+  }
+  .input-option-input {
+    width: 100%;
+    display: flex;
+  }
+  select#unitConverter
+  {
+    width: 33.33%;
+    margin:0 2px;
+    padding: 8px;
+    border: 0;
+    border-radius: 3px;
+    background-color: #F1C40F;
+    color: #333;
+    font-size: 1.05rem;
+    font-weight: bold;
+    outline: none;
+  }
+
+  input
+  {
+    width: 33.33%;
+    padding: 9px;
+    border-radius: 3px;
+    border: 2px solid #F1C40F;
+    color: #F1C40F;
+    background-color: #333;
+    font-size: 1.1rem;
+    outline: none;
+  }
+  ::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.8);
+  }

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PhyCalc | Velocity</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="velocity.css">
+</head>
+<body>
+
+	<nav class="clearfix">
+		<div class="nav-logo animated fadeInRight"><a href="phyCalc.php">PhyCalc</a></div>
+		<div class="navigation animated fadeInLeft">
+			<ul class="horizontal-nav">
+				<li><a href="#" id="examples-btn">Examples</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
+				<li><a href="#" id="conversion-btn">Conversions</a></li>
+				<li><a href="#" id="horizontal-search-btn"><i class="glyphicon glyphicon-search"></i></a></li>
+			</ul>
+			<div class="animated fadeInLeft" id="icon">
+				<div id="vertical-search-btn"><i class="glyphicon glyphicon-search"></i></div>
+				<div id="click-box"></div>
+				<span class="hamburger"></span>
+				<div class="vertical-nav">
+					<ul>
+						<li><a data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
+						<li><a href="#" id="vert-conversion-btn">Conversions</a></li>
+						<li><a href="#" id="vert-examples-btn">Examples</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<div id="search-section">
+		<section id="search-bar-btn">
+			<input type="text" id="search-bar" placeholder="search.."/>
+			<div id="search-btn"><i class="glyphicon glyphicon-search"></i></div>
+		</section>
+		<div id="close-search-btn">
+			<span id="close-bar-one"></span>
+			<span id="close-bar-two"></span>
+		</div>
+			<div id="search-case-list">
+				<a href="../html/displacement.html">displacement</a>
+				<a href="../html/displacement.html">initial position</a>
+				<a href="../html/displacement.html">final position</a>
+				<a href="../html/vectorDisplacement.html">vectors</a>
+				<a href="../html/vectorDisplacement.html">vector displacement</a>
+				<a href="../html/velocity.html">velocity</a>
+				<a href="../html/velocity.html">time interval</a>
+				<a href="../html/velocity.html">displacement for velocity</a>
+				<a href="../html/velocity.html">acceleration</a>s
+			</div>
+	</div>
+
+
+
+
+	<section class="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h2 class="animated bounceInDown section-heading">Velocity</h2>
+					<div class="pages-nav" id="top-pager">
+						<ul class="pager">
+							<li><a href="vectorDisplacement.html" class="prev-page" id="top-prev">Previous: 2D Displacement</a></li>
+							<li><a href="kinematicsBigFive.html" class="next-page" id="top-next">Next: Kinematics</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>  <!-- Prev and Next Page Btns-->
+
+			<div class="row animated fadeInRight">
+				<div class="col-md-8">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="panel-title radio-btn-selection">
+								<div class="solve-selection">
+									<form>
+										<span class="badge">1</span>
+										<span><b>Solve:&nbsp;</b></span>
+										<label class="radio-btn">
+										 	<input type="radio" class="solve-btns" id="solve-velocity-radio-btn" name="radio-one">
+										    <span class="checkmark">Velocity</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="solve-btns" name="radio-one" id="solve-displacement-radio-btn">
+										    <span class="checkmark">Displacement</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="solve-btns" name="radio-one" id="solve-time-interval-radio-btn">
+										    <span class="checkmark">Time Interval</span>
+										</label>
+									</form>
+								</div>
+								<div class="solve-selection2">
+									<span class="badge">1</span>
+									<select id="solve-selector">
+										<option value="">Solve for:</option>
+										<option value="" id="velocity-option">Velocity</option>
+										<option value="" id="displacement-option">Displacement</option>
+										<option value="" id="time-option">Time</option>
+									</select>
+								</div>
+								<div class="unit-selection">
+									<form>
+										<span class="badge">2</span>
+										<span><b>Unit:&nbsp;</b></span>
+										<label class="radio-btn">
+										 	<input type="radio" class="first-units" name="radio-two" units="m" id="meter-radio-btn"/>
+										    <span class="checkmark">meters</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="first-units" name="radio-two" units="mi" id="mile-radio-btn"/>
+										    <span class="checkmark">miles</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="first-units" name="radio-two" units="ft" id="feet-radio-btn"/>
+										    <span class="checkmark">feet</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="first-units" name="radio-two" units="km" id="kilometer-radio-btn"/>
+										    <span class="checkmark">kilometers</span>
+										</label>
+									</form>
+								</div>
+								<div class="unit-selection2">
+									<span class="badge">2</span>
+									<select id="unit-selector">
+										<option value="">Unit:</option>
+										<option value="" id="meter-option">Meter</option>
+										<option value="" id="kilometer-option">Kilometer</option>
+										<option value="" id="mile-option">Mile</option>
+										<option value="" id="feet-option">Feet</option>
+									</select>
+								</div>
+								<div class="time-selection">
+									<form>
+										<span class="badge">3</span>
+										<span><b>Time:&nbsp;</b></span>
+										<label class="radio-btn">
+										 	<input type="radio" class="second-units" name="radio-three" units="sec" id="sec-radio-btn">
+										    <span class="checkmark">seconds</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="second-units" name="radio-three" units="min" id="min-radio-btn">
+										    <span class="checkmark">minutes</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="second-units" name="radio-three" units="hr" id="hour-radio-btn">
+										    <span class="checkmark">hours</span> |
+										</label>
+										<label class="radio-btn">
+										    <input type="radio" class="second-units" name="radio-three" units="day" id="day-radio-btn">
+										    <span class="checkmark">days</span>
+										</label>
+									</form>
+								</div>
+								<div class="time-selection2">
+									<span class="badge">3</span>
+									<select id="time-selector">
+										<option value="">Time:</option>
+										<option value="" id="seconds-option">Seconds</option>
+										<option value="" id="minutes-option">Minutes</option>
+										<option value="" id="hours-option">Hours</option>
+										<option value="" id="days-option">Days</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body" id="main-panel">
+							<div class="row">
+								<div class="col-md-4">
+									<h4 class="text-center"><span class="badge">4</span> <strong>Values</strong></h4>
+									<form class="form-group">
+									<input class="form-control part-one-fields" type="number" id="velocity-field-one" placeholder="Velocity">
+									<input class="form-control part-one-fields" type="number" name="displacement" id="displacement-field-one" placeholder="Displacement">
+									<input class="form-control part-one-fields" type="number" name="time-interval" id="time-interval-field-one" placeholder="Time Interval">
+									<input class="form-control part-one-fields" type="number" id="sig-figs-field" placeholder="# of sig-figs (optional)">
+									<div class="form-divider"></div>
+									<div class="calc-and-clear">
+										<button type="button" id="calculate-btn"><b>Calculate</b></button>
+										<button type="button" id="clear-btn"><b>Clear</b></button>
+									</div>
+								</div>
+								<div class="col-md-8 text-center">
+									<h4><strong>Equation</strong></h4>
+									<div id="slide-arrows-container">
+										<div class="slide-arrow-btn" id="prev-slide-btn">&#10094;</div>
+										<div class="slide-arrow-btn" id="next-slide-btn">&#10095;</div>
+									</div>
+									<div id="outer-image-container">
+										<div id="inner-image-container">
+											<img src="../img/newVelocityEquation.png" class="img-responsive slide" alt="Velocity Equation"/>
+											<img src="../img/newDisplacementEquation.png" class="img-responsive slide" alt="Displacement Equation"/>
+											<img src="../img/newTimeIntervalEquation.png" class="img-responsive slide" alt="Time Interval Equation"/>
+										</div>
+										<div id="slide-bar-indicators">
+											<div class="slide-bar"></div>
+											<div class="slide-bar"></div>
+											<div class="slide-bar"></div>
+										</div>
+									</div>
+									<div id="solo-image">
+										<img src="../img/newVelocityFrames.png" class="img-responsive" alt="Velocity Frames"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="panel-title text-center"><strong>Background:</strong></div>
+						</div>
+						<div class="panel-body module-section">
+							<div class="module-box">
+								<div class="module">
+									<div class="module-front" id="first-front">Speed</div>
+									<div class="module-back" id="first-back">
+										Scalar, so we consider its magnitude and not its direction
+									</div>
+								</div>
+							</div>
+							<div class="module-box">
+								<div class="module">
+									<div class="module-front">Velocity</div>
+									<div class="module-back">
+										Vector, so we consider its direction and its magnitude
+									</div>
+								</div>
+							</div>
+							<div class="module-box">
+								<div class="module">
+									<div class="module-front">Distance v. Displacement</div>
+									<div class="module-back">
+										Distance = total area traveled. Displacement is net distance
+									</div>
+								</div>
+							</div>
+							<div class="module-box">
+								<div class="module">
+									<div class="module-front" id="last-front">Graph Below</div>
+									<div class="module-back" id="last-back">
+										An object that changed positions over time has velocity
+									</div>
+								</div>
+							</div>
+							<div class="module-img">
+								<img src="../img/positionVTimeGraph.png" class="img-responsive" alt="Position v. Time Graph">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> <!-- First Section Equations / Calcs / Pictures -->
+
+			<div class="panel panel-default">
+				<div class="panel-body" id="third-pics-panel">
+					<div class="row animated fadeInLeft" id="third-pics-row">
+						<div class="col-sm-4 third-page-pics">
+							<img src="../img/tourDeFrance.jpeg" alt="Bike Race" class="img-responsive">
+							<div class="img-caption">
+								<p>In 2015, Rohan Dennis broke the hour world record in Switzerland by covering a net distance of 52.491km. <a href="https://www.theguardian.com/sport/2015/feb/09/rohan-dennis-sets-new-hour-record" target="_blank"/> (Source)</a></p>
+							</div>
+						</div>
+						<div class="col-sm-4 third-page-pics">
+							<img src="../img/swimmer.jpeg" alt="Swimmer" class="img-responsive">
+							<div class="img-caption">
+								<p>Frederick Bousquest set a world record for the 50 m freestyleat 20.94 seconds, an average speed of 5.342 mph. <a href="https://www.teamusa.org/News/2009/April/26/Bousquet-sets-50-meter-freestyle-record" target="_blank"/> (Source)</a></p>
+							</div>
+						</div>
+						<div class="col-sm-4 third-page-pics">
+							<img src="../img/cheetah.jpg" alt="Cheetah" class="img-responsive">
+							<div class="img-caption">
+								<p>Cheetahs can reach speeds of up to 75 miles per hour when chasing prey, but only for relatively short bursts. <a href="http://www.speedofanimals.com/animals/cheetah" target="_blank"/> (Source)</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- third page pics -->
+
+
+			<div class="line-divider"></div>
+
+
+
+			<div class="row text-center">
+				<div class="text-center" id="practice-btns-container">
+					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-one">Example 1</button>
+					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-two">Example 2</button>
+					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-three">Example 3</button>
+				</div>
+			</div>
+
+
+			<div id="conversion-container">
+				<div id="conversion-heading">Unit Conversions</div>
+				<div class="input-option-input">
+					<input type="number" id="unit-input-field" max="999" placeholder="(input)"/>
+					<select name="unitConversions" id="unit-converter">
+						<option value="mmToM" id="millimetersToCentimeters" selected>mm to cm</option>
+						<option value="mToMm" id="centimetersToMillimeters">cm to mm</option>
+						<option value="cmToM" id="centimetersToMeters">cm to m</option>
+						<option value="mtoCm" id="metersToCentimeters">m to cm</option>
+						<option value="mToKm" id="metersTokilometers">m to km</option>
+						<option value="kmToM" id="kilometersToMeters">km to m</option>
+						<option value="mToMi" id="metersToMiles">m to mi</option>
+						<option value="miToM" id="milesToMeters">mi to m</option>
+						<option value="mToMi" id="metersToMiles">m to mi</option>
+						<option value="kmToMi" id="kilometersToMiles">km to mi</option>
+						<option value="miToKm" id="milesToKilometers">mi to km</option>
+						<option value="ftToYds" id="feetToYards">ft to yds</option>
+						<option value="ydsToFt" id="yardsToFeet">yds to ft</option>
+						<option value="ftToM" id="feetToMeters">ft to m</option>
+						<option value="mToFt" id="metersToFeet">m to ft</option>
+						<option value="inToCm" id="inchesToCentimeters">in to cm</option>
+						<option value="cmToIn" id="centimetersToInches">cm to in</option>
+						<option value="mgToG" id="milligramsToGrams">mg to g</option>
+						<option value="gToMg" id="gramsToMilligrams">g to mg</option>
+						<option value="gToKg" id="gramsToKilograms">g to kg</option>
+						<option value="kgToG" id="kilogramsToGrams">kg to g</option>
+						<option value="lbsToKg" id="poundsToKilograms">lbs to kg</option>
+						<option value="kgToLbs" id="kilogramsToPounds">kg to lbs</option>
+						<option value="km2Tom2" id="kilometerSquaredToSquareMeters">km² to m²</option>
+						<option value="m2ToKm2" id="squareMetersToKilometersSquared">m² to km²</option>-->
+					</select>
+					<input type="text" id="unit-output-field" placeholder="(output)" disabled="disabled">
+				</div>
+			</div>
+
+
+			<div class="modal fade example-modal" id="my-modal-one" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-center">Time Interval</h4>
+						</div>
+						<div class="modal-body">
+              <button class="accordion first-accordion"><strong>Problem</strong></button>
+              <div class="modal-panel">
+                  <p>
+                      A typical bowling ball that ois released in a straight line can reach up to 21 mph while traveling from x1 = 1.8 meters to x2 = 7.8 meters. How much time does it take for it to travel that distance?(1 mph = 0.447 m/s)
+                  </p>
+              </div>
+              <button class="accordion"><strong>Illustration</strong></button>
+              <div class="modal-panel">
+                  This is where the sketched out illustration will be so that the user can see how we make a drawing to better conceptualize the given problem and get closer to finding a solution
+              </div>
+              <button class="accordion"><strong>Given Variables</strong></button>
+              <div class="modal-panel">
+                  <p>
+                      <ul>
+                          <li><b>Equation</b> : v = (&Delta;x) / (&Delta;t)</li>
+                          <li><b>Equation for &Delta;t</b> : (&Delta;x) / v</li>
+                          <li><b>Displacement (&Delta;x)</b> : 7.8 meters - 1.8 meters</li>
+                          <li><b>Velocity</b> : 21 mph (1 mph = 0.447 m/s)</li>
+                      </ul>
+                  </p>
+              </div>
+              <button class="accordion last-accordion"><strong>Solution</strong></button>
+              <div class="modal-panel">
+                  <p>
+                      <ol>
+                          <li><b>Equation</b> : Velocity = (&Delta;x) / (&Delta;t)</li>
+                          <li><b>Convert Units</b> : 1 mph = 0.447 m/s, therefore 21 mph = 9.39 m/s</li>
+                          <li><b>Displacement</b> : 7.8 - 1.8 = 6 meters</li>
+                          <li><b>Solve for &Delta;t</b> : (6m) / (9.39 m/s) = 0.639 seconds</li>
+                      </ol>
+                  </p>
+              </div>
+          </div>
+						<div class="modal-footer text-center">
+							<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<div class="modal-container">
+			<div class="modal fade example-modal" id="my-modal-two" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-center">Velocity</h4>
+						</div>
+						<div class="modal-body">
+							<button class="accordion first-accordion"><strong>Problem</strong></button>
+							<div class="modal-panel">
+								<p>
+									A guard dog walks 130 meters in one trip around the perimeter of a building. If it takes him 230 seconds to make this trip. What was his speed in that one trip?
+								</p>
+							</div>
+							<button class="accordion"><strong>Illustration</strong></button>
+							<div class="modal-panel">
+								This is where the sketched out illustration will be so that the user can see how we make a drawing to better conceptualize the given problem and get closer to finding a solution
+							</div>
+							<button class="accordion"><strong>Given Variables</strong></button>
+							<div class="modal-panel">
+								<p>
+									<ul>
+										<li><b>Equation</b> : Speed = distance / time interval</li>
+										<li><b>Distance</b> : 130 meters</li>
+										<li><b>Time interval</b> : 230 seconds</li>
+									</ul>
+								</p>
+							</div>
+							<button class="accordion last-accordion"><strong>Solution</strong></button>
+							<div class="modal-panel">
+								<p>
+									<ol>
+										<li><b>Equation</b> : Speed = distance / time interval</li>
+										<li><b>Plug in Variables</b> : Speed = 130 meters / 230 seconds</li>
+										<li><b>Dog's Speed</b> : 0.565 meters / sec</li>
+									</ol>
+								</p>
+							</div>
+						</div>
+						<div class="modal-footer text-center">
+							<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal-container">
+			<div class="modal fade example-modal" id="my-modal-three" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="text-center">Net Displacement</h4>
+						</div>
+						<div class="modal-body">
+							<button class="accordion first-accordion"><strong>Problem</strong></button>
+							<div class="modal-panel">
+								<p>
+									A ball that is thrown in a straight line with a velocity of 80 mph goes from x<sub>i</sub> = 1.5 m to x<sub>f</sub> = 34 m. How much time does this ball take to travel that distance?
+								</p>
+							</div>
+							<button class="accordion"><strong>Illustration</strong></button>
+							<div class="modal-panel">
+								This is where the sketched out illustration will be so that the user can see how we make a drawing to better conceptualize the given problem and get closer to finding a solution
+							</div>
+							<button class="accordion"><strong>Given Variables</strong></button>
+							<div class="modal-panel">
+								<p>
+									<ul>
+										<li><b>Equation</b>: &Delta;t = displacement / velocity</li>
+										<li><b>Final position</b> : 34 m</li>
+										<li><b>Initial position</b> : 1.5 m</li>
+										<li><b>Velocity</b> : 80 mph</li>
+									</ul>
+								</p>
+							</div>
+							<button class="accordion last-accordion"><strong>Solution</strong></button>
+							<div class="modal-panel">
+								<p>
+									<ol>
+										<li><b>Displacement</b> : final-p - initial-p = 34 - 1.5 = 32.5 meters</li>
+										<li><b>Velocity</b> : 1 mph = 0.447 m/s, therefore 80 mph = 35.76 m/s</li>
+										<li><b>&Delta;t</b> : 32.5 meters / 35.75 m/s = 0.909 seconds</li>
+									</ol>
+								</p>
+							</div>
+						</div>
+						<div class="modal-footer text-center">
+							<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Calculator Modal -->
+				<div class="modal fade" id="calculator-modal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="text-center">Calculator</h4>
+							</div>
+								<div class="modal-body">
+									<div class="calculator-whole">
+						        <input type="text" id="input-field">
+						        <div class="row">
+						            <div class="col-half">
+						                <div id="radians-container">
+						                    <button type="button" id="radians-btn">Radians</button>
+						                    <span id="radians-indicator"></span>
+						                </div>
+						            </div>
+						            <div class="col-half">
+						                <div id="degrees-container">
+						                    <button type="button" id="degrees-btn">Degrees</button>
+						                    <span id="degrees-indicator"></span>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" class="trig-btn">sin</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="trig-btn">cos</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="trig-btn">tan</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button pi-btn" class="reg-btn">&pi;</button>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" class="trig-btn">sin<sup>-1</sup></button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="trig-btn">cos<sup>-1</sup></button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="trig-btn">tan<sup>-1</sup></button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">/</button>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">7</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">8</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">9</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn"><b>*</b></button>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">4</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">5</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">6</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">-</button>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">1</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">2</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">3</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">+</button>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">0</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn"><b>.</b></button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" id="square-btn">x<sup>2</sup></button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" id="nth-power">x<sup>n</sup></button>
+						            </div>
+						        </div>
+						         <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" id="square-root-btn">&radic;</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">(</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" class="reg-btn">)</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" id="ten-power">EE</button>
+						            </div>
+						        </div>
+						        <div class="row">
+						            <div class="col-fourth">
+						                <button type="button" id="calculator-calculate-btn">=</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" id="calculator-clear-btn">Clear</button>
+						            </div>
+						            <div class="col-fourth">
+						                <button type="button" id="delete-btn">Del</button>
+						            </div>
+						            <div class="col-fourth">
+						                <input type="number" id="sig-fig-field" placeholder="sigfigs"/>
+						            </div>
+						        </div>
+						    </div>
+										<div id="calculator-tooltip"></div>
+								</div>
+							<div class="modal-footer text-center">
+								<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End of Calculator Modal -->
+
+		</div> <!-- END OF CONTAINER -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="pager">
+						<li><a href="vectorDisplacement.html" class="prev-page">Previous: 2D Displacement</a></li>
+						<li><a href="kinematicsBigFive.html" class="next-page">Next: Kinematics</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Go back to top -->
+	<div id="go-up-container">
+		<button type="button" id="go-up-btn"><span class="glyphicon glyphicon-chevron-up"></span></button>
+	</div>
+
+	<!-- <script type="text/javascript" src="../js/smoothSlideWBS.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="velocity.js"></script>
+	<script type="text/javascript" src="jsCalculator.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
