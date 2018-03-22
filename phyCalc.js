@@ -1,3 +1,8 @@
+$(window).on('beforeunload', function() {
+	 $(window).scrollTop(0);
+});
+
+
 window.onload = function(){
 var navBar = document.getElementsByTagName("nav")[0],
 		horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
