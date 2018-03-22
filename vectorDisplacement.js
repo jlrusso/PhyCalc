@@ -47,8 +47,6 @@ verticalSearchBtn.addEventListener("click", openSearchContainer);
 searchBar.addEventListener("input", showList);
 closeSearchBtn.addEventListener("click", closeSearchContainer);
 
-
-
 function openSearchContainer(){
 	if(!searchContainer.classList.contains("active-search")){
 		searchContainer.classList.toggle("active-search");
@@ -78,7 +76,6 @@ for(let i = 0; i < searchClosers.length; i++){
     }
   })
 }
-
 
 function showList() {
 	if (searchBar.value.length > 0){
@@ -125,18 +122,18 @@ window.onclick = function(e){
 }
 
 /*--- End of Hamburger Menu ---*/
-var acc = document.getElementsByClassName("accordion");
+var accordions = document.getElementsByClassName("accordion");
 for(var i = 0; i < acc.length; i++){
-	acc[i].addEventListener("click", openClosePanel, false);
+	accordions[i].addEventListener("click", openClosePanel);
 }
 
 function openClosePanel(){
 	this.classList.toggle("active");
-	var panel = this.nextElementSibling;
-	if(panel.style.maxHeight){
-		panel.style.maxHeight = null;
+	var underPanel = this.nextElementSibling;
+	if(underPanel.style.maxHeight){
+		underPanel.style.maxHeight = null;
 	} else {
-		panel.style.maxHeight = panel.scrollHeight + "px";
+		underPanel.style.maxHeight = underPanel.scrollHeight + "px";
 	}
 }
 
@@ -165,12 +162,12 @@ $(".example-modal").click(function(e){
 
 /*--- Equation Slides and Control ---*/
 var innerImageContainer = document.getElementById("inner-image-container"),
-	slides = document.getElementsByClassName("slide"),
-	currentSlideIndex = 0,
-	width = 100,
-	prevBtn = document.getElementById("prev-slide-btn"),
-	nextBtn = document.getElementById("next-slide-btn"),
-	slideBars = document.getElementsByClassName("slide-bar");
+  	slides = document.getElementsByClassName("slide"),
+  	currentSlideIndex = 0,
+  	width = 100,
+  	prevBtn = document.getElementById("prev-slide-btn"),
+  	nextBtn = document.getElementById("next-slide-btn"),
+  	slideBars = document.getElementsByClassName("slide-bar");
 
 prevBtn.addEventListener("click", goToPrevSlide);
 nextBtn.addEventListener("click", goToNextSlide);
