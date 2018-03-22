@@ -52,6 +52,7 @@
 			if(!searchContainer.classList.contains("active-search")){
 				searchContainer.classList.toggle("active-search");
 				mainContent.style.marginTop = "40px";
+				searchBar.focus();
 			} else {
 				searchContainer.classList.remove("active-search");
 				caseList.classList.remove("show");
