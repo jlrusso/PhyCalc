@@ -294,7 +294,6 @@ nav {
 	border-radius: 5px;
 	z-index: 3000 !important;
 	transition: right 0.5s;
-	transition: opacity 0.1s;
 }
 .vertical-nav:after {
 	content: "";
