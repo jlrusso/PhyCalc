@@ -70,7 +70,14 @@ function closeSearchContainer(){
 		mainContent.style.marginTop = "0";
 	}
 }
-
+var searchClosers = [searchContainer, mainContent];
+for(let i = 0; i < searchClosers.length; i++){
+  searchClosers[i].addEventListener("click", function(e){
+    if(!e.target.matches("#search-bar")){
+      closeSearchContainer();
+    }
+  })
+}
 
 
 function showList() {
@@ -98,7 +105,7 @@ function showAnchors(){
 /*--- Toggle Hamburger Menu ---*/
 var clickBox = document.getElementById("click-box"),
 		burgerIcon = document.getElementById("icon"),
-		verticalNav = document.getElementsByClassName("vertical-nav")[0];
+		verticalNav = document.getElementById("vertical-nav");
 clickBox.addEventListener("click", openVerticalNav);
 
 function openVerticalNav(e){
