@@ -13,8 +13,10 @@ body {
 	padding:0;
 }
 * {
-	font-family: Century Gothic;
+	font-family: 'Titillium Web', sans-serif;
 	box-sizing: border-box !important;
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
 }
 
 ::placeholder {
@@ -561,7 +563,7 @@ a.next-page:hover:after {
 }
 .checkmark {
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 3px 10px;
     border: 1.5px solid #F1C40F;
 }
 .radio-btn:hover input + .checkmark {
@@ -597,7 +599,6 @@ a.next-page:hover:after {
     border-radius: 3px;
     background-color: #F1C40F;
     font-size: 1.7rem;
-    font-family: Verdana, sans-serif;
   }
   .input-option-input {
     width: 100%;
@@ -1241,6 +1242,17 @@ button.accordion.active:after {
 	}
 }
 
+@media screen and (max-width: 550px){
+	.module-section {
+		width: 100%;
+	}
+	#third-pics-row {
+		width: 100%;
+	}
+	.third-page-pics {
+		padding: 0;
+	}
+}
 @media screen and (max-width: 500px){
 	.horizontal-nav {
 		display: none;
@@ -1264,15 +1276,6 @@ button.accordion.active:after {
 	.slide-arrow-btn {
 		width:100px;
 		padding:8px;
-	}
-	.module-section {
-		width: 100%;
-	}
-	#third-pics-row {
-		width: 100%;
-	}
-	.third-page-pics {
-		padding: 0;
 	}
 	.input-option-input {
 		display: block;
