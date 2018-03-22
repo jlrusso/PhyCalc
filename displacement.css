@@ -114,17 +114,17 @@ nav {
 	outline: none;
 }
 
-#search-section {
+#search-container {
 	position: absolute;
 	top: -100px;
 	width: 100%;
 	height: 60px;
 	padding: 10px;
 	background-color: #393939;
-	transition: 0.5s;
+	transition: 0.4s;
 	z-index: 1;
 }
-#search-section.active-search {
+#search-container.active-search {
 	top: 50px;
 }
 #search-form {
@@ -370,11 +370,11 @@ nav {
 
 
 /*--- Start of Main Content ---*/
-.main-content {
+#main-content {
 	width:100%;
 	height:auto;
 	padding:20px 0;
-	transition: 0.3s;
+	transition: 0.4s;
 }
 
 .section-heading {
@@ -706,7 +706,7 @@ input[type="radio"] {
   width: 100%;
   height: 50%;
   border-radius: 7px !important;
-  margin-bottom: 35px;
+  margin: 22px auto;
   box-shadow: 0 0 10px #333;
   overflow-x: hidden;
 }
@@ -856,7 +856,7 @@ input[type="radio"] {
 }
 .modal-header h4 {
 	max-width: 200px;
-	margin:auto;
+	margin: auto;
 	background-color:#333;
 	padding:5px;
 	border-radius: 4px;
@@ -1079,17 +1079,22 @@ button.accordion.active:after {
 	}
 	#outer-image-container,
 	#solo-image img {
-		height: 120px;
+		width: 100%;
+		height: 105px;
 	}
 	#outer-image-container {
-		margin-bottom: 17px;
+		margin: 30px auto;
 	}
 	.module-section {
 		height: auto;
 		border-radius: 4px;
+		padding-bottom: 0;
+	}
+	.module-box {
+		height: 44.5px;
 	}
 	.module-img img {
-		height: 175.5px;
+		height: 175px;
 	}
 	.img-caption {
 		font-size: 1.25rem;
@@ -1114,7 +1119,7 @@ button.accordion.active:after {
 
 	#slide-arrow-container {
 		width: 100%;
-		top: -5px;
+		top: -10px;
 	}
 	.slide-arrow-btn {
 		width:150px;
@@ -1126,7 +1131,9 @@ button.accordion.active:after {
 	#next-slide-btn {
 		margin-right:14px;
 	}
-
+	h4 {
+		margin-top: 25px;
+	}
 	#outer-image-container {
 		width: 100%;
 		height: auto;
@@ -1195,15 +1202,16 @@ button.accordion.active:after {
 	#search-case-list a {
 		margin-left: 0;
 }
-
-@media screen and (max-width: 610px){
-	#slide-arrow-container {
-		width: 85%;
+@media screen and (max-width: 670px){
+	#inner-image-container {
+		width: 100%;
 	}
+}
+@media screen and (max-width: 610px){
 	#outer-image-container,
 	#solo-image img {
-		width: 90%;
-		height: 110px;
+		width: 100%;
+		height: auto;
 	}
 	.img-caption p {
 		font-size: 1.4rem;
@@ -1253,13 +1261,9 @@ button.accordion.active:after {
 		float: none !important;
 		margin-top: 20px;
 	}
-	#slide-arrow-container {
-		width: 91%;
-	}
-	#outer-image-container,
-	#solo-image img {
-		width: 100%;
-		height: 105px;
+	.slide-arrow-btn {
+		width:100px;
+		padding:8px;
 	}
 	.module-section {
 		width: 100%;
