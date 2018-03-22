@@ -116,13 +116,12 @@ nav {
 	top: 50px;
 }
 #search-form {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
+	position: relative;
+	width: 500px;
+	margin: auto;
 }
 #search-bar {
-	width: 500px;
+	width: 100%;
 	background-color: #333;
 	color: #F1C40F;
 	border: 1px solid #F1C40F;
@@ -1149,7 +1148,6 @@ button.accordion.active:after {
 		font-size: 1.25rem;
 	}
 }
-
 @media screen and (max-width: 993px){
 	#main-panel,
 	#third-panel {
@@ -1165,21 +1163,17 @@ button.accordion.active:after {
 	#clear-btn {
 		padding: 10px;
 	}
-
 	#slide-arrow-container {
 		width: 72%;
 		top: -2px;
 	}
-
 	#outer-image-container {
 		width: 75%;
 		margin: 15px auto 15px;
 	}
-
 	#solo-image {
 		padding-bottom: 20px;
 	}
-
 	#solo-image img {
 		width: 75%;
 		margin: auto;
@@ -1200,7 +1194,6 @@ button.accordion.active:after {
 		width: 84%;
 		margin: auto;
 	}
-
 	.third-page-pics {
 		width: 100%;
 		height: auto;
@@ -1217,7 +1210,6 @@ button.accordion.active:after {
     margin: auto;
 	}
 }
-
 @media screen and (max-width: 745px){
 	#practice-btns-container {
 		width: 95%;
@@ -1226,7 +1218,6 @@ button.accordion.active:after {
 		font-size: 1.4rem;
 	}
 }
-
 @media screen and (max-width: 700px){
   .section-heading,
   #top-pager {
@@ -1235,15 +1226,13 @@ button.accordion.active:after {
   }
 }
 @media screen and (max-width: 650px){
-	#search-bar {
-		width: 400px;
-	}
 	#search-form {
-		left: 10px;
-		transform: translate(0, -50%);
+		margin-left: 0;
+	  width: 89%;
 	}
 	#search-case-list a {
 		width: 100%;
+		margin-left: 0;
 	}
 }
 @media screen and (max-width: 610px){
@@ -1275,8 +1264,11 @@ button.accordion.active:after {
 		margin: auto;
 	}
 }
-
 @media screen and (max-width: 550px){
+	#search-form {
+		margin-left: 0;
+	  width: 85%;
+	}
 	.horizontal-nav {
 		display: none;
 	}
@@ -1288,9 +1280,6 @@ button.accordion.active:after {
 		padding-top: 0;
 		margin: 0 auto 20px;
 	}
-	#search-bar {
-		width: 275px;
-	}
 	.section-heading {
 		float: none;
 	}
@@ -1299,13 +1288,11 @@ button.accordion.active:after {
 	.unit-selection {
 		display: none;
 	}
-
 	.solve-for-selection2,
 	.trig-selection2,
 	.unit-selection2 {
 		display: block;
 	}
-
 	#solve-for-selector,
 	#trig-selector,
 	#unit-selector {
@@ -1314,7 +1301,6 @@ button.accordion.active:after {
 	#slide-arrow-container {
 		width: 93%;
 	}
-
 	#outer-image-container,
 	#solo-image img {
 		width: 100%;
@@ -1341,8 +1327,6 @@ button.accordion.active:after {
 		margin-bottom: 15px;
 	}
 }
-
-
 @media screen and (max-width: 450px){
 	#outer-image-container,
 	#solo-image img {
@@ -1381,8 +1365,11 @@ button.accordion.active:after {
 		width: 85%;
 	}
 }
-
 @media screen and (max-width: 350px){
+	#search-form {
+		margin-left: 0;
+	  width: 83%;
+	}
 	.section-heading {
 		font-size: 25px;
 	}
