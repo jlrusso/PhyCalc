@@ -2,18 +2,6 @@ $(window).on('beforeunload', function() {
    $(window).scrollTop(0);
 });
 
-var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
-verticalSearchBtn = document.getElementById("vertical-search-btn"),
-searchSection = document.getElementById("search-section"),
-searchBar = document.getElementById("search-bar"),
-closeSearchBtn = document.getElementById("close-search-btn"),
-caseList = document.getElementById("search-case-list");
-
-horizontalSearchBtn.addEventListener("click", openSearchSection);
-verticalSearchBtn.addEventListener("click", openSearchSection);
-searchBar.addEventListener("input", showList);
-closeSearchBtn.addEventListener("click", closeSearchSection);
-
 $(document).ready(function(){
 	$("#conversion-btn").click(function(){
 		$("html, body").animate({
@@ -44,27 +32,42 @@ $(document).ready(function(){
 			scrollTop: 0
 		}, "slow")
 	});
-
 })
 
-function openSearchSection(){
-	if(!searchSection.classList.contains("active-search")){
-		searchSection.classList.toggle("active-search");
-		document.getElementsByClassName("main-content")[0].style.marginTop = "30px";
+var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
+verticalSearchBtn = document.getElementById("vertical-search-btn"),
+searchContainer = document.getElementById("search-container"),
+searchBar = document.getElementById("search-bar"),
+closeSearchBtn = document.getElementById("close-search-btn"),
+caseList = document.getElementById("search-case-list"),
+mainContent = document.getElementById("main-content");
+
+horizontalSearchBtn.addEventListener("click", openSearchContainer);
+verticalSearchBtn.addEventListener("click", openSearchContainer);
+searchBar.addEventListener("input", showList);
+closeSearchBtn.addEventListener("click", closeSearchContainer);
+
+
+
+function openSearchContainer(){
+	if(!searchContainer.classList.contains("active-search")){
+		searchContainer.classList.toggle("active-search");
+		mainContent.style.marginTop = "30px";
+    searchBar.focus();
 	} else {
-		searchSection.classList.remove("active-search");
+		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value = "";
-		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
+		mainContent.style.marginTop = "0";
 	}
 }
 
-function closeSearchSection(){
-	if(searchSection.classList.contains("active-search")){
-		searchSection.classList.remove("active-search");
+function closeSearchContainer(){
+	if(searchContainer.classList.contains("active-search")){
+		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value  = "";
-		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
+		mainContent.style.marginTop = "0";
 	}
 }
 
