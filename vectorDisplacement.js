@@ -123,7 +123,7 @@ window.onclick = function(e){
 
 /*--- End of Hamburger Menu ---*/
 var accordions = document.getElementsByClassName("accordion");
-for(var i = 0; i < acc.length; i++){
+for(var i = 0; i < accordions.length; i++){
 	accordions[i].addEventListener("click", openClosePanel);
 }
 
