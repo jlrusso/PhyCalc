@@ -294,8 +294,10 @@ nav {
 	top: 0;
 	transform: rotate(135deg);
 }
-#vertical-nav {
+.vertical-nav {
 	display: none;
+}
+#vertical-nav {
 	position: absolute;
 	top: 135%;
 	right: -15px;
