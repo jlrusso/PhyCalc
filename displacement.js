@@ -2,19 +2,6 @@
 			 $(window).scrollTop(0);
 		});
 
-		var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
-		verticalSearchBtn = document.getElementById("vertical-search-btn"),
-		searchContainer = document.getElementById("search-container"),
-		searchBar = document.getElementById("search-bar"),
-		closeSearchBtn = document.getElementById("close-search-btn"),
-		caseList = document.getElementById("search-case-list"),
-		mainContent = document.getElementById("main-content");
-
-		horizontalSearchBtn.addEventListener("click", openSearchContainer);
-		verticalSearchBtn.addEventListener("click", openSearchContainer);
-		searchBar.addEventListener("input", showList);
-		closeSearchBtn.addEventListener("click", closeSearchContainer);
-
 		$(document).ready(function(){
 			$("#conversion-btn").click(function(){
 				$("html, body").animate({
@@ -47,6 +34,19 @@
 			});
 
 		})
+
+		var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
+				verticalSearchBtn = document.getElementById("vertical-search-btn"),
+				searchContainer = document.getElementById("search-container"),
+				searchBar = document.getElementById("search-bar"),
+				closeSearchBtn = document.getElementById("close-search-btn"),
+				caseList = document.getElementById("search-case-list"),
+				mainContent = document.getElementById("main-content");
+
+		horizontalSearchBtn.addEventListener("click", openSearchContainer);
+		verticalSearchBtn.addEventListener("click", openSearchContainer);
+		searchBar.addEventListener("input", showList);
+		closeSearchBtn.addEventListener("click", closeSearchContainer);
 
 		function openSearchContainer(){
 			if(!searchContainer.classList.contains("active-search")){
@@ -104,17 +104,13 @@
 		/*--- Toggle Hamburger Menu ---*/
     var clickBox = document.getElementById("click-box"),
 				burgerIcon = document.getElementById("icon"),
-				verticalNav = document.getElementsByClassName("vertical-nav")[0];
-		clickBox.addEventListener("click", openVerticalNav);
-
-		function openVerticalNav(e){
+				verticalNav = document.getElementById("vertical-nav");
+		clickBox.addEventListener("click", function(e){
 			if(e.target == clickBox){
 				verticalNav.classList.toggle("show-vertical-nav");
 				burgerIcon.classList.toggle("active");
-			} else {
-				console.log("burger");
 			}
-		}
+		});
 
 		window.onclick = function(e){
 			if(!e.target.matches("#click-box")){
@@ -129,11 +125,11 @@
 
 
 		/*--- Open and Close Accordion Panels ---*/
-		var acc = document.getElementsByClassName("accordion");
+		var accordions = document.getElementsByClassName("accordion");
 		var panel;
 		var i;
-		for (i = 0; i < acc.length; i++) {
-		  	acc[i].onclick = function(e) {
+		for (i = 0; i < accordions.length; i++) {
+		  	accordions[i].onclick = function(e) {
 		    	this.classList.toggle("active");
 		    	panel = this.nextElementSibling;
 		        if (panel.style.maxHeight){
@@ -167,8 +163,6 @@
 		})
     /*--- End of Closing all Accordion and Panels ---*/
 
-
-
 		/*--- Calculating Displacement, Final P, and Initial P ---*/
 		var solveForBtns = document.getElementsByClassName("solve-btns"),
 			solveForDisplacement = document.getElementById("solve-displacement-radio-btn"),
@@ -191,7 +185,7 @@
 			clearBtn = document.getElementById("clear-btn");
 
 			/*--- Bind Solve Selector Options with Solve For Radio Btns ---*/
-			function reseTrigAndUnitSelectors(){
+			function resetTrigAndUnitSelectors(){
 				currentSlideIndex = 0;
 				switchToSlide();
 				$("#solve-selector").prop("selectedIndex", 0);
@@ -351,14 +345,16 @@
 		}
 
 		function clearFunction(){
-			reseTrigAndUnitSelectors();
+			resetTrigAndUnitSelectors();
+			resetPlaceholders();
+			uncheckRadioBTns();
+			resetInputFields();
+			resetSlide();
 			function resetPlaceholders(){
 				displacementField.placeholder = "Displacement";
 				finalPositionField.placeholder = "Final Position";
 				initialPositionField.placeholder = "Initial Position";
 			}
-			resetPlaceholders();
-
 			function uncheckRadioBTns(){
 				for(let i = 0; i < solveForBtns.length; i++){
 					if(solveForBtns[i].checked){
@@ -371,8 +367,6 @@
 					}
 				}
 			}
-			uncheckRadioBTns();
-
 			function resetInputFields(){
 				for(let i = 0; i < numInputFields.length; i++){
 					numInputFields[i].value = ""
@@ -387,14 +381,10 @@
 					}
 				}
 			}
-			resetInputFields();
-
 			function resetSlide(){
 				currentSlideIndex = 0;
 				switchToSlide();
 			}
-			resetSlide();
-
 		}
 		/*--- End of Calculations ---*/
 
@@ -560,11 +550,11 @@
 					}
 				})
 			}
-			if(window.innerWidth < 545 && window.innerWidth > 480){
+			if(window.innerWidth < 525 && window.innerWidth > 460){
 				$(".checkmark").eq(0).text($dispSymbol);
 				$(".checkmark").eq(1).text("Final-P");
 				$(".checkmark").eq(2).text("Initial-P");
-			} else if (window.innerWidth < 480 && window.innerWidth > 380){
+			} else if (window.innerWidth < 460 && window.innerWidth > 381){
 				$(".checkmark").eq(0).text($dispSymbol);
 				$(".checkmark").eq(1).text("Final-P");
 				$(".checkmark").eq(2).text("Initial-P");
@@ -572,7 +562,7 @@
 				$(".checkmark").eq(4).text($mileUnit);
 				$(".checkmark").eq(5).text($feetUnit);
 				$(".checkmark").eq(6).text($kilometerUnit);
-			} else if (window.innerWidth < 380){
+			} else if (window.innerWidth < 381){
 				$(".checkmark").eq(0).text($dispSymbol);
 				$(".checkmark").eq(1).text("X f");
 				$(".checkmark").eq(2).text("X i");
@@ -602,11 +592,11 @@
 					}
 				})
 			}
-			if(window.innerWidth < 545 && window.innerWidth > 480){
+			if(window.innerWidth < 525 && window.innerWidth > 460){
 				$(".checkmark").eq(0).text($dispSymbol);
 				$(".checkmark").eq(1).text("Final-P");
 				$(".checkmark").eq(2).text("Initial-P");
-			} else if (window.innerWidth < 480 && window.innerWidth > 380){
+			} else if (window.innerWidth < 460 && window.innerWidth > 381){
 				$(".checkmark").eq(0).text($dispSymbol);
 				$(".checkmark").eq(1).text("Final-P");
 				$(".checkmark").eq(2).text("Initial-P");
@@ -614,7 +604,7 @@
 				$(".checkmark").eq(4).text($mileUnit);
 				$(".checkmark").eq(5).text($feetUnit);
 				$(".checkmark").eq(6).text($kilometerUnit);
-			} else if (window.innerWidth < 380){
+			} else if (window.innerWidth < 381){
 				$(".checkmark").eq(0).text($dispSymbol);
 				$(".checkmark").eq(1).text("X f");
 				$(".checkmark").eq(2).text("X i");
@@ -632,3 +622,15 @@
 				$(".checkmark").eq(6).text("Kilometers");
 			}
 		})
+
+		var downArrows = document.getElementsByClassName("glyphicon-chevron-down");
+		for(let i = 0; i < downArrows.length; i++){
+			downArrows[i].addEventListener("click", function(){
+				this.classList.toggle("flip");
+				var $thisArrowContainer = $(this).parents(".caption-arrow");
+				$thisArrowContainer.toggleClass("caption-arrow-toggle");
+				var $thisPicContainer = $(this).parents(".third-page-pics");
+				var $thisPicCaption = $thisPicContainer.find(".img-caption");
+				$thisPicCaption.toggleClass("caption-toggle");
+			})
+		}
