@@ -388,8 +388,8 @@ nav {
 .next-page {
 	padding-right: 0px !important;
 }
-.glyphicon-chevron-left,
-.glyphicon-chevron-right {
+a .glyphicon-chevron-left,
+a .glyphicon-chevron-right {
 	opacity: 0;
 	transition: 0.4s;
 }
@@ -972,9 +972,10 @@ button.accordion.active:after {
     transition: max-height 0.2s ease-out;
 }
 .modal-panel img {
+	display: block;
   width: 70%;
-  height: 50%;
-  margin: auto;
+	height: auto;
+	margin: auto;
 }
 .modal-panel p {
   padding-top: 10px;
