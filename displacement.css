@@ -465,37 +465,19 @@ nav {
 	-moz-transition: 0.4s;
 	-o-transition: 0.4s;
 }
-a.next-page:after{
-  content: "\276F";
-  position: absolute;
-  top: 57.5%;
-  right: 10%;
-  transform: translateY(-60%);
-	-webkit-transform: translateY(-60%);
-	-moz-transform: translateY(-60%);
-	-ms-transform: translateY(-60%);
-	-o-transform: translateY(-60%);
-  opacity: 0;
-  font-size: 140%;
-  transition: 0.5s;
-	-webkit-transition: 0.5s;
-	-moz-transition: 0.5s;
-	-o-transition: 0.5s;
+.next-page {
+	padding-right: 0px !important;
+}
+a .glyphicon-chevron-right {
+	opacity: 0;
+	transition: 0.4s;
 }
 a.next-page:hover {
-  padding-right: 25px !important;
 	background-color: var(--main-yellow-color) !important;
 }
-a.next-page:hover:after {
-  position: absolute;
-  top: 57.5%;
-  right: 3%;
-  transform: translateY(-60%);
-	-webkit-transform: translateY(-60%);
-	-moz-transform: translateY(-60%);
-	-ms-transform: translateY(-60%);
-	-o-transform: translateY(-60%);
-  opacity: 1;
+a.next-page:hover .glyphicon-chevron-right {
+	padding: 0 5px 0 10px;
+	opacity: 1;
 }
 /*--- Modules ---*/
 .module-section {
@@ -865,6 +847,7 @@ input[type="radio"] {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
   background-color: transparent;
+	padding-top: 1px;
   transition: 0.3s;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
@@ -947,7 +930,7 @@ input[type="radio"] {
   width: 85%;
   height: auto;
   position: absolute;
-  bottom: 200%;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0,0,0,0.8);
@@ -955,13 +938,8 @@ input[type="radio"] {
   overflow: hidden;
   color: #fff;
   text-align: center;
-  border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-  transition: 0.4s;
-	-webkit-transition: 0.4s;
-	-moz-transition:0.4s;
-	-o-transition: 0.4s;
+  border-radius: 5px;
+  transition: 0.5s;
 }
 .img-caption a {
   text-decoration: none;
