@@ -2,18 +2,6 @@ $(window).on('beforeunload', function() {
    $(window).scrollTop(0);
 });
 
-var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
-verticalSearchBtn = document.getElementById("vertical-search-btn"),
-searchSection = document.getElementById("search-section"),
-searchBar = document.getElementById("search-bar"),
-closeSearchBtn = document.getElementById("close-search-btn"),
-caseList = document.getElementById("search-case-list");
-
-horizontalSearchBtn.addEventListener("click", openSearchSection);
-verticalSearchBtn.addEventListener("click", openSearchSection);
-searchBar.addEventListener("input", showList);
-closeSearchBtn.addEventListener("click", closeSearchSection);
-
 $(document).ready(function(){
 	$("#conversion-btn").click(function(){
 		$("html, body").animate({
@@ -44,31 +32,50 @@ $(document).ready(function(){
 			scrollTop: 0
 		}, "slow")
 	});
-
 })
 
-function openSearchSection(){
-	if(!searchSection.classList.contains("active-search")){
-		searchSection.classList.toggle("active-search");
-		document.getElementsByClassName("main-content")[0].style.marginTop = "30px";
+var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
+verticalSearchBtn = document.getElementById("vertical-search-btn"),
+searchContainer = document.getElementById("search-container"),
+searchBar = document.getElementById("search-bar"),
+closeSearchBtn = document.getElementById("close-search-btn"),
+caseList = document.getElementById("search-case-list"),
+mainContent = document.getElementById("main-content");
+
+horizontalSearchBtn.addEventListener("click", openSearchContainer);
+verticalSearchBtn.addEventListener("click", openSearchContainer);
+searchBar.addEventListener("input", showList);
+closeSearchBtn.addEventListener("click", closeSearchContainer);
+
+function openSearchContainer(){
+	if(!searchContainer.classList.contains("active-search")){
+		searchContainer.classList.toggle("active-search");
+		mainContent.style.marginTop = "30px";
+    searchBar.focus();
 	} else {
-		searchSection.classList.remove("active-search");
+		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value = "";
-		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
+		mainContent.style.marginTop = "0";
 	}
 }
 
-function closeSearchSection(){
-	if(searchSection.classList.contains("active-search")){
-		searchSection.classList.remove("active-search");
+function closeSearchContainer(){
+	if(searchContainer.classList.contains("active-search")){
+		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value  = "";
-		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
+		mainContent.style.marginTop = "0";
 	}
 }
-
-
+var searchClosers = [searchContainer, mainContent];
+for(let i = 0; i < searchClosers.length; i++){
+  searchClosers[i].addEventListener("click", function(e){
+    if(!e.target.matches("#search-bar")){
+      closeSearchContainer();
+    }
+  })
+}
 
 function showList() {
 	if (searchBar.value.length > 0){
@@ -95,7 +102,7 @@ function showAnchors(){
 /*--- Toggle Hamburger Menu ---*/
 var clickBox = document.getElementById("click-box"),
 		burgerIcon = document.getElementById("icon"),
-		verticalNav = document.getElementsByClassName("vertical-nav")[0];
+		verticalNav = document.getElementById("vertical-nav");
 clickBox.addEventListener("click", openVerticalNav);
 
 function openVerticalNav(e){
@@ -115,18 +122,18 @@ window.onclick = function(e){
 }
 
 /*--- End of Hamburger Menu ---*/
-var acc = document.getElementsByClassName("accordion");
-for(var i = 0; i < acc.length; i++){
-	acc[i].addEventListener("click", openClosePanel, false);
+var accordions = document.getElementsByClassName("accordion");
+for(var i = 0; i < accordions.length; i++){
+	accordions[i].addEventListener("click", openClosePanel);
 }
 
 function openClosePanel(){
 	this.classList.toggle("active");
-	var panel = this.nextElementSibling;
-	if(panel.style.maxHeight){
-		panel.style.maxHeight = null;
+	var underPanel = this.nextElementSibling;
+	if(underPanel.style.maxHeight){
+		underPanel.style.maxHeight = null;
 	} else {
-		panel.style.maxHeight = panel.scrollHeight + "px";
+		underPanel.style.maxHeight = underPanel.scrollHeight + "px";
 	}
 }
 
@@ -155,12 +162,12 @@ $(".example-modal").click(function(e){
 
 /*--- Equation Slides and Control ---*/
 var innerImageContainer = document.getElementById("inner-image-container"),
-	slides = document.getElementsByClassName("slide"),
-	currentSlideIndex = 0,
-	width = 100,
-	prevBtn = document.getElementById("prev-slide-btn"),
-	nextBtn = document.getElementById("next-slide-btn"),
-	slideBars = document.getElementsByClassName("slide-bar");
+  	slides = document.getElementsByClassName("slide"),
+  	currentSlideIndex = 0,
+  	width = 100,
+  	prevBtn = document.getElementById("prev-slide-btn"),
+  	nextBtn = document.getElementById("next-slide-btn"),
+  	slideBars = document.getElementsByClassName("slide-bar");
 
 prevBtn.addEventListener("click", goToPrevSlide);
 nextBtn.addEventListener("click", goToNextSlide);

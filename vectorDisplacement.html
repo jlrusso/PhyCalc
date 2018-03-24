@@ -6,9 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+	<link rel="stylesheet" href="vectorDisplacement.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="vectorDisplacement.css">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 				<div id="vertical-search-btn"><i class="glyphicon glyphicon-search"></i></div>
 				<div id="click-box"></div>
 				<span class="hamburger"></span>
-				<div class="vertical-nav">
+				<div id="vertical-nav" class="vertical-nav">
 					<ul>
 						<li><a data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
 						<li><a href="#" id="vert-conversion-btn">Conversions</a></li>
@@ -36,9 +37,9 @@
 		</div>
 	</nav>
 
-	<div id="search-section">
-		<section id="search-bar-btn">
-			<input type="text" id="search-bar" placeholder="search.."/>
+	<div id="search-container">
+		<section id="search-form">
+			<input type="text" id="search-bar"/>
 			<div id="search-btn"><i class="glyphicon glyphicon-search"></i></div>
 		</section>
 		<div id="close-search-btn">
@@ -59,15 +60,15 @@
 	</div>
 
 
-	<section class="main-content">
+	<section id="main-content">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 text-center">
 					<h2 class="animated bounceInDown section-heading">Vector Displacement</h2>
 					<div class="pages-nav animated bounceInDown" id="top-pager">
 						<ul class="pager">
-							<li><a href="displacement.html" class="prev-page" id="top-prev">Previous: Displacement</a></li>
-							<li><a href="velocity.html" class="next-page" id="top-next">Next: Velocity</a></li>
+							<li><a href="displacement.html" class="prev-page" id="top-prev"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Displacement</a></li>
+							<li><a href="velocity.html" class="next-page" id="top-next">Next: Velocity<span class="glyphicon glyphicon-chevron-right"></span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -201,7 +202,7 @@
 									<input class="form-control part-one-input-field" type="number" id="vector-one" placeholder="(d1)">
 									<input class="form-control part-one-input-field" type="number" id="vector-two" placeholder="(d2)">
 									<input class="form-control part-one-input-field" type="number" id="net-displacement" placeholder="d-net">
-									<input class="form-control part-one-input-field" type="number" id="sig-figs-field" placeholder="# of sigfigs default-7">
+									<input class="form-control part-one-input-field" type="number" id="sig-figs-field" placeholder="# of sigfigs (optional)">
 									<div class="form-divider"></div>
 									<div class="calc-and-clear">
 										<button type="button" id="calculate-btn"><b>Calculate</b></button>
@@ -210,10 +211,10 @@
 									</form>
 								</div>
 								<div class="col-md-8 text-center">
-									<h4><strong>Equation</strong></h4>
+									<h4 id="equation-heading"><strong>Equation</strong></h4>
 									<div id="slide-arrow-container">
-										<div class="slide-arrow-btn" id="prev-slide-btn">&#10094;</div>
-										<div class="slide-arrow-btn" id="next-slide-btn">&#10095;</div>
+										<div class="slide-arrow-btn" id="prev-slide-btn"><span class="glyphicon glyphicon-chevron-left"></span></div>
+										<div class="slide-arrow-btn" id="next-slide-btn"><span class="glyphicon glyphicon-chevron-right"></span></div>
 									</div>
 									<div id="outer-image-container">
 										<div id="inner-image-container">
@@ -244,7 +245,7 @@
 				<div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="panel-title text-center"><h4><b>Background:</b></h4></div>
+							<div class="panel-title text-center"><h4 id="background-heading"><b>Background:</b></h4></div>
 						</div>
 						<div class="panel-body module-section">
 							<div class="module-box">
@@ -342,9 +343,7 @@
 							</div>
 							<button class="accordion"><strong>Illustration</strong></button>
 							<div class="modal-panel">
-								<div class="modal-text">
 									<img src="../img/vector-accordion-pic.png" alt="Vector Image"/>
-								</div>
 							</div>
 							<button class="accordion"><strong>Given Variables</strong></button>
 							<div class="modal-panel">
@@ -396,9 +395,7 @@
 									</div>
 									<button class="accordion"><strong>Illustration</strong></button>
 									<div class="modal-panel">
-										<p>
-											Illustration
-										</p>
+										<img src="img/vectorDisplacementAccordionImg2.png" alt="Vector Image"/>
 									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
@@ -448,14 +445,12 @@
 								<button class="accordion first-accordion"><strong>Problem</strong></button>
 									<div class="modal-panel">
 										<p>
-											Fred ran 30 meters east with the football towards the sideline and then made a sharp cut north towards the endzone, running 40 more meters to get a touchdown. What would the angle be if he ran directly from the starting point to point at which he entered the endzone?
+											Fred ran 30 yards east with the football towards the sideline and then made a sharp cut north towards the endzone, running 40 more yards to get a touchdown. What would the angle be if he ran directly from the starting point to point at which he entered the endzone?
 										</p>
 									</div>
 									<button class="accordion"><strong>Illustration</strong></button>
 									<div class="modal-panel">
-										<p>
-											Draw Illustration
-										</p>
+										<img src="img/vectorDisplacementAccordionImg3.png" alt="Vector Image"/>
 									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
@@ -522,11 +517,9 @@
 					</div>
 				</div>
 
-
-
 			<ul class="pager text-center" id="bottom-pager">
-				<li><a href="displacement.html" class="prev-page">Previous: Displacement</a></li>
-				<li><a href="velocity.html" class="next-page">Next: Velocity</a></li>
+				<li><a href="displacement.html" class="prev-page"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Displacement</a></li>
+				<li><a href="velocity.html" class="next-page">Next: Velocity<span class="glyphicon glyphicon-chevron-right"></span></a></li>
 			</ul>
 
 	</section>
