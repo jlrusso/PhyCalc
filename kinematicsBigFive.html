@@ -6,9 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+	<link rel="stylesheet" href="kinematicsBigFive.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="kinematicsBigFive.css">
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 				<div id="vertical-search-btn"><i class="glyphicon glyphicon-search"></i></div>
 				<div id="click-box"></div>
 				<span class="hamburger"></span>
-				<div class="vertical-nav">
+				<div id="vertical-nav" class="vertical-nav">
 					<ul>
 						<li><a data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
 						<li><a href="#" id="vert-conversion-btn">Conversions</a></li>
@@ -37,9 +38,9 @@
 	</nav>
 
 
-	<div id="search-section">
-		<section id="search-bar-btn">
-			<input type="text" id="search-bar" placeholder="search.."/>
+	<div id="search-container">
+		<section id="search-form">
+			<input type="text" id="search-bar"/>
 			<div id="search-btn"><i class="glyphicon glyphicon-search"></i></div>
 		</section>
 		<div id="close-search-btn">
@@ -60,7 +61,7 @@
 	</div>
 
 
-	<section class="main-content">
+	<section id="main-content">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -362,9 +363,7 @@
 									</div>
 									<button class="accordion"><strong>Illustration</strong></button>
 									<div class="modal-panel">
-										<p>
-											Draw trajectory of ball and the angle at which it is thrown
-										</p>
+										<input type="image" src="img/kinematicsAccordionImg1.png" alt="Angle Throw"/>
 									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
@@ -414,7 +413,7 @@
 									</div>
 									<button class="accordion"><strong>Illustration</strong></button>
 									<div class="modal-panel">
-										Draw cliff and soccer ball and trajectory of its travel
+										<input type="image" src="img/kinematicsAccordionImg2.png" alt="Cliff kick ball"/>
 									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
 									<div class="modal-panel">
@@ -467,7 +466,7 @@
 									<button class="accordion"><strong>Illustration</strong></button>
 									<div class="modal-panel">
 										<p>
-											Draw the problem
+											<input type="image" src="img/kinematicsAccordionImg3.png" alt="Parabolic Path"/>
 										</p>
 									</div>
 									<button class="accordion"><strong>Given Variables</strong></button>
