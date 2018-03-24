@@ -585,7 +585,7 @@ input[type="radio"] {
 #outer-image-container {
   position: relative;
   width: 100%;
-  height: 50%;
+  height: 122px;
   border-radius: 10px !important;
   margin-bottom: 10px;
   box-shadow: 0 0 10px #333;
@@ -1144,29 +1144,45 @@ button.accordion.active:after {
 		height: auto !important;
     padding-bottom: 0;
 	}
-
 	#calculate-btn,
 	#clear-btn {
 		padding: 10px;
 	}
 	#slide-arrows-container {
-		width: 75%;
-		top: -2px;
+		width: 100%;
+		top: -10px;
 	}
-
+	.slide-arrow-btn {
+		width:150px;
+		padding:8px;
+	}
+	#prev-slide-btn {
+		margin-left:14px;
+	}
+	#next-slide-btn {
+		margin-right:14px;
+	}
+	#equation-heading {
+		margin-top: 25px;
+	}
 	#outer-image-container {
-		width: 78%;
-		height: 130px;
-		margin: 15px auto 15px;
+		width: 100%;
+		height: auto;
+		margin: 30px auto 15px;
 	}
-
+	#inner-image-container {
+		width: 300%;
+	}
+	#inner-image-container img {
+		width: 33.33%;
+		height: auto;
+	}
 	#solo-image {
 		padding-bottom: 20px;
 	}
-
 	#solo-image img {
-		width: 78%;
-		height: 130px;
+		width: 100%;
+		height: auto;
 		margin: auto;
 	}
 	.form-control {
@@ -1231,26 +1247,12 @@ button.accordion.active:after {
   }
 }
 @media screen and (max-width: 650px){
-	#search-bar {
-		width: 400px;
-	}
-	#search-bar-btn {
-		left: 10px;
-		transform: translate(0, -50%);
-	}
-	#search-case-list a {
-		width: 100%;
+	#outer-image-container,
+	#solo-image img {
+		height: 145px;
 	}
 }
 @media screen and (max-width: 610px){
-	#slide-arrows-container {
-		width: 85%;
-	}
-	#outer-image-container,
-	#solo-image img {
-		width: 90%;
-		height: 110px;
-	}
 	.img-caption p {
 		font-size: 1.4rem;
 	}
@@ -1284,19 +1286,8 @@ button.accordion.active:after {
 		padding-top: 0;
 		margin: 0 auto 20px;
 	}
-	#search-bar {
-		width: 275px;
-	}
 	.section-heading {
 		float: none;
-	}
-	#slide-arrows-container {
-		width: 93%;
-	}
-	#outer-image-container,
-	#solo-image img {
-		width: 100%;
-		height: 120px;
 	}
 	.module-section {
 		width: 100%;
@@ -1320,6 +1311,14 @@ button.accordion.active:after {
 	}
 }
 @media screen and (max-width: 500px){
+	#outer-image-container,
+	#solo-image img {
+		height: 125px;
+	}
+	.slide-arrow-btn {
+		width:100px;
+		padding:8px;
+	}
 	.solve-selection,
 	.unit-selection,
 	.time-selection {
@@ -1363,9 +1362,6 @@ button.accordion.active:after {
 		width: 88.5%;
 		margin-left: 2px;
 	}
-	#slide-arrows-container {
-		width: 91%;
-	}
 	.slide-arrow-btn {
 		width: 70px;
 	}
@@ -1389,4 +1385,11 @@ button.accordion.active:after {
   #top-prev {
     margin-bottom: 10px;
   }
+}
+@media screen and (max-width: 350px){
+	#outer-image-container,
+	#solo-image img {
+		width: 100%;
+		height: 80px;
+	}
 }
