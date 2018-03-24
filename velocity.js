@@ -3,34 +3,44 @@ verticalSearchBtn = document.getElementById("vertical-search-btn"),
 searchContainer = document.getElementById("search-container"),
 searchBar = document.getElementById("search-bar"),
 closeSearchBtn = document.getElementById("close-search-btn"),
-caseList = document.getElementById("search-case-list");
+caseList = document.getElementById("search-case-list"),
+mainContent = document.getElementById("main-content");
 
-horizontalSearchBtn.addEventListener("click", openSearchSection);
-verticalSearchBtn.addEventListener("click", openSearchSection);
+horizontalSearchBtn.addEventListener("click", openSearchContainer);
+verticalSearchBtn.addEventListener("click", openSearchContainer);
 searchBar.addEventListener("input", showList);
-closeSearchBtn.addEventListener("click", closeSearchSection);
+closeSearchBtn.addEventListener("click", closeSearchContainer);
 
 
-function openSearchSection(){
+function openSearchContainer(){
 	if(!searchContainer.classList.contains("active-search")){
 		searchContainer.classList.toggle("active-search");
-		document.getElementsByClassName("main-content")[0].style.marginTop = "30px";
+		mainContent.style.marginTop = "30px";
 		searchBar.focus();
 	} else {
 		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value = "";
-		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
+		mainContent.style.marginTop = "0";
 	}
 }
 
-function closeSearchSection(){
+function closeSearchContainer(){
 	if(searchContainer.classList.contains("active-search")){
 		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value  = "";
-		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
+		mainContent.style.marginTop = "0";
 	}
+}
+
+var searchClosers = [searchContainer, mainContent];
+for(let i = 0; i < searchClosers.length; i++){
+  searchClosers[i].addEventListener("click", function(e){
+    if(!e.target.matches("#search-bar")){
+      closeSearchContainer();
+    }
+  })
 }
 
 
