@@ -67,6 +67,27 @@ function showAnchors(){
 		}
 	}
 }
+/*--- Toggle Hamburger Menu ---*/
+var clickBox = document.getElementById("click-box"),
+		burgerIcon = document.getElementById("icon"),
+		verticalNav = document.getElementsByClassName("vertical-nav")[0];
+clickBox.addEventListener("click", openVerticalNav);
+
+function openVerticalNav(e){
+	if(e.target == clickBox){
+		verticalNav.classList.toggle("show-vertical-nav");
+		burgerIcon.classList.toggle("active");
+	}
+}
+
+window.onclick = function(e){
+	if(!e.target.matches("#click-box")){
+		if(icon.classList.contains("active")){
+			icon.classList.remove("active");
+			verticalNav.classList.remove("show-vertical-nav");
+		}
+	}
+}
 /*--- Open and Close Modal Accordion Panels ---*/
 var acc = document.getElementsByClassName("accordion");
 var i;
