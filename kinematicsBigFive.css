@@ -699,7 +699,7 @@ input[type="radio"] {
 #outer-image-container {
   position: relative;
   width: 100%;
-  height: 140px;
+  height: 145px;
   border-radius: 4px !important;
   box-shadow: 0 0 10px #333;
   overflow: hidden !important;
@@ -845,7 +845,7 @@ input[type="radio"] {
 .module-img img {
   border-radius: 5px;
   width: 100%;
-  height: 380px;
+  height: 390px;
 	margin-bottom: 5px;
 }
 .module-box:hover > .module {
@@ -984,10 +984,10 @@ input[type="radio"] {
 .modal-header h4 {
   max-width: 200px;
   margin:auto;
-  background-color:black;
+  background-color:var(--main-black-color);
   padding:5px;
-  border-radius: 10px;
-  color:#F1C40F;
+  border-radius: 4px;
+  color: var(--main-yellow-color);
 }
 
 .modal-footer-btn {
@@ -1045,10 +1045,10 @@ button.accordion.active:after {
     margin-left: 5px;
 }
 .first-accordion {
-  border-radius: 10px 10px 0 0;
+  border-radius: 4px 4px 0 0;
 }
 .last-accordion {
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 4px 4px;
 }
 
 .modal-body .modal-panel {
@@ -1056,7 +1056,7 @@ button.accordion.active:after {
     background-color: white;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.4s ease-out;
 }
 .modal-panel input[type="image"] {
 	display: block;
@@ -1240,6 +1240,10 @@ button.accordion.active:after {
 		width:42px;
 		height:auto;
 	}
+	.car-icon img {
+		width: 45px;
+		height: 45px;
+	}
 	.module-section {
 		height: auto;
 		border-radius: 4px;
@@ -1308,7 +1312,11 @@ button.accordion.active:after {
 	}
 	#street-light-img {
 		width:60px;
-		height:auto;
+		height:auto;s
+	}
+	.car-icon img {
+		width: 50px;
+		height: 50px;
 	}
 	#animate-car-two-btn {
 		padding: 0.5px 17px;
@@ -1337,14 +1345,13 @@ button.accordion.active:after {
 		width: 85%;
 		margin: auto;
 	}
-
 	.third-page-pics {
 		width: 100%;
 		height: auto;
 		margin: 0 auto 20px !important;
 	}
 	.third-page-pics img {
-		height: 370px;
+		height: auto;
 	}
 	.img-caption {
 		font-size: 1.5rem;
@@ -1373,6 +1380,11 @@ button.accordion.active:after {
     float: none;
   }
 }
+@media screen and (max-width: 680px){
+	#inner-image-container {
+		width: 100%;
+	}
+}
 @media screen and (max-width: 650px){
 	#search-form {
 		margin-left: 0;
@@ -1384,17 +1396,6 @@ button.accordion.active:after {
 	}
 }
 @media screen and (max-width: 610px){
-	#slide-arrows-container {
-		width: 85%;
-	}
-	#outer-image-container,
-	#solo-image {
-		width: 90%;
-	}
-	#outer-image-container,
-	#solo-image > img {
-		height: 110px;
-	}
 	.img-caption p {
 		font-size: 1.4rem;
 	}
@@ -1432,16 +1433,24 @@ button.accordion.active:after {
 	.section-heading {
 		float: none;
 	}
-	#slide-arrows-container {
-		width: 93%;
-	}
 	#outer-image-container,
 	#solo-image {
 		width: 100%;
 	}
+	#animation-btns-container {
+		margin: 15px auto;
+	}
 	#outer-image-container,
 	#solo-image > img {
 		height: 120px;
+	}
+	.car-icon img {
+		width: 35px;
+		height: 35px;
+	}
+	#street-light-img {
+		width: 45px;
+		height: auto;
 	}
 	.module-section {
 		width: 100%;
@@ -1475,19 +1484,26 @@ button.accordion.active:after {
 	#solo-image > img {
 		height: 100px;
 	}
+	#street-light-img {
+		width: 35px;
+		height: auto;
+	}
 	.slide-arrow-btn {
 		width: 70px;
 	}
 	.slide-bar {
 		width: 35px;
 	}
-	#top-next,
-  #top-prev {
-    width: 100%;
-  }
-  #top-prev {
-    margin-bottom: 10px;
-  }
+	.next-page,
+	.prev-page {
+		width: 100%;
+	}
+	.prev-page {
+		margin-bottom: 10px;
+	}
+	.img-caption {
+		width: 92%;
+	}
 }
 @media screen and (max-width: 385px){
 	#solve-selector,
@@ -1495,9 +1511,6 @@ button.accordion.active:after {
 	#time-selector {
 		width: 88.5%;
 		margin-left: 2px;
-	}
-	#slide-arrows-container {
-		width: 91%;
 	}
 	.img-caption {
 		width: 95%;
@@ -1509,17 +1522,17 @@ button.accordion.active:after {
     width: 100%;
     margin-bottom: 10px;
   }
-  #top-next,
-  #top-prev {
-    width: 100%;
-  }
-  #top-prev {
-    margin-bottom: 10px;
-  }
+	#street-light-img {
+		right: 4px;
+	}
 }
 @media screen and (max-width: 350px){
 	#search-form {
 		margin-left: 0;
 		width: 83%;
+	}
+	#outer-image-container,
+	#solo-image > img {
+		height: 90px;
 	}
 }
