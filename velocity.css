@@ -877,9 +877,10 @@ input[type="radio"] {
 }
 .module-img img {
   width: 100%;
-  height: 200px;
+  height: 205px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5)
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	margin-top: 7px;
 }
 /*--- End of Background Modules ---*/
 
@@ -1128,7 +1129,7 @@ button.accordion.active:after {
     height: 52.5px;
   }
 	.module-img img {
-		height: 182px;
+		height: 187px;
 	}
   .third-page-pics img {
     height: 210px;
@@ -1359,13 +1360,13 @@ button.accordion.active:after {
 	#solo-image img {
 		height: 100px;
 	}
-	#top-next,
-  #top-prev {
+	.prev-page,
+  .next-page {
     width: 100%;
   }
-  #top-prev {
-    margin-bottom: 10px;
-  }
+  .prev-page {
+		margin-bottom: 10px;
+	}
 }
 @media screen and (max-width: 385px){
 	#solve-selector,
@@ -1390,12 +1391,9 @@ button.accordion.active:after {
     width: 100%;
     margin-bottom: 10px;
   }
-  #top-next,
-  #top-prev {
+  .next-page,
+	.prev-page {
     width: 100%;
-  }
-  #top-prev {
-    margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 350px){
