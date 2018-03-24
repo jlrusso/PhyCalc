@@ -1,6 +1,6 @@
 var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
 verticalSearchBtn = document.getElementById("vertical-search-btn"),
-searchSection = document.getElementById("search-section"),
+searchContainer = document.getElementById("search-container"),
 searchBar = document.getElementById("search-bar"),
 closeSearchBtn = document.getElementById("close-search-btn"),
 caseList = document.getElementById("search-case-list");
@@ -12,11 +12,12 @@ closeSearchBtn.addEventListener("click", closeSearchSection);
 
 
 function openSearchSection(){
-	if(!searchSection.classList.contains("active-search")){
-		searchSection.classList.toggle("active-search");
+	if(!searchContainer.classList.contains("active-search")){
+		searchContainer.classList.toggle("active-search");
 		document.getElementsByClassName("main-content")[0].style.marginTop = "30px";
+		searchBar.focus();
 	} else {
-		searchSection.classList.remove("active-search");
+		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value = "";
 		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
@@ -24,8 +25,8 @@ function openSearchSection(){
 }
 
 function closeSearchSection(){
-	if(searchSection.classList.contains("active-search")){
-		searchSection.classList.remove("active-search");
+	if(searchContainer.classList.contains("active-search")){
+		searchContainer.classList.remove("active-search");
 		caseList.classList.remove("show");
 		searchBar.value  = "";
 		document.getElementsByClassName("main-content")[0].style.marginTop = "0";
