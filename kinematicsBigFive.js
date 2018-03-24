@@ -1,3 +1,72 @@
+var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
+verticalSearchBtn = document.getElementById("vertical-search-btn"),
+searchContainer = document.getElementById("search-container"),
+searchBar = document.getElementById("search-bar"),
+closeSearchBtn = document.getElementById("close-search-btn"),
+caseList = document.getElementById("search-case-list"),
+mainContent = document.getElementById("main-content");
+
+horizontalSearchBtn.addEventListener("click", openSearchContainer);
+verticalSearchBtn.addEventListener("click", openSearchContainer);
+searchBar.addEventListener("input", showList);
+closeSearchBtn.addEventListener("click", closeSearchContainer);
+
+
+function openSearchContainer(){
+	if(!searchContainer.classList.contains("active-search")){
+		searchContainer.classList.toggle("active-search");
+		mainContent.style.marginTop = "30px";
+		searchBar.focus();
+	} else {
+		searchContainer.classList.remove("active-search");
+		caseList.classList.remove("show");
+		searchBar.value = "";
+		mainContent.style.marginTop = "0";
+	}
+}
+
+function closeSearchContainer(){
+	if(searchContainer.classList.contains("active-search")){
+		searchContainer.classList.remove("active-search");
+		caseList.classList.remove("show");
+		searchBar.value  = "";
+		mainContent.style.marginTop = "0";
+	}
+}
+
+var searchClosers = [searchContainer, mainContent];
+for(let i = 0; i < searchClosers.length; i++){
+  searchClosers[i].addEventListener("click", function(e){
+    if(!e.target.matches("#search-bar")){
+      closeSearchContainer();
+    }
+  })
+}
+
+
+
+function showList() {
+	if (searchBar.value.length > 0){
+		caseList.classList.add('show');
+		showAnchors();
+	} else {
+		caseList.classList.remove('show');
+	}
+}
+
+function showAnchors(){
+	let inputValue = searchBar.value.toUpperCase();
+	let anchors = caseList.getElementsByTagName('a');
+	let newAnchors = document.createElement("a");
+	for (var i = 0; i < anchors.length; i++){
+		let a = anchors[i];
+		if (a.textContent.toUpperCase().indexOf(inputValue) > -1){
+			anchors[i].style.display = "";
+		} else {
+			anchors[i].style.display = "none";
+		}
+	}
+}
 /*--- Open and Close Modal Accordion Panels ---*/
 var acc = document.getElementsByClassName("accordion");
 var i;
