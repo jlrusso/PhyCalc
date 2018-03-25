@@ -1087,6 +1087,9 @@ button.accordion.active:after {
 
 
 /*--- Calculator Modal ---*/
+.close-modal-btn {
+	display: none;
+}
 .calculator-whole {
 	max-width: 500px;
 	margin: auto;
@@ -1169,7 +1172,7 @@ button.accordion.active:after {
 	height: 40px;
 	border: 1px solid #F1C40F;
 	border-radius: 5px;
-	padding: 4.5px 4.5px 4.5px 20px;
+	padding: 4.5px 4.5px 4.5px 10px;
 	background-color: #333;
 	outline: none;
 	font-size: 1.5rem;
@@ -1179,7 +1182,6 @@ button.accordion.active:after {
 #calculator-tooltip {
 	opacity: 0;
 	text-align: center;
-	transition: 0.3s;
 	width: 200px;
 	margin: 5px auto 0;
 	border: 2px solid rgb(192, 57, 43);
@@ -1187,6 +1189,7 @@ button.accordion.active:after {
 	background-color: rgba(192, 57, 43, 0.5);
 	font-weight: bold;
 	color: var(--main-black-color);
+	transition: 0.3s;
 }
 /*--- End of Calculator ---*/
 
@@ -1471,6 +1474,34 @@ button.accordion.active:after {
 	}
 	#conversion-container {
 		margin-bottom: 15px;
+	}
+}
+@media screen and (max-width: 500px){
+	.modal-dialog {
+		margin: 0;
+	}
+	.modal-content {
+		border-radius: 0;
+	}
+	#calculator-tooltip {
+		margin-top: 15px;
+	}
+	#calc-modal-footer {
+		display: none;
+	}
+	.close-modal-btn {
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 45px;
+		transform: translateX(-50%);
+	}
+	.close-modal-btn .glyphicon-remove {
+		border: 2px solid var(--main-yellow-color);
+		font-size: 3rem;
+		font-weight: normal;
+		text-align: center;
+		color: var(--main-yellow-color);
 	}
 }
 
