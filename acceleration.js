@@ -94,16 +94,14 @@ function closeSearchSection(){
 		document.getElementById("main-content").style.marginTop = "0";
 	}
 }
-searchSection.addEventListener("click", function(e){
-  if(!e.target.matches("#search-bar")){
-    closeSearchSection();
-  }
-})
-mainContent.addEventListener("click", function(e){
-  if(!e.target.matches("#search-bar")){
-    closeSearchSection();
-  }
-})
+var searchClosers = [searchSection, mainContent];
+for(let i = 0; i < searchClosers.length; i++){
+  searchClosers[i].addEventListener("click", function(e){
+    if(!e.target.matches("#search-bar")){
+      closeSearchSection();
+    }
+  })
+}
 
 function showList() {
 	if (searchBar.value.length > 0){
