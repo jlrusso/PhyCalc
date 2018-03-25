@@ -169,6 +169,14 @@ $(document).ready(function(){
     }, "slow")
   });
 })
+window.onclick = function(e){
+	if(!e.target.matches("#click-box")){
+		if(icon.classList.contains("active")){
+			icon.classList.remove("active");
+			verticalNav.classList.remove("show-vertical-nav");
+		}
+	}
+}
 
 
 /*--- Open and Close Modal Panels ---*/
@@ -509,16 +517,3 @@ window.onload = function(){
 		}
 		switchToSlide();
 	}
-
-  /*--- Move Third Page Img Captions ---*/
-  var downArrows = document.getElementsByClassName("glyphicon-chevron-down");
-  for(let i = 0; i < downArrows.length; i++){
-    downArrows[i].addEventListener("click", function(){
-      this.classList.toggle("flip");
-      var $thisArrowContainer = $(this).parents(".caption-arrow");
-      $thisArrowContainer.toggleClass("caption-arrow-toggle");
-      var $thisPicContainer = $(this).parents(".third-page-pics");
-      var $thisPicCaption = $thisPicContainer.find(".img-caption");
-      $thisPicCaption.toggleClass("caption-toggle");
-    })
-  }
