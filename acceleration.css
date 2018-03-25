@@ -1102,26 +1102,13 @@ button.accordion.active:after {
 	#slide-arrows-container {
 		width: 92%;
 	}
-	#outer-image-container {
-		margin-top:35px;
-	}
 	#outer-image-container,
 	#solo-image > img {
 		height: 120px;
 	}
-	.car-icon img {
-		width: 45px;
-		height: 45px;
+	.module-img img {
+		height: 197.5px;
 	}
-	.module-section {
-		width: 100%;
-		padding: 15px 15px 5px;
-		height: auto;
-		border-radius: 4px;
-	}
-  .module-box {
-    height: 55.25px;
-  }
   .third-page-pics img {
     height: 210px;
   }
@@ -1143,6 +1130,7 @@ button.accordion.active:after {
 	#calculate-btn,
 	#clear-btn {
 		padding: 10px;
+		font-size: 1.7rem;
 	}
 	#slide-arrows-container {
 		width: 100%;
@@ -1175,28 +1163,19 @@ button.accordion.active:after {
 	#slide-bar-indicators {
 		opacity:1;
 	}
-	#solo-image {
-		width: 100%;
-		margin: 0 auto 20px;
-		height: auto;
-	}
 	#solo-image > img {
 		width: 100%;
 		height: 180px;
 	}
-	.module-section {
-		width: 80%;
-		margin: auto;
-		height: auto;
-		padding-top: 15px;
-		padding-bottom: 0;
-	}
 	.module-box {
 		height: 65px;
 	}
+	.module-front,
+	.module-back {
+		font-size: 1.7rem;
+	}
 	.module-img img {
 		height: auto;
-		margin-bottom: 20px;
 	}
 	#third-pics-panel {
 		padding-bottom: 0;
@@ -1222,6 +1201,7 @@ button.accordion.active:after {
     margin: auto;
 	}
 }
+
 @media screen and (max-width: 770px){
 	.modal-panel input[type="image"] {
 		display: block;
