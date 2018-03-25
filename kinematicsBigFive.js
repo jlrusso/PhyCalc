@@ -811,3 +811,11 @@ for(let i = 0; i < animateCarBtns.length; i++){
     carIcons[i].classList.toggle(carAnimations[i]);
   })
 }
+
+var closeModalBtns = document.querySelectorAll(".close-modal-btn");
+closeModalBtns.forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var $modalParent = $(this).parents(".modal");
+    $modalParent.click();
+  })
+})
