@@ -432,7 +432,7 @@ a.next-page:hover .glyphicon-chevron-right {
 .solve-for-selection,
 .unit-selection,
 .time-selection {
-  padding: 8px 8px 5px;
+  padding: 10px 10px 7px;
   margin-bottom: 5px;
   vertical-align: middle;
 }
@@ -477,8 +477,9 @@ a.next-page:hover .glyphicon-chevron-right {
 
 
 /*--- Form ---*/
-.form-group {
-  width:100%;
+.values-form {
+	width: 100%;
+	margin-bottom: 0;
 }
 .calc-and-clear {
   width:100%;
@@ -515,7 +516,7 @@ a.next-page:hover .glyphicon-chevron-right {
 }
 .form-control {
   width: 100%;
-  margin: 10px 0;
+  margin: 10px 0 14px;
   padding: 18px;
   font-size: 1.5rem;
 }
@@ -533,9 +534,6 @@ input[type="radio"] {
 #delta-symbol {
   display: none;
 }
-#main-panel {
-  padding-bottom: 0px;
-}
 /*--- End of Form ---*/
 
 
@@ -549,7 +547,7 @@ input[type="radio"] {
   width: 100%;
   height: 50%;
   border-radius: 4px !important;
-  margin-bottom: 10px;
+  margin: 15px 0;
   box-shadow: 0 0 10px #333;
   overflow: hidden !important;
 }
@@ -640,8 +638,8 @@ input[type="radio"] {
 /*--- Background Modules ---*/
 .module-section {
   width: 100%;
-  height: 420px;
-  padding: 5px;
+  height: auto;
+  padding: 15px;
 }
 .module-box {
   width: 100%;
@@ -699,12 +697,11 @@ input[type="radio"] {
   transform: rotateX(180deg);
 }
 .module-img {
-  margin: 5px 0 5px 0;
-  margin-bottom: 10px;
+	margin-top: 15px;
 }
 .module-img img {
   width: 100%;
-  height: 200px;
+  height: 204px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5)
 }
