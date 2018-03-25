@@ -221,3 +221,12 @@ tenPowerBtn.addEventListener("mouseover", function(){
 tenPowerBtn.addEventListener("mouseout", function(){
   calculatorTooltip.style.opacity = "0";
 })
+
+var sigFigField = document.getElementById("sig-fig-field");
+sigFigField.addEventListener("mouseover", function(){
+  calculatorTooltip.textContent = "# of significant digits";
+  calculatorTooltip.style.opacity = "1";
+})
+sigFigField.addEventListener("mouseout", function(){
+  calculatorTooltip.style.opacity = "0";
+})
