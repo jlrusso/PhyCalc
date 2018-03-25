@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="acceleration.css">
@@ -37,7 +38,7 @@
 	</nav>
 
 		<div id="search-section">
-			<section id="search-bar-btn">
+			<section id="search-form">
 				<input type="text" id="search-bar"/>
 				<div id="search-btn"><i class="glyphicon glyphicon-search"></i></div>
 			</section>
@@ -66,8 +67,8 @@
 					<h2 class="animated bounceInDown section-heading">Acceleration</h2>
 					<div class="pages-nav animated bounceInDown" id="top-pager">
 						<ul class="pager">
-							<li><a href="kinematicsBigFive.html" class="prev-page" id="top-prev">Previous: Kinematics</a></li>
-							<li><a href="circularMotion.html" class="next-page" id="top-next">Next: Circular Motion</a></li>
+							<li><a href="kinematicsBigFive.html" class="prev-page"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Kinematics</a></li>
+							<li><a href="circularMotion.html" class="next-page">Next: Circular Motion<span class="glyphicon glyphicon-chevron-right"></span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -187,7 +188,7 @@
 				<div class="col-sm-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="panel-title text-center"><h4><b>Background:</b></h4></div>
+							<div class="panel-title text-center"><h4 id="background-heading"><b>Background:</b></h4></div>
 						</div>
 						<div class="panel-body module-section">
 							<div class="module-box">
@@ -315,32 +316,29 @@
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h4 class="text-center">Vector Displacement</h4>
+							<h4 class="text-center">Acceleration</h4>
 						</div>
 						<div class="modal-body">
 							<button class="accordion first-accordion"><strong>Problem</strong></button>
 							<div class="modal-panel">
 								<div class="modal-text">
 									<p>
-									Tom went camping with his family and decided to leave the campsite and wonder off using only his compass for navigating. He started by heading 30 north of east (north east) and walked a total of 200 meters before deciding to turn back. How far east did he travel?
+										Arnold is running late to work and is driving 70 mph in a 25 mph zone. He sees a child run for a ball in the middle of the street so he hits he brakes as hard as he can and comes to a full stop in  3.5 seconds. What was his acceleration / deceleration?
 									</p>
 								</div>
 							</div>
 							<button class="accordion"><strong>Illustration</strong></button>
 							<div class="modal-panel">
-								<div class="modal-text">
-									<p>
-									This is where the sketched out illustration will be so that the user can see how we make a drawing to better conceptualize the given problem and get closer to finding a solution
-									</p>
-								</div>
+								<input type="image" src="img/accelerationAccordionImg1.png" alt="Car deceleration"/>
 							</div>
 							<button class="accordion"><strong>Given Variables</strong></button>
 							<div class="modal-panel">
 								<p>
 									<ul>
-										<li><b>Tom's Motion</b> : two-dimensional and angles are used</li>
-										<li><b>sin(&Theta;) = (O / H), cos(&Theta;) = (A / H), tan(&Theta;) = (O / A)</b></li>
-										<li><b>Displacement</b> : 200 meters northeast</li>
+										<li><b>Equation</b> : a = (delta V) / (delta t) = (vf - vi) / &Delta;t)</li>
+										<li><b>Top Velocity</b> : 70 mph (1 mph = 0.447 m/s) = V<sub>initial</sub></li>
+										<li><b>Full Stop</b> : in 3.5 seconds = &Delta;t</li>
+										<li><b>Final Velocity (Vf)</b> : 0 m/s</li>
 									</ul>
 								</p>
 							</div>
@@ -348,12 +346,9 @@
 							<div class="modal-panel">
 								<p>
 									<ul>
-										<li><b>Displacement</b> : 200 meters = Hypotenuse = H</li>
-										<li><b>North of East</b> : means he traveled at an angle of 30&deg; NE </li>
-										<li><b>Trig Used</b> : cos(30&deg;) gives us the east vector over the hypotenuse displacement</li>
-										<li><b>Plug in Values</b> : cos(30&deg;) = A / (200)</li>
-										<li><b>Solve for Unknown Variable</b> : cos(30&deg;) * 200 = A</li>
-										<li><b>Solution</b> : east vector is 173 meters</li>
+										<li><b>Convert mph to m/s</b> : 1 mph = 0.447 m/s, 70 mph * 0.447 = 31.29 m/s</li>
+										<li><b>Solve for a</b> : a = (0 m/s - 31.29 m/s) / (3.5 s - 0)</li>
+										<li><b>Solution</b>: -8.94 m/s<sup>2</sup></li>
 									</ul>
 								</p>
 							</div>
@@ -365,37 +360,30 @@
 				</div>
 			</div>
 
-
-
-
-
 				<div class="modal fade" id="my-modal-two" role="dialog">
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="text-center">Net Displacement</h4>
+								<h4 class="text-center">Velocity Change</h4>
 							</div>
 							<div class="modal-body">
 								<button class="accordion first-accordion"><strong>Problem</strong></button>
 								<div class="modal-panel">
 									<p>
-										Jim wondered off from the campsite like Tom, but instead he walked 115 meters due east and then 75 meters due north. What is his displacement from the starting point?
+										If a drag racer starts from a stop and accelerations down the track at 12 m/s<sup>2</sup> for 9.5 seconds, what would be his final velocity?
 									</p>
 								</div>
 								<button class="accordion"><strong>Illustration</strong></button>
 								<div class="modal-panel">
-									<p>
-										Illustration
-									</p>
+									<input type="image" src="img/accelerationAccordionImg1.png" alt="Car deceleration"/>
 								</div>
 								<button class="accordion"><strong>Given Variables</strong></button>
 								<div class="modal-panel">
 									<p>
 										<ul>
-											<li><b>Right Triangle</b> : we can use pythagorean theorem to find side lengths</li>
-											<li><b>Pythagorean Theorem</b> : a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></li>
-											<li><b>Given Sides</b> : d<sub>1</sub> = 115 m, d<sub>2</sub> = 75 m</li>
-											<li><b>Unknown Variable</b> : hypotenuse / net displacement</li>
+											<li><b>Equation</b> : a = (delta V) / (delta t) = (vf - vi) / &Delta;t)</li>
+											<li><b>Starting Velocity<b/> : 0 b/c he starts from a stop</li>
+											<li><b>Time Interval</b> : 9.5 seconds</li>
 										</ul>
 									</p>
 								</div>
@@ -403,14 +391,9 @@
 								<div class="modal-panel">
 									<p>
 										<ol>
-											<li><b>Side opposite to angle</b> : 75 (north)</li>
-											<li><b>Side adjacent to angle</b> : 115 (east)</li>
-											<li><b>Equation</b> : a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></li>
-											<li><b>Assign Known Variables</b> : b to a side</b> : a = 75, b = 115</li>
-											<li><b>Unknown Variable</b> : c , net displacement</li>
-											<li><b>Plug in Values</b> : (75)<sup>2</sup> + (115)<sup>2</sup> = 18850</li>
-											<li><b>Solve for C</b> : c<sup>2</sup> = 18850, therefore c = 137.29</li>
-											<li><b>Net Displacement</b> : 137.29 meters</li>
+											<li><b>Solve for v</b> : v = a * (t<sub>f</sub> - t<sub>i</sub>)</li>
+											<li><b>Input Values</b> : v = 12 m/s<sup>2</sup> * 9.5 seconds </li>
+											<li><b>Solution</b> : 114 m/s</li>
 										</ol>
 									</p>
 								</div>
@@ -430,13 +413,13 @@
 					<div class="modal-dialog">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="text-center">Net Displacement</h4>
+								<h4 class="text-center">Time Interval</h4>
 							</div>
 							<div class="modal-body">
 								<button class="accordion first-accordion"><strong>Problem</strong></button>
 								<div class="modal-panel">
 									<p>
-										Fred ran 30 meters east with the football towards the sideline and then made a sharp cut north towards the endzone, running 40 more meters to get a touchdown. What would the angle be if he ran directly from the starting point to point at which he entered the endzone?
+										If a speed boat is going 91 mph and starts to decelerate at a rate of 4.2 m/s<sup>2</sup> how long would it take the boat to come to a complete stop?
 									</p>
 								</div>
 								<button class="accordion"><strong>Illustration</strong></button>
@@ -449,8 +432,10 @@
 								<div class="modal-panel">
 									<p>
 										<ul>
-											<li><b>First Vector</b> : 30 meters east</li>
-											<li><b>Second Vector</b> : 40 meters north</li>
+											<li><b>Equation</b> : a = (delta V) / (delta t) = (vf - vi) / &Delta;t)</li>
+											<li><b>Solve for t</b> : t = velocity / acceleration</li>
+											<li><b>Boat Velocity</b> : 91 mph</li>
+											<li><b>Rate of Acceleration</b> : -3.2 m/s<sup>2</sup></li>
 										</ul>
 									</p>
 								</div>
@@ -458,12 +443,9 @@
 								<div class="modal-panel">
 									<p>
 										<ol>
-											<li><b>Equation</b> : Use inverse trig functions to find &Delta; from side lengths</li>
-											<li><b>First Vector to Trig Side</b> : 30 meters east = adjacent side</li>
-											<li><b>Second Vector to Trig Side</b> : 40 meters north = opposite side</li>
-											<li><b>Trig Function</b> : use tan<sup>-1</sup>(O / A) = &Delta;</li>
-											<li><b>Plug in Values</b> : tan<sup>-1</sup>(30 / 40) = (&Delta;)</li>
-											<li><b>Solution</b> : tan<sup>-1</sup>(40/30) = 53.13&deg;</li>
+											<li><b>Convert mph to m/s</b> : 1 mph = 0.447 m/s, 91 mph = 40.68 m/s </li>
+											<li><b>Input Values</b> : t = 40.68 m/s / 3.2 m/s<sup>2</sup></li>
+											<li><b>Solution</b> : 12.71 seconds</li>
 										</ol>
 									</p>
 								</div>
@@ -623,11 +605,16 @@
 						</div>
 						<!-- End of Calculator Modal -->
 
+						<!-- Go back to top -->
+						<div id="go-up-container">
+							<button type="button" id="go-up-btn"><span class="glyphicon glyphicon-chevron-up"></span></button>
+						</div>
+
 
 		<div class="container">
 			<ul class="pager">
-				<li><a href="kinematicsBigFive.html" class="prev-page">Previous: Kinematics</a></li>
-				<li><a href="circularMotion.html" class="next-page">Next: Circular Motion</a></li>
+				<li><a href="kinematicsBigFive.html" class="prev-page"><span class="glyphicon glyphicon-chevron-left"></span>Previous: Kinematics</a></li>
+				<li><a href="circularMotion.html" class="next-page">Next: Circular Motion<span class="glyphicon glyphicon-chevron-right"></span></a></li>
 			</ul>
 		</div>
 
