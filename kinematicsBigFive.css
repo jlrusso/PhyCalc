@@ -1471,6 +1471,8 @@ button.accordion.active:after {
 	}
 	.module-section {
 		width: 100%;
+		padding-right: 15px;
+		padding-left: 15px;
 	}
 	#third-pics-row {
 		width: 100%;
