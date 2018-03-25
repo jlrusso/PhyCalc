@@ -1061,7 +1061,7 @@ button.accordion.active:after {
 .modal-panel input[type="image"] {
 	display: block;
   width: 70%;
-  height: 50%;
+  height: auto;
   margin: auto;
 }
 .modal-panel p {
@@ -1365,6 +1365,14 @@ button.accordion.active:after {
     margin: auto;
 	}
 }
+@media screen and (max-width: 770px){
+	.modal-panel input[type="image"] {
+		display: block;
+	  width: 60%;
+	  height: auto;
+	  margin: auto;
+	}
+}
 
 @media screen and (max-width: 745px){
 	#practice-btns-container {
@@ -1396,6 +1404,12 @@ button.accordion.active:after {
 	#search-case-list a {
 		width: 100%;
 		margin-left: 0;
+	}
+	.modal-panel input[type="image"] {
+		display: block;
+	  width: 90%;
+	  height: auto;
+	  margin: auto;
 	}
 }
 @media screen and (max-width: 610px){
@@ -1555,6 +1569,12 @@ button.accordion.active:after {
   }
 	#street-light-img {
 		right: 4px;
+	}
+	.modal-panel input[type="image"] {
+		display: block;
+	  width: 100%;
+	  height: auto;
+	  margin: auto;
 	}
 }
 @media screen and (max-width: 350px){
