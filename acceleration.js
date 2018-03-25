@@ -1,3 +1,64 @@
+$(window).on('beforeunload', function() {
+   $(window).scrollTop(0);
+});
+
+$(document).ready(function(){
+  $("#conversion-btn").click(function(){
+    $("html, body").animate({
+      scrollTop: $("#conversion-container").offset().top
+    }, "slow")
+  });
+
+  $("#vert-conversion-btn").click(function(){
+    $("html, body").animate({
+      scrollTop: $("#conversion-container").offset().top
+    }, "slow")
+  });
+
+  $("#examples-btn").click(function(){
+    $("html, body").animate({
+      scrollTop: $("#practice-btns-container").offset().top
+    }, "slow")
+  });
+
+  $("#vert-examples-btn").click(function(){
+    $("html, body").animate({
+      scrollTop: $("#practice-btns-container").offset().top
+    }, "slow")
+  });
+
+  $("#go-up-btn").click(function(){
+    $("html, body").animate({
+      scrollTop: 0
+    }, "slow")
+  });
+
+})
+
+window.addEventListener("resize", function(){
+  if(window.innerWidth < 992){
+    $(window).scroll(function(){
+      if($(window).scrollTop() > 600){
+        $("#go-up-container").css("opacity", "1");
+      } else {
+        $("#go-up-container").css("opacity", "0");
+      }
+    })
+  }
+})
+
+window.addEventListener("load", function(){
+  if(window.innerWidth < 992){
+    $(window).scroll(function(){
+      if($(window).scrollTop() > 600){
+        $("#go-up-container").css("opacity", "1");
+      } else {
+        $("#go-up-container").css("opacity", "0");
+      }
+    })
+  }
+})
+
 var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
 verticalSearchBtn = document.getElementById("vertical-search-btn"),
 searchSection = document.getElementById("search-section"),
@@ -16,6 +77,7 @@ function openSearchSection(){
 	if(!searchSection.classList.contains("active-search")){
 		searchSection.classList.toggle("active-search");
 		mainContent.style.marginTop = "30px";
+		searchBar.focus();
 	} else {
 		searchSection.classList.remove("active-search");
 		caseList.classList.remove("show");
@@ -452,7 +514,6 @@ window.onload = function(){
 
   /*--- Move Third Page Img Captions ---*/
   var downArrows = document.getElementsByClassName("glyphicon-chevron-down");
-
   for(let i = 0; i < downArrows.length; i++){
     downArrows[i].addEventListener("click", function(){
       this.classList.toggle("flip");
