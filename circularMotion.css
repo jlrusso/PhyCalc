@@ -755,29 +755,88 @@ input[type="radio"] {
 
 
 /*--- Practice btn ---*/
+#practice-btns-container {
+	width: 65%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 10px;
+}
 .practice-btn {
-  background-color: #F1C40F;
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  padding:7px 20px;
-  transform: translateY(0px);
-  border-radius: 8px;
-  font-size: 150%;
-  outline: none;
-  transition: 0.3s;
+	width: 100%;
+	background-color: transparent;
+	padding:7px 20px;
+	border: 2px solid var(--main-black-color);
+	transform: translateY(0px);
+	border-radius: 4px;
+	font-size: 1.6rem;
+	font-weight: bold;
+	outline: none;
+	transition: 0.3s;
 }
-.practice-btn:not(:last-child){
-  margin-right: 10px;
-}
-.practice-btn:active  {
-  transform:translateY(4px);
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  outline: none !important;
+.practice-btn:hover {
+	background-color: var(--main-yellow-color);
 }
 .practice-btn:focus {
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  outline: none;
+	outline: none;
 }
 /*--- End of Practice btn ---*/
+
+/*--- Start of Conversion Section ---*/
+  #conversion-container {
+    position: relative;
+    width: 550px;
+    height: auto;
+    margin: 20px auto 0;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #333;
+    text-align: center;
+  }
+  #conversion-heading {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: var(--main-yellow-color);
+    font-size: 1.7rem;
+  }
+  .input-option-input {
+    width: 100%;
+    display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 7px;
+  }
+  #unit-converter {
+    width: 100%;
+		max-height: 200px;
+    padding: 8px;
+    border: 0;
+    background-color: var(--main-yellow-color);
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    outline: none;
+  }
+
+  .input-option-input input {
+    width: 100%;
+    padding: 9px;
+    border-radius: 4px;
+    border: 2px solid var(--main-yellow-color);
+    color: var(--main-yellow-color);
+    background-color: #333;
+    font-size: 1.4rem;
+    outline: none;
+  }
+	#unit-converter {
+		background-color: var(--main-yellow-color);
+		border-radius: 4px;
+	}
+/*--- End of Conversion Section ---*/
+
 
 /*--- Modal ---*/
 .modal-header h4 {
@@ -882,6 +941,29 @@ button.accordion.active:after {
   background-color:#F1C40F;
   color: #333;
 }
+
+/*--- Start of Top of Page Btn ---*/
+#go-up-container {
+	opacity: 0;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	transition: 0.4s;
+	z-index: -1;
+}
+#go-up-container button {
+	background-color: var(--main-black-color);
+	border: 0;
+	border-radius: 4px;
+	color: var(--main-yellow-color);
+	padding: 10px 15px;
+	font-size: 1.5rem;
+}
+#go-up-container button:focus {
+	outline: none !important;
+}
+/*--- End of Top of Page Btn ---*/
+
 @media screen and (max-width: 1200px){
   .solve-selection,
 	.unit-selection,
@@ -978,11 +1060,21 @@ button.accordion.active:after {
 		font-size: 2rem;
     padding: 7px 5px 0 5px;
 	}
+  #practice-btns-container {
+		width: 85%;
+    margin: auto;
+	}
 }
 @media screen and (max-width: 745px){
 	#outer-image-container,
 	#solo-image img {
 		height: 178px;
+	}
+  #practice-btns-container {
+		width: 95%;
+	}
+	.practice-btn {
+		font-size: 1.4rem;
 	}
 }
 @media screen and (max-width: 700px){
@@ -997,6 +1089,9 @@ button.accordion.active:after {
     float: none;
 		margin: auto;
   }
+  #conversion-container {
+		margin-bottom: 20px;
+	}
 }
 @media screen and (max-width: 650px){
   #search-form {
@@ -1010,6 +1105,21 @@ button.accordion.active:after {
   #outer-image-container,
 	#solo-image img {
 		height: 155px;
+	}
+}
+@media screen and (max-width: 610px){
+  #practice-btns-container {
+		display: block;
+		margin-bottom: 10px;
+	}
+	.practice-btn {
+		width: 90%;
+		margin: 0 auto 10px;
+		font-size: 1.7rem;
+	}
+  #conversion-container {
+		width: 90%;
+		margin: auto;
 	}
 }
 @media screen and (max-width: 550px){
@@ -1030,6 +1140,14 @@ button.accordion.active:after {
 	#outer-image-container,
 	#solo-image > img {
 		height: 120px;
+	}
+  .input-option-input {
+		display: block;
+	}
+  .input-option-input input,
+	#unit-converter {
+		width: 100%;
+		margin: 0 0 7px 0;
 	}
 }
 @media screen and (max-width: 500px){
