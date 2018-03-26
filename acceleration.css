@@ -447,6 +447,9 @@ a.next-page:hover .glyphicon-chevron-right {
   -moz-user-select:none;
   -ms-user-select:none;
 }
+.radio-btn:last-child {
+	margin-right: 5px;
+}
 .radio-btn input {
   display:none;
 }
@@ -831,12 +834,10 @@ input[type="radio"] {
 	}
 /*--- End of Conversion Section ---*/
 
-
-
-
-
-
 /*--- Modal ---*/
+.modal {
+	background-color: rgba(0,0,0,0.7) !important;
+}
 .modal-header h4 {
   max-width: 200px;
   margin:auto;
@@ -913,7 +914,8 @@ button.accordion.active:after {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-.modal-panel img {
+.modal-panel input[type="image"] {
+	display: block;
   width: 70%;
   height: 50%;
   margin: auto;
@@ -939,6 +941,28 @@ button.accordion.active:after {
 }
 
 /*--- Calculator Modal ---*/
+.modal-content {
+	width: 535px;
+	margin: auto;
+	border-radius: 4px;
+}
+#calc-modal-footer {
+	display: none;
+}
+.close-modal-btn {
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 45px;
+	transform: translateX(-50%);
+}
+.close-modal-btn .glyphicon-remove {
+	border: 2px solid var(--main-yellow-color);
+	font-size: 3rem;
+	font-weight: normal;
+	text-align: center;
+	color: var(--main-yellow-color);
+}
 .calculator-whole {
 	max-width: 500px;
 	margin: auto;
@@ -955,7 +979,7 @@ button.accordion.active:after {
 	background: #333;
 	outline-color: var(--main-yellow-color);
 	color: var(--main-yellow-color);
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 .calculator-whole .row {
     width: 100%;
@@ -1021,7 +1045,7 @@ button.accordion.active:after {
 	height: 40px;
 	border: 1px solid var(--main-yellow-color);
 	border-radius: 5px;
-	padding: 4.5px 4.5px 4.5px 20px;
+	padding: 4.5px 4.5px 4.5px 10px;
 	background-color: #333;
 	outline: none;
 	font-size: 1.5rem;
@@ -1029,7 +1053,7 @@ button.accordion.active:after {
 }
 
 #calculator-tooltip {
-	opacity: 0;
+	display: none;
 	text-align: center;
 	transition: 0.3s;
 	width: 200px;
@@ -1048,6 +1072,7 @@ button.accordion.active:after {
 	bottom: 20px;
 	right: 20px;
 	transition: 0.4s;
+	z-index: -1;
 }
 #go-up-container button {
 	background-color: var(--main-black-color);
@@ -1253,6 +1278,9 @@ button.accordion.active:after {
 }
 
 @media screen and (max-width: 550px){
+	.modal-content {
+		width: 100%;
+	}
 	.horizontal-nav {
 		display: none;
 	}
@@ -1305,21 +1333,10 @@ button.accordion.active:after {
 		margin-top: 15px;
 	}
 	#calc-modal-footer {
-		display: none;
+		display: block;
 	}
 	.close-modal-btn {
-		display: block;
-		position: absolute;
-		left: 50%;
-		bottom: 45px;
-		transform: translateX(-50%);
-	}
-	.close-modal-btn .glyphicon-remove {
-		border: 2px solid var(--main-yellow-color);
-		font-size: 3rem;
-		font-weight: normal;
-		text-align: center;
-		color: var(--main-yellow-color);
+		display: none;
 	}
 	.img-caption p {
 		font-size: 1.5rem;
@@ -1378,6 +1395,10 @@ button.accordion.active:after {
 	  width: 100%;
 	  height: auto;
 	  margin: auto;
+	}
+	.calculator-whole button,
+	#sig-fig-field {
+		height: 35px;
 	}
 }
 @media screen and (max-width: 350px){
