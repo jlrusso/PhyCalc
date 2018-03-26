@@ -8,58 +8,35 @@ $(document).ready(function(){
       scrollTop: $("#conversion-container").offset().top
     }, "slow")
   });
-
   $("#vert-conversion-btn").click(function(){
     $("html, body").animate({
       scrollTop: $("#conversion-container").offset().top
     }, "slow")
   });
-
   $("#examples-btn").click(function(){
     $("html, body").animate({
       scrollTop: $("#practice-btns-container").offset().top
     }, "slow")
   });
-
   $("#vert-examples-btn").click(function(){
     $("html, body").animate({
       scrollTop: $("#practice-btns-container").offset().top
     }, "slow")
   });
-
 })
 
-
-/*--- Open and Close Modal Panels ---*/
-var acc = document.getElementsByClassName("accordion");
-var i;
-for (i = 0; i < acc.length; i++) {
-  	acc[i].onclick = function() {
-    	this.classList.toggle("active");
-    	var panel = this.nextElementSibling;
-        if (panel.style.maxHeight){
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    }
-}
-/*--- End of Modal Accordions ---*/
-
-
 var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
-verticalSearchBtn = document.getElementById("vertical-search-btn"),
-searchSection = document.getElementById("search-section"),
-searchBar = document.getElementById("search-bar"),
-closeSearchBtn = document.getElementById("close-search-btn"),
-caseList = document.getElementById("search-case-list"),
-mainContent = document.getElementById("main-content");
+    verticalSearchBtn = document.getElementById("vertical-search-btn"),
+    searchSection = document.getElementById("search-section"),
+    searchBar = document.getElementById("search-bar"),
+    closeSearchBtn = document.getElementById("close-search-btn"),
+    caseList = document.getElementById("search-case-list"),
+    mainContent = document.getElementById("main-content");
 
 horizontalSearchBtn.addEventListener("click", openSearchSection);
 verticalSearchBtn.addEventListener("click", openSearchSection);
 searchBar.addEventListener("input", showList);
 closeSearchBtn.addEventListener("click", closeSearchSection);
-
 
 function openSearchSection(){
 	if(!searchSection.classList.contains("active-search")){
@@ -113,115 +90,113 @@ function showAnchors(){
 		}
 	}
 }
-	/*--- Toggle Hamburger Menu ---*/
-	var icon = document.getElementById("icon");
-	var clickBox = document.getElementById("click-box");
-	var verticalNav = document.getElementsByClassName("vertical-nav")[0];
-	clickBox.addEventListener("click", toggleVerticalNav, false);
+/*--- Toggle Hamburger Menu ---*/
+var icon = document.getElementById("icon");
+var clickBox = document.getElementById("click-box");
+var verticalNav = document.getElementsByClassName("vertical-nav")[0];
+clickBox.addEventListener("click", toggleVerticalNav, false);
 
-	function toggleVerticalNav(e){
-		icon.classList.toggle("active");
-		verticalNav.classList.toggle("show-vertical-nav");
-	}
+function toggleVerticalNav(e){
+	icon.classList.toggle("active");
+	verticalNav.classList.toggle("show-vertical-nav");
+}
 
-	window.onclick = function(e){
-		if(!e.target.matches("#click-box")){
-			if(icon.classList.contains("active")){
-				icon.classList.remove("active");
-				verticalNav.classList.remove("show-vertical-nav");
-			}
+window.onclick = function(e){
+	if(!e.target.matches("#click-box")){
+		if(icon.classList.contains("active")){
+			icon.classList.remove("active");
+			verticalNav.classList.remove("show-vertical-nav");
 		}
 	}
+}
+
+/*--- Topic Calculators ---*/
+var solveBtns = document.getElementsByClassName("solve-btn"),
+	solveAngularVelocity = document.getElementById("angular-velocity-radio-btn"),
+	solveRadius = document.getElementById("radius-radio-btn"),
+	solvePeriod = document.getElementById("period-radio-btn");
+
+var unitBtns = document.getElementsByClassName("unit-btn"),
+	feetBtn = document.getElementById("feet-radio-btn"),
+	meterBtn = document.getElementById("meter-radio-btn"),
+	mileBtn = document.getElementById("mile-radio-btn"),
+	kilometerBtn = document.getElementById("kilometer-radio-btn"),
+	revolutionBtn = document.getElementById("revolution-radio-btn"),
+	chosenUnit;
+
+var timeBtns = document.getElementsByClassName("time-btn"),
+	secondsBtn = document.getElementById("seconds-radio-btn"),
+	minutesBtn = document.getElementById("minutes-radio-btn"),
+	hoursBtn = document.getElementById("hours-radio-btn"),
+	daysBtn = document.getElementById("days-radio-btn"),
+	chosenTimeUnit;
 
 
+var inputFields = document.getElementsByClassName("input-field"),
+	angularVelocityField = document.getElementById("angular-velocity-field"),
+	radiusField = document.getElementById("radius-field"),
+	periodField = document.getElementById("period-field"),
+	sigFigsField = document.getElementById("sig-figs-field"),
+	omegaSymbol = document.getElementById("omega-symbol");
 
-	/*--- Topic Calculators ---*/
-	var solveBtns = document.getElementsByClassName("solve-btn"),
-		solveAngularVelocity = document.getElementById("angular-velocity-radio-btn"),
-		solveRadius = document.getElementById("radius-radio-btn"),
-		solvePeriod = document.getElementById("period-radio-btn");
+var calculateBtn = document.getElementById("calculate-btn"),
+	clearBtn = document.getElementById("clear-btn");
 
-	var unitBtns = document.getElementsByClassName("unit-btn"),
-		feetBtn = document.getElementById("feet-radio-btn"),
-		meterBtn = document.getElementById("meter-radio-btn"),
-		mileBtn = document.getElementById("mile-radio-btn"),
-		kilometerBtn = document.getElementById("kilometer-radio-btn"),
-		revolutionBtn = document.getElementById("revolution-radio-btn"),
-		chosenUnit;
+var innerImageContainer = document.getElementById("inner-image-container"),
+	slides = document.getElementsByClassName("slide"),
+	currentSlideIndex = 0,
+	width = 100,
+	prevBtn = document.getElementById("prev-slide-btn"),
+	nextBtn = document.getElementById("next-slide-btn"),
+	slideBars = document.getElementsByClassName("slide-bar");
 
-	var timeBtns = document.getElementsByClassName("time-btn"),
-		secondsBtn = document.getElementById("seconds-radio-btn"),
-		minutesBtn = document.getElementById("minutes-radio-btn"),
-		hoursBtn = document.getElementById("hours-radio-btn"),
-		daysBtn = document.getElementById("days-radio-btn"),
-		chosenTimeUnit;
+calculateBtn.addEventListener("click", calculateFunc);
+clearBtn.addEventListener("click", clearFunc);
 
-
-	var inputFields = document.getElementsByClassName("input-field"),
-		angularVelocityField = document.getElementById("angular-velocity-field"),
-		radiusField = document.getElementById("radius-field"),
-		periodField = document.getElementById("period-field"),
-		sigFigsField = document.getElementById("sig-figs-field"),
-		omegaSymbol = document.getElementById("omega-symbol");
-
-	var calculateBtn = document.getElementById("calculate-btn"),
-		clearBtn = document.getElementById("clear-btn");
-
-	var innerImageContainer = document.getElementById("inner-image-container"),
-		slides = document.getElementsByClassName("slide"),
-		currentSlideIndex = 0,
-		width = 100,
-		prevBtn = document.getElementById("prev-slide-btn"),
-		nextBtn = document.getElementById("next-slide-btn"),
-		slideBars = document.getElementsByClassName("slide-bar");
-
-	calculateBtn.addEventListener("click", calculateFunc);
-	clearBtn.addEventListener("click", clearFunc);
-
-	prevBtn.addEventListener("click", goToPrevSlide);
-	nextBtn.addEventListener("click", goToNextSlide);
+prevBtn.addEventListener("click", goToPrevSlide);
+nextBtn.addEventListener("click", goToNextSlide);
 
 
-	for(let i = 0; i < solveBtns.length; i++){
-		solveBtns[i].addEventListener("click", solveForBtnFunction);
+for(let i = 0; i < solveBtns.length; i++){
+	solveBtns[i].addEventListener("click", solveForBtnFunction);
+}
+
+function solveForBtnFunction(){
+	for(let i = 0; i < unitBtns.length; i++){
+		if(unitBtns[i].disabled){
+			unitBtns[i].disabled = false;
+		}
+		if(unitBtns[i].checked){
+			unitBtns[i].checked = false;
+		}
 	}
+	for(let i = 0; i < timeBtns.length; i++){
+		if(timeBtns[i].checked){
+			timeBtns[i].checked = false;
+		}
+	}
+	secondsBtn.checked = true;
 
-	function solveForBtnFunction(){
-		for(let i = 0; i < unitBtns.length; i++){
-			if(unitBtns[i].disabled){
-				unitBtns[i].disabled = false;
+	function resetInputFields(){
+		angularVelocityField.placeholder = "Angular Velocity " + omegaSymbol.textContent;
+		radiusField.placeholder = "Radius (r)";
+		periodField.placeholder = "Period (T)";
+		sigFigsField.placeholder = "# of sigfigs (optional)";
+
+		for(let i = 0; i < inputFields.length; i++){
+			inputFields[i].value = "";
+			if(inputFields[i].disabled){
+				inputFields[i].disabled = false;
 			}
-			if(unitBtns[i].checked){
-				unitBtns[i].checked = false;
+			if(inputFields[i].classList.contains("yellow-outline")){
+				inputFields[i].classList.remove("yellow-outline");
+			}
+			if(inputFields[i].type === "text"){
+				inputFields[i].type = "number";
 			}
 		}
-		for(let i = 0; i < timeBtns.length; i++){
-			if(timeBtns[i].checked){
-				timeBtns[i].checked = false;
-			}
-		}
-		secondsBtn.checked = true;
-
-		function resetInputFields(){
-			angularVelocityField.placeholder = "Angular Velocity " + omegaSymbol.textContent;
-			radiusField.placeholder = "Radius (r)";
-			periodField.placeholder = "Period (T)";
-			sigFigsField.placeholder = "# of sigfigs (optional)";
-
-			for(let i = 0; i < inputFields.length; i++){
-				inputFields[i].value = "";
-				if(inputFields[i].disabled){
-					inputFields[i].disabled = false;
-				}
-				if(inputFields[i].classList.contains("yellow-outline")){
-					inputFields[i].classList.remove("yellow-outline");
-				}
-				if(inputFields[i].type === "text"){
-					inputFields[i].type = "number";
-				}
-			}
-		}
-		resetInputFields();
+	}
+	resetInputFields();
 
 		switch(true){
 			case (solveAngularVelocity.checked):
@@ -249,12 +224,10 @@ function showAnchors(){
 				radiusField.classList.add("yellow-outline");
 				currentSlideIndex = 2;
 				switchToSlide();
-
 				secondsBtn.checked = false;
 			break;
 		}
 	}
-
 
 	function assignLengthUnit(){
 		for(let i = 0; i < unitBtns.length; i++){
@@ -266,9 +239,6 @@ function showAnchors(){
 		}
 	}
 	assignLengthUnit();
-
-
-
 	function assignTimeUnit(){
 		for(let i = 0; i < timeBtns.length; i++){
 			timeBtns[i].addEventListener("click", function(){
@@ -279,7 +249,6 @@ function showAnchors(){
 		}
 	}
 	assignTimeUnit();
-
 
 	function calculateFunc(){
 		switch(true){
@@ -366,11 +335,6 @@ function showAnchors(){
 		switchToSlide();
 	}
 
-
-
-	/*--- End of Topic Calculators ---*/
-
-
 	/*--- Move Equation Images ---*/
 	for(let i = 0; i < slideBars.length; i++){
 		slideBars[i].addEventListener("click", function(){
@@ -405,3 +369,17 @@ function showAnchors(){
 		}
 		switchToSlide();
 	}
+
+  /*--- Example Problems Modals ---*/
+  var exampleAccordions = document.getElementsByClassName("accordion");
+  for (let i = 0; i < exampleAccordions.length; i++) {
+    	exampleAccordions[i].onclick = function() {
+      	this.classList.toggle("active");
+      	var innerPanel = this.nextElementSibling;
+          if (innerPanel.style.maxHeight){
+              innerPanel.style.maxHeight = null;
+          } else {
+              innerPanel.style.maxHeight = innerPanel.scrollHeight + "px";
+          }
+      }
+  }
