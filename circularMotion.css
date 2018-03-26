@@ -364,49 +364,38 @@ nav {
 }
 .pager a {
   position: relative;
-  color: #F1C40F;
+  color: var(--main-black-color);
   font-weight: bold;
   letter-spacing: 0.5px;
-  padding: 8px !important;
-  background-color:#333 !important;
-  border-radius: 5px !important;
-  -webkit-user-select: none;
+  background-color: transparent !important;
+	border: 2px solid var(--main-black-color) !important;
+	border-radius: 4px !important;
   transition: 0.4s;
 }
-
-a.prev-page:before {
-  content: "\276E";
-  position: absolute;
-  top: 21px;
-  left: 10%;
-  transform: translateY(-60%);
-  font-size: 140%;
-  opacity: 0;
-  transition: 0.5s;
+.prev-page-btn {
+	padding-left: 0px !important;
 }
-a.prev-page:hover {
-  padding-left: 25px !important;
+.next-page-btn {
+	padding-right: 0px !important;
 }
-a.prev-page:hover:before {
+a .glyphicon-chevron-left,
+a .glyphicon-chevron-right {
+	opacity: 0;
+	transition: 0.4s;
+}
+a.prev-page-btn:hover {
+  background-color: var(--main-yellow-color) !important;
+}
+a.prev-page-btn:hover .glyphicon-chevron-left {
+	padding: 0 10px 0 5px;
   opacity: 1;
-  left: 5px;
 }
-a.next-page:after{
-  content: "\276F";
-  position: absolute;
-  top: 19px;
-  right: 10%;
-  transform: translateY(-55%);
-  opacity: 0;
-  font-size: 140%;
-  transition: 0.5s;
+a.next-page-btn:hover {
+	background-color: var(--main-yellow-color) !important;
 }
-a.next-page:hover {
-  padding-right: 25px !important;
-}
-a.next-page:hover:after {
-  right: 6px;
-  opacity: 1;
+a.next-page-btn:hover .glyphicon-chevron-right {
+	padding: 0 5px 0 10px;
+	opacity: 1;
 }
 /*--- Btns to Change Page :End ---*/
 
@@ -901,6 +890,19 @@ button.accordion.active:after {
 @media screen and (max-width: 1200px){
 
 }
+@media screen and (max-width: 700px){
+  .section-heading {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .pages-nav {
+    width: 85%;
+		text-align: center;
+    float: none;
+		margin: auto;
+  }
+}
 @media screen and (max-width: 650px){
   #search-form {
     margin-left: 0;
@@ -917,6 +919,16 @@ button.accordion.active:after {
 	}
   #icon {
     display: block;
+  }
+}
+@media screen and (max-width: 450px){
+  .prev-page-btn,
+  .next-page-btn {
+    width: 100%;
+    display: block;
+  }
+  .prev-page-btn {
+    margin-bottom: 10px;
   }
 }
 @media screen and (max-width: 360px){
