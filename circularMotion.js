@@ -424,3 +424,34 @@ function solveForBtnFunction(){
           }
       }
   }
+
+  /*--- Close all accordion panels on "X" btn click or Modal Window click ---*/
+  var modalCloseBtns = document.getElementsByClassName("glyphicon-remove");
+  var modalPanels = document.getElementsByClassName("modal-panel");
+  for(let i = 0; i < modalCloseBtns.length; i++){
+    modalCloseBtns[i].addEventListener("click", function(){
+      for(let i = 0; i < modalPanels.length; i++){
+        if(modalPanels[i].style.maxHeight != null){
+          modalPanels[i].style.maxHeight = null;
+        }
+      }
+      var $modalContent = $(this).parents(".modal-content");
+      var $accordions = $modalContent.find(".accordion");
+      $accordions.removeClass("active");
+    })
+  }
+  $(".example-modal").click(function(e){
+    var $closeBtn = $(this).find(".glyphicon-remove");
+    if(e.target.matches(".example-modal")){
+      $closeBtn.click();
+    }
+  })
+  /*--- End of Closing all Accordion and Panels ---*/
+
+  var closeModalBtns = document.querySelectorAll(".close-modal-btn");
+  closeModalBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var $modalParent = $(this).parents(".modal");
+      $modalParent.click();
+    })
+  })
