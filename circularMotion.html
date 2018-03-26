@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PhyCalc | Physics Calculators</title>
-	<!-- Latest compiled and minified CSS -->
+	<title>PhyCalc | Circular Motion</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<!-- jQuery library -->
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- <script type="text/javascript" src="../js/vectorDisplacement.js"></script> -->
-	<link rel="stylesheet" href="../css/circularMotion.css">
+	<link rel="stylesheet" href="circularMotion.css">
 </head>
 <body>
+
 	<nav class="clearfix">
-			<div class="nav-logo animated fadeInRight"><a href="../html/phyCalc.html">PhyCalc</a></div>
-			<div class="navigation animated fadeInLeft">
-				<ul class="horizontal-nav">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
-					<li><a href="#">Conversions</a></li>
-					<li><a id="open-search-btn"><i class="glyphicon glyphicon-search"></i></a></li>
-				</ul>
-				<div class="animated fadeInLeft" id="icon">					
-					<div id="click-box"></div>
-					<span id="hamburger"></span>
-					<div class="vertical-nav">
-						<ul>
-							<li><a href="../html/phyCalc.html">Home</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
-							<li><a href="#">Conversions</a></li>
-						</ul>
-					</div>
+		<div class="nav-logo animated fadeInRight"><a href="phyCalc.php">PhyCalc</a></div>
+		<div class="navigation animated fadeInLeft">
+			<ul class="horizontal-nav">
+				<li><a href="#" id="examples-btn">Examples</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
+				<li><a href="#" id="conversion-btn">Conversions</a></li>
+				<li><a href="#" id="horizontal-search-btn"><i class="glyphicon glyphicon-search"></i></a></li>
+			</ul>
+			<div class="animated fadeInLeft" id="icon">
+				<div id="vertical-search-btn"><i class="glyphicon glyphicon-search"></i></div>
+				<div id="click-box"></div>
+				<span class="hamburger"></span>
+				<div class="vertical-nav">
+					<ul>
+						<li><a data-toggle="modal" data-target="#calculator-modal">Calculator</a></li>
+						<li><a href="#" id="vert-conversion-btn">Conversions</a></li>
+						<li><a href="#" id="vert-examples-btn">Examples</a></li>
+					</ul>
 				</div>
 			</div>
-			<div id="open-search-btn-two"><i class="glyphicon glyphicon-search"></i></div>
-		</nav>
+		</div>
+	</nav>
 
 		<div id="search-section">
-			<section id="search-bar-btn">
-				<input type="text" id="search-bar" placeholder="search.."/>
+			<section id="search-form">
+				<input type="text" id="search-bar" placeholder="Search"/>
 				<div id="search-btn"><i class="glyphicon glyphicon-search"></i></div>
 			</section>
 			<div id="close-search-btn">
@@ -60,21 +54,21 @@
 				<a href="../html/velocity.html">time interval</a>
 				<a href="../html/velocity.html">displacement for velocity</a>
 				<a href="../html/velocity.html">acceleration</a>
-			</div>		
+			</div>
 		</div>
 
-	<section class="main-content">
+	<section id="main-content">
 		<div class="container">
 
 			<div class="row">
 				<div class="col-sm-12 text-center">
 					<div class="pages-nav animated bounceInDown">
 						<ul class="pager">
-							<li><a href="../html/kinematicsBigFive.html" class="prev-page">Previous: Kinematics Big Five</a></li>
-							<li><a href="../html/oneDimensionalforces.html" class="next-page">Next: 1D Forces</a></li>
+							<li><a href="kinematicsBigFive.html" class="prev-page">Previous: Kinematics Big Five</a></li>
+							<li><a href="oneDimensionalforces.html" class="next-page">Next: Forces</a></li>
 						</ul>
 					</div>
-					<h2 class="animated bounceInDown section-heading">Circular Motion</h2>					
+					<h2 class="animated bounceInDown section-heading">Circular Motion</h2>
 				</div>
 			</div>
 			<div class="row animated fadeInRight">
@@ -82,10 +76,10 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<div class="panel-title">
-								<div class="solve-for-selection">	
+								<div class="solve-selection">
 									<form>
 										<span class="badge">1</span>
-										<span><b>Solve For:&nbsp;</b></span>
+										<span><b>Solve:&nbsp;</b></span>
 										<label class="radio-btn">
 										 	<input type="radio" class="solve-btn" name="radio-one" id="angular-velocity-radio-btn">
 										    <span class="checkmark">Angular V (&omega;)</span> |
@@ -100,7 +94,7 @@
 										</label>
 									</form>
 								</div>
-								<div class="unit-selection">	
+								<div class="unit-selection">
 									<form>
 										<span class="badge">2</span>
 										<span><b>Units:&nbsp;</b></span>
@@ -126,7 +120,7 @@
 										</label>
 									</form>
 								</div>
-								<div class="time-selection">	
+								<div class="time-selection">
 									<form>
 										<span class="badge">3</span>
 										<span><b>Time:&nbsp;</b></span>
@@ -153,31 +147,31 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-4">
-									<h4 class="text-center"><span class="badge">4</span>&nbsp;<strong>Calculate</strong></h4>
+									<h4 class="text-center"><span class="badge">4</span>&nbsp;<strong>Values</strong></h4>
 									<form class="form-group">
 									<span id="omega-symbol">&omega;</span>
 									<input class="form-control input-field" type="number" id="angular-velocity-field" placeholder="Angular Velocity (&omega;)">
 									<input class="form-control input-field" type="number" id="period-field" placeholder="Period (T)">
-									<input class="form-control input-field" type="number" id="radius-field" placeholder="Radius (r)">		
-									<input class="form-control input-field" type="number" id="sig-figs-field" placeholder="# of sigfigs (optional)">											
+									<input class="form-control input-field" type="number" id="radius-field" placeholder="Radius (r)">
+									<input class="form-control input-field" type="number" id="sig-figs-field" placeholder="# of sigfigs (optional)">
 									<div class="form-divider"></div>
 									<div class="calc-and-clear">
-										<button type="button" class="btn" id="calculate-btn"><b>=</b></button>
+										<button type="button" class="btn" id="calculate-btn"><b>Calculate</b></button>
 										<button type="button" class="btn" id="clear-btn"><b>Clear</b></button>
 									</div>
 									</form>
 								</div>
 								<div class="col-sm-8 text-center">
-									<h4><strong>Equation</strong></h4>
+									<h4 id="equation-heading"><strong>Equation</strong></h4>
+									<div id="slide-arrows-container">
+										<div class="slide-arrow-btn" id="prev-slide-btn">&#10094;</div>
+										<div class="slide-arrow-btn" id="next-slide-btn">&#10095;</div>
+									</div>
 									<div id="outer-image-container">
 										<div id="inner-image-container">
 											<img src="../img/circular-equation-one.png" class="img-responsive slide" alt="Accl Equation 2"/>
 											<img src="../img/circular-equation-two.png" class="img-responsive slide" alt="Accl Equation 3"/>
 											<img src="../img/circular-equation-three.png" class="img-responsive slide" alt="Accl Equation 3"/>
-										</div>
-										<div id="slide-arrow-container">
-											<div class="slide-arrow-btn" id="prev-slide-btn">&#10094;</div>
-											<div class="slide-arrow-btn" id="next-slide-btn">&#10095;</div>
 										</div>
 										<div id="slide-bar-indicators">
 											<div class="slide-bar"></div>
@@ -187,7 +181,7 @@
 									</div>
 									<div id="solo-image">
 										<img src="../img/circular-motion-solo-pic.png" class="img-responsive" alt="Acceleration Graph"/>
-									</div>	
+									</div>
 								</div>
 							</div>
 						</div>
@@ -196,7 +190,7 @@
 				<div class="col-sm-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="panel-title text-center"><h4><b>Background:</b></h4></div>
+							<div class="panel-title text-center"><h4 id="background-heading"><b>Background:</b></h4></div>
 						</div>
 						<div class="panel-body module-section">
 							<div class="module-box">
@@ -262,13 +256,49 @@
 
 			<div class="line-divider"></div>
 
-			<div class="row">
-				<div class="col-sm-12 text-center">
-					<button type="button" class="btn practice-btn" data-toggle="modal" data-target="#my-modal-one">Practice &amp; Solution 1</button>
-					<button type="button" class="btn practice-btn" data-toggle="modal" data-target="#my-modal-two">Practice &amp; Solution 2</button>
-					<button type="button" class="btn practice-btn" data-toggle="modal" data-target="#my-modal-three">Practice &amp; Solution 3</button>
+			<div class="row text-center">
+				<div class="text-center" id="practice-btns-container">
+					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-one">Example 1</button>
+					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-two">Example 2</button>
+					<button type="button" class="practice-btn" data-toggle="modal" data-target="#my-modal-three">Example 3</button>
 				</div>
 			</div>
+
+			<div id="conversion-container">
+				<div id="conversion-heading">Unit Conversions</div>
+				<div class="input-option-input">
+					<input type="number" id="unit-input-field" max="999" placeholder="(input)"/>
+					<select name="unitConversions" id="unit-converter">
+						<option value="mmToM" id="millimetersToCentimeters" selected>mm to cm</option>
+						<option value="mToMm" id="centimetersToMillimeters">cm to mm</option>
+						<option value="cmToM" id="centimetersToMeters">cm to m</option>
+						<option value="mtoCm" id="metersToCentimeters">m to cm</option>
+						<option value="mToKm" id="metersTokilometers">m to km</option>
+						<option value="kmToM" id="kilometersToMeters">km to m</option>
+						<option value="mToMi" id="metersToMiles">m to mi</option>
+						<option value="miToM" id="milesToMeters">mi to m</option>
+						<option value="mToMi" id="metersToMiles">m to mi</option>
+						<option value="kmToMi" id="kilometersToMiles">km to mi</option>
+						<option value="miToKm" id="milesToKilometers">mi to km</option>
+						<option value="ftToYds" id="feetToYards">ft to yds</option>
+						<option value="ydsToFt" id="yardsToFeet">yds to ft</option>
+						<option value="ftToM" id="feetToMeters">ft to m</option>
+						<option value="mToFt" id="metersToFeet">m to ft</option>
+						<option value="inToCm" id="inchesToCentimeters">in to cm</option>
+						<option value="cmToIn" id="centimetersToInches">cm to in</option>
+						<option value="mgToG" id="milligramsToGrams">mg to g</option>
+						<option value="gToMg" id="gramsToMilligrams">g to mg</option>
+						<option value="gToKg" id="gramsToKilograms">g to kg</option>
+						<option value="kgToG" id="kilogramsToGrams">kg to g</option>
+						<option value="lbsToKg" id="poundsToKilograms">lbs to kg</option>
+						<option value="kgToLbs" id="kilogramsToPounds">kg to lbs</option>
+						<option value="km2Tom2" id="kilometerSquaredToSquareMeters">km² to m²</option>
+						<option value="m2ToKm2" id="squareMetersToKilometersSquared">m² to km²</option>-->
+					</select>
+					<input type="text" id="unit-output-field" placeholder="(output)" disabled="disabled">
+				</div>
+			</div>
+
 
 
 			<div class="modal fade" id="my-modal-one" role="dialog">
@@ -279,13 +309,13 @@
 							<h4 class="text-center"><b>Angular Velocity</b></h4>
 						</div>
 						<div class="modal-body">
-							<button class="accordion first-accordion"><strong>Problem</strong></button>	
+							<button class="accordion first-accordion"><strong>Problem</strong></button>
 							<div class="modal-panel">
 								<div class="modal-text">
 									<p>
 									A CD that is 120 mm in diameter can spin in a CD player up to 480 rpm. When the CD is spinning at its max rate, what is the period? If a dust particle were to land on the CD, what would be the difference in velocity if the particle landed on the outside edge vs. 40 mm from the edge?
 									</p>
-								</div>										
+								</div>
 							</div>
 							<button class="accordion"><strong>Illustration</strong></button>
 							<div class="modal-panel">
@@ -341,7 +371,7 @@
 								<h4 class="text-center"><b>Frequency</b></h4>
 							</div>
 							<div class="modal-body">
-								<button class="accordion first-accordion"><strong>Problem</strong></button>	
+								<button class="accordion first-accordion"><strong>Problem</strong></button>
 								<div class="modal-panel">
 									<p>
 									The diameter of the London Eye ferris wheel is about 120 meters and completes one revolution in 30 minutes. What is the frequency in revolutions per second and how fast are the capsules at the edge going?
@@ -360,7 +390,7 @@
 											<li><b>Frequency Equation</b> : f = 1 / T</li>
 											<li><b>Angular Velocity Equation</b> : &omega; = (2&pi;r) / T</li>
 											<li><b>Diameter</b> : 120 meters, radius = 60 meters</li>
-											<li><b>One Revolution</b> : 1 rev / 30 minutes</li>		
+											<li><b>One Revolution</b> : 1 rev / 30 minutes</li>
 										</ul>
 									</p>
 								</div>
@@ -384,7 +414,7 @@
 
 
 
-			
+
 
 				<div class="modal fade" id="my-modal-three" role="dialog">
 					<div class="modal-dialog">
@@ -436,6 +466,163 @@
 				</div>
 
 
+				<!-- Calculator Modal -->
+						<div class="modal fade" id="calculator-modal" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="text-center">Calculator</h4>
+									</div>
+										<div class="modal-body">
+											<div class="calculator-whole">
+												<input type="text" id="input-field">
+												<div class="row">
+														<div class="col-half">
+																<div id="radians-container">
+																		<button type="button" id="radians-btn">Radians</button>
+																		<span id="radians-indicator"></span>
+																</div>
+														</div>
+														<div class="col-half">
+																<div id="degrees-container">
+																		<button type="button" id="degrees-btn">Degrees</button>
+																		<span id="degrees-indicator"></span>
+																</div>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" class="trig-btn">sin</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="trig-btn">cos</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="trig-btn">tan</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn pi-btn">&pi;</button>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" class="trig-btn">sin<sup>-1</sup></button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="trig-btn">cos<sup>-1</sup></button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="trig-btn">tan<sup>-1</sup></button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">/</button>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">7</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">8</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">9</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn"><b>*</b></button>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">4</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">5</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">6</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">-</button>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">1</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">2</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">3</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">+</button>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">0</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn"><b>.</b></button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" id="square-btn">x<sup>2</sup></button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" id="nth-power">x<sup>n</sup></button>
+														</div>
+												</div>
+												 <div class="row">
+														<div class="col-fourth">
+																<button type="button" id="square-root-btn">&radic;</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">(</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" class="reg-btn">)</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" id="ten-power">EE</button>
+														</div>
+												</div>
+												<div class="row">
+														<div class="col-fourth">
+																<button type="button" id="calculator-calculate-btn">=</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" id="calculator-clear-btn">Clear</button>
+														</div>
+														<div class="col-fourth">
+																<button type="button" id="delete-btn">Del</button>
+														</div>
+														<div class="col-fourth">
+																<input type="number" id="sig-fig-field" placeholder="#"/>
+														</div>
+												</div>
+										</div>
+												<div id="calculator-tooltip"></div>
+										</div>
+									<div class="modal-footer text-center" id="calc-modal-footer">
+										<button type="button" class="btn glyphicon glyphicon-remove" data-dismiss="modal"></button>
+									</div>
+								</div>
+							</div>
+							<div class="close-modal-btn">
+								<span class="btn glyphicon glyphicon-remove"></span>
+							</div>
+						</div>
+						<!-- End of Calculator Modal -->
+
+						<!-- Go back to top -->
+						<div id="go-up-container">
+							<button type="button" id="go-up-btn"><span class="glyphicon glyphicon-chevron-up"></span></button>
+						</div>
+
+
+
 		<div class="container">
 			<ul class="pager">
 				<li><a href="../html/kinematicsBigFive.html" class="prev-page">Previous: Kinematics Big Five</a></li>
@@ -445,7 +632,9 @@
 
 	</section>
 
-	<script type="text/javascript" src="../js/circularMotion.js"></script>
+	<script type="text/javascript" src="circularMotion.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="jsCalculator.js"></script>
 
 
 
