@@ -39,9 +39,9 @@ window.addEventListener("resize", function(){
   if(window.innerWidth < 992){
     $(window).scroll(function(){
       if($(window).scrollTop() > 600){
-        $("#go-up-container").css("opacity", "1");
+        $("#go-up-container").css({"opacity":"1", "z-index":"4"});
       } else {
-        $("#go-up-container").css("opacity", "0");
+        $("#go-up-container").css({"opacity":"0", "z-index":"-1"});
       }
     })
   }
@@ -51,9 +51,9 @@ window.addEventListener("load", function(){
   if(window.innerWidth < 992){
     $(window).scroll(function(){
       if($(window).scrollTop() > 600){
-        $("#go-up-container").css("opacity", "1");
+        $("#go-up-container").css({"opacity":"1", "z-index":"4"});
       } else {
-        $("#go-up-container").css("opacity", "0");
+        $("#go-up-container").css({"opacity":"0", "z-index":"-1"});
       }
     })
   }
@@ -278,6 +278,14 @@ window.onload = function(){
 		}
 	}
 }
+
+var closeModalBtns = document.querySelectorAll(".close-modal-btn");
+closeModalBtns.forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var $modalParent = $(this).parents(".modal");
+    $modalParent.click();
+  })
+})
 
 
 	/*--- Topic Calculators ---*/
