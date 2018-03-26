@@ -178,6 +178,18 @@ window.onclick = function(e){
 	}
 }
 
+/*--- Toggle Caption Show/Hide ---*/
+var imgCaptions = document.getElementsByClassName("img-caption");
+var thirdPageImgs = document.querySelectorAll(".third-page-pics > img");
+thirdPageImgs.forEach(function(image){
+	image.addEventListener("click", function(e){
+		var imgCaption = this.nextElementSibling;
+		if(!e.target.matches(".img-caption")){
+			imgCaption.classList.toggle("hide-caption");
+		}
+	})
+})
+
 
 /*--- Open and Close Modal Panels ---*/
 var acc = document.getElementsByClassName("accordion");
