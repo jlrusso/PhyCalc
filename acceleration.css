@@ -717,6 +717,7 @@ input[type="radio"] {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .img-caption {
+	opacity: 1;
   width: 85%;
   height: auto;
   position: absolute;
@@ -729,11 +730,15 @@ input[type="radio"] {
   color: #fff;
   text-align: center;
   border-radius: 4px;
+	transition: opacity 0.4s;
 }
 .img-caption a {
   text-decoration: none;
   color: var(--main-yellow-color);
   font-weight: bold;
+}
+.hide-caption {
+	opacity: 0;
 }
 /*--- END OF ABOVE ---*/
 
@@ -1229,9 +1234,6 @@ button.accordion.active:after {
 	}
 }
 @media screen and (max-width: 610px){
-	.img-caption p {
-		font-size: 1.4rem;
-	}
 	#practice-btns-container {
 		display: block;
 		margin-bottom: 10px;
@@ -1274,16 +1276,8 @@ button.accordion.active:after {
 	#solo-image > img {
 		height: 120px;
 	}
-	.module-section {
-		width: 100%;
-		padding-right: 15px;
-		padding-left: 15px;
-	}
-	#third-pics-row {
-		width: 100%;
-	}
-	.third-page-pics {
-		padding: 0;
+	.img-caption p {
+		font-size: 1.75rem;
 	}
 	.input-option-input {
 		display: block;
@@ -1324,6 +1318,9 @@ button.accordion.active:after {
 		text-align: center;
 		color: var(--main-yellow-color);
 	}
+	.img-caption p {
+		font-size: 1.5rem;
+	}
 }
 
 @media screen and (max-width: 450px){
@@ -1352,8 +1349,11 @@ button.accordion.active:after {
 	.prev-page {
 		margin-bottom: 10px;
 	}
-	.img-caption {
-		width: 92%;
+}
+@media screen and (max-width: 400px){
+	.module-front,
+	.module-back {
+		font-size: 1.5rem;
 	}
 }
 @media screen and (max-width: 385px){
@@ -1363,11 +1363,8 @@ button.accordion.active:after {
 		width: 88.5%;
 		margin-left: 2px;
 	}
-	.img-caption {
-		width: 95%;
-	}
 	.img-caption p {
-		font-size: 1.2rem;
+		font-size: 1.35rem;
 	}
   #bottom-pager li a {
     width: 100%;
@@ -1388,5 +1385,8 @@ button.accordion.active:after {
 	#outer-image-container,
 	#solo-image > img {
 		height: 90px;
+	}
+	.img-caption > p {
+		font-size: 1.25rem;
 	}
 }
