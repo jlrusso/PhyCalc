@@ -1212,6 +1212,9 @@ button.accordion.active:after {
 	.section-heading {
 		margin-bottom: 15px;
 	}
+	#conversion-container {
+		margin-bottom: 20px;
+	}
 }
 @media screen and (max-width: 650px){
 	#search-form {
@@ -1239,12 +1242,12 @@ button.accordion.active:after {
 		margin-bottom: 10px;
 	}
 	.practice-btn {
-		width: 95%;
+		width: 90%;
 		margin: 0 auto 10px;
 		font-size: 1.7rem;
 	}
 	#conversion-container {
-		width: 95.5%;
+		width: 90%;
 		margin: auto;
 	}
 }
