@@ -23,6 +23,35 @@ $(document).ready(function(){
       scrollTop: $("#practice-btns-container").offset().top
     }, "slow")
   });
+  $("#go-up-btn").click(function(){
+    $("html, body").animate({
+      scrollTop: 0
+    }, "slow")
+  });
+})
+
+window.addEventListener("resize", function(){
+  if(window.innerWidth < 992){
+    $(window).scroll(function(){
+      if($(window).scrollTop() > 600){
+        $("#go-up-container").css({"opacity":"1", "z-index":"4"});
+      } else {
+        $("#go-up-container").css({"opacity":"0", "z-index":"-1"});
+      }
+    })
+  }
+})
+
+window.addEventListener("load", function(){
+  if(window.innerWidth < 992){
+    $(window).scroll(function(){
+      if($(window).scrollTop() > 600){
+        $("#go-up-container").css({"opacity":"1", "z-index":"4"});
+      } else {
+        $("#go-up-container").css({"opacity":"0", "z-index":"-1"});
+      }
+    })
+  }
 })
 
 var horizontalSearchBtn = document.getElementById("horizontal-search-btn"),
@@ -178,9 +207,9 @@ function solveForBtnFunction(){
 	secondsBtn.checked = true;
 
 	function resetInputFields(){
-		angularVelocityField.placeholder = "Angular Velocity " + omegaSymbol.textContent;
-		radiusField.placeholder = "Radius (r)";
-		periodField.placeholder = "Period (T)";
+		angularVelocityField.placeholder = "ang. velocity " + omegaSymbol.textContent;
+		radiusField.placeholder = "radius (r)";
+		periodField.placeholder = "period (T)";
 		sigFigsField.placeholder = "# of sigfigs (optional)";
 
 		for(let i = 0; i < inputFields.length; i++){
@@ -301,9 +330,9 @@ function solveForBtnFunction(){
 
 
 	function clearFunc(){
-		angularVelocityField.placeholder = "Angular Velocity " + omegaSymbol.textContent;
-		radiusField.placeholder = "Radius (r)";
-		periodField.placeholder = "Period (T)";
+		angularVelocityField.placeholder = "ang. velocity " + omegaSymbol.textContent;
+		radiusField.placeholder = "radius (r)";
+		periodField.placeholder = "period (T)";
 		for(let i = 0; i < inputFields.length; i++){
 			inputFields[i].value = "";
 			if(inputFields[i].disabled){
