@@ -82,15 +82,15 @@
 										<span><b>Solve:&nbsp;</b></span>
 										<label class="radio-btn">
 										 	<input type="radio" class="solve-btn" name="radio-one" id="angular-velocity-radio-btn">
-										    <span class="checkmark">Angular V (&omega;)</span> |
+										    <span class="checkmark">ang. velocity (&omega;)</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="solve-btn" name="radio-one" id="period-radio-btn">
-										    <span class="checkmark">Period</span>
+										    <span class="checkmark">period</span>
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="solve-btn" name="radio-one" id="radius-radio-btn">
-										    <span class="checkmark">Radius</span>
+										    <span class="checkmark">radius</span>
 										</label>
 									</form>
 								</div>
@@ -100,23 +100,23 @@
 										<span><b>Units:&nbsp;</b></span>
 										<label class="radio-btn">
 										 	<input type="radio" class="unit-btn" units="ft" name="radio-two" id="feet-radio-btn">
-										    <span class="checkmark">Feet</span> |
+										    <span class="checkmark">feet</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="unit-btn" units="m" name="radio-two" id="meter-radio-btn">
-										    <span class="checkmark">Meters</span> |
+										    <span class="checkmark">meters</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="unit-btn" units="mi" name="radio-two" id="mile-radio-btn">
-										    <span class="checkmark">Miles</span> |
+										    <span class="checkmark">miles</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="unit-btn" units="km" name="radio-two" id="kilometer-radio-btn">
-										    <span class="checkmark">Kilometer</span>
+										    <span class="checkmark">kilometer</span>
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="unit-btn" units="km" name="radio-two" id="revolution-radio-btn">
-										    <span class="checkmark">Rev</span>
+										    <span class="checkmark">revs</span>
 										</label>
 									</form>
 								</div>
@@ -126,19 +126,19 @@
 										<span><b>Time:&nbsp;</b></span>
 										<label class="radio-btn">
 										 	<input type="radio" class="time-btn" units="sec" name="radio-three" id="seconds-radio-btn"/>
-										    <span class="checkmark">Seconds</span> |
+										    <span class="checkmark">seconds</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="time-btn" units="min" name="radio-three" id="minutes-radio-btn"/>
-										    <span class="checkmark">Minutes</span> |
+										    <span class="checkmark">minutes</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="time-btn" units="hr" name="radio-three" id="hours-radio-btn"/>
-										    <span class="checkmark">Hours</span> |
+										    <span class="checkmark">hours</span> |
 										</label>
 										<label class="radio-btn">
 										    <input type="radio" class="time-btn" units="day" name="radio-three" id="days-radio-btn"/>
-										    <span class="checkmark">Days</span>
+										    <span class="checkmark">days</span>
 										</label>
 									</form>
 								</div>
@@ -148,11 +148,11 @@
 							<div class="row">
 								<div class="col-md-4">
 									<h4 class="text-center"><span class="badge">4</span>&nbsp;<strong>Values</strong></h4>
-									<form class="form-group">
+									<form id="values-form">
 									<span id="omega-symbol">&omega;</span>
-									<input class="form-control input-field" type="number" id="angular-velocity-field" placeholder="Angular Velocity (&omega;)">
-									<input class="form-control input-field" type="number" id="period-field" placeholder="Period (T)">
-									<input class="form-control input-field" type="number" id="radius-field" placeholder="Radius (r)">
+									<input class="form-control input-field" type="number" id="angular-velocity-field" placeholder="ang. velocity (&omega;)">
+									<input class="form-control input-field" type="number" id="period-field" placeholder="period (T)">
+									<input class="form-control input-field" type="number" id="radius-field" placeholder="radius (r)">
 									<input class="form-control input-field" type="number" id="sig-figs-field" placeholder="# of sigfigs (optional)">
 									<div class="form-divider"></div>
 									<div class="calc-and-clear">
@@ -164,8 +164,8 @@
 								<div class="col-md-8 text-center">
 									<h4 id="equation-heading"><strong>Equation</strong></h4>
 									<div id="slide-arrows-container">
-										<div class="slide-arrow-btn" id="prev-slide-btn">&#10094;</div>
-										<div class="slide-arrow-btn" id="next-slide-btn">&#10095;</div>
+										<div class="slide-arrow-btn" id="prev-slide-btn"><span class="glyphicon glyphicon-chevron-left"></span></div>
+										<div class="slide-arrow-btn" id="next-slide-btn"><span class="glyphicon glyphicon-chevron-right"></span></div>
 									</div>
 									<div id="outer-image-container">
 										<div id="inner-image-container">
