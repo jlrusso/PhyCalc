@@ -1119,6 +1119,10 @@ button.accordion.active:after {
   .img-caption p {
 		font-size: 1.5rem;
 	}
+  #bottom-pager {
+    width: 90%;
+    margin: auto;
+  }
 }
 @media screen and (max-width: 450px){
   #outer-image-container,
