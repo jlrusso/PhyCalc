@@ -425,20 +425,16 @@ a.next-page-btn:hover .glyphicon-chevron-right {
 
 
 /*--- Topic Calculator and Equation*/
-.time-selection,
+.solve-selection,
 .unit-selection,
-.solve-for-selection {
+.time-selection {
+  padding: 10px 10px 6px;
+  margin-bottom: 5px;
+  vertical-align: middle;
   background: #333 !important;
   color: #F1C40F !important;
   font-weight: normal !important;
   border-radius: 5px;
-}
-.solve-for-selection,
-.unit-selection,
-.time-selection {
-  padding: 8px 8px 5px;
-  margin-bottom: 5px;
-  vertical-align: middle;
 }
 /*--- BADGES ---*/
 .badge {
@@ -460,7 +456,7 @@ a.next-page-btn:hover .glyphicon-chevron-right {
 }
 .checkmark {
   padding: 3px 10px 5px;
-  border-radius: 20px;
+  border-radius: 4px;
   border: 1.5px solid #F1C40F;
 }
 .radio-btn:hover input + .checkmark {
@@ -897,6 +893,15 @@ button.accordion.active:after {
 .modal-header-btn:hover {
   background-color:#F1C40F;
   color: #333;
+}
+@media screen and (max-width: 1200px){
+  .solve-selection,
+	.unit-selection,
+	.time-selection {
+		width: auto;
+		white-space: nowrap;
+		overflow-x: scroll !important;
+	}
 }
 @media screen and (max-width: 700px){
   .section-heading {
