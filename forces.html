@@ -149,8 +149,8 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-4">
-									<h4 class="text-center"><span class="badge">4</span>&nbsp;<strong>Calculate</strong></h4>
-									<form class="form-group">
+									<h4 class="text-center"><span class="badge">4</span>&nbsp;<strong>Values</strong></h4>
+									<form class="values-form">
 									<span id="delta-symbol">&Delta;</span>
 									<input class="form-control input-field" type="number" id="net-force-field" placeholder="net force (Fnet)">
 									<input class="form-control input-field" type="number" id="mass-field" placeholder="mass (m)">
@@ -158,22 +158,22 @@
 									<input class="form-control input-field" type="number" id="sig-figs-field" placeholder="# of sigfigs (optional)">
 									<div class="form-divider"></div>
 									<div class="calc-and-clear">
-										<button type="button" class="btn" id="calculate-btn"><b>=</b></button>
+										<button type="button" class="btn" id="calculate-btn"><b>Calculate</b></button>
 										<button type="button" class="btn" id="clear-btn"><b>Clear</b></button>
 									</div>
 									</form>
 								</div>
 								<div class="col-md-8 text-center">
-									<h4><strong>Equation</strong></h4>
+									<h4 id="equation-heading"><strong>Equation</strong></h4>
+									<div id="slide-arrows-container">
+										<div class="slide-arrow-btn" id="prev-slide-btn"><span class="glyphicon glyphicon-chevron-left"></span></div>
+										<div class="slide-arrow-btn" id="next-slide-btn"><span class="glyphicon glyphicon-chevron-right"></span></div>
+									</div>
 									<div id="outer-image-container">
 										<div id="inner-image-container">
 											<img src="../img/force-equation-one.png" class="img-responsive slide" alt="Force Equation 1"/>
 											<img src="../img/force-equation-two.png" class="img-responsive slide" alt="Force Equation 2"/>
 											<img src="../img/force-equation-three.png" class="img-responsive slide" alt="Force Equation 3"/>
-										</div>
-										<div id="slide-arrow-container">
-											<div class="slide-arrow-btn" id="prev-slide-btn">&#10094;</div>
-											<div class="slide-arrow-btn" id="next-slide-btn">&#10095;</div>
 										</div>
 										<div id="slide-bar-indicators">
 											<div class="slide-bar"></div>
@@ -192,7 +192,7 @@
 				<div class="col-md-4">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<div class="panel-title text-center"><h4><b>Background:</b></h4></div>
+							<div class="panel-title text-center"><h4 id="background-heading"><b>Background:</b></h4></div>
 						</div>
 						<div class="panel-body module-section">
 							<div class="module-box">
