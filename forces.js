@@ -90,21 +90,43 @@ function showAnchors(){
 		}
 	}
 }
-/*--- Open and Close Modal Panels ---*/
-var acc = document.getElementsByClassName("accordion");
-var i;
-for (i = 0; i < acc.length; i++) {
-  	acc[i].onclick = function() {
-    	this.classList.toggle("active");
-    	var panel = this.nextElementSibling;
-        if (panel.style.maxHeight){
-            panel.style.maxHeight = null;
+/*--- Example Problems Modals ---*/
+var exampleAccordions = document.getElementsByClassName("accordion");
+for (let i = 0; i < exampleAccordions.length; i++) {
+    exampleAccordions[i].onclick = function() {
+      this.classList.toggle("active");
+      var innerPanel = this.nextElementSibling;
+        if (innerPanel.style.maxHeight){
+            innerPanel.style.maxHeight = null;
         } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
+            innerPanel.style.maxHeight = innerPanel.scrollHeight + "px";
         }
     }
 }
 /*--- End of Modal Accordions ---*/
+
+/*--- Close all accordion panels on "X" btn click or Modal Window click ---*/
+var modalCloseBtns = document.getElementsByClassName("glyphicon-remove");
+var modalPanels = document.getElementsByClassName("modal-panel");
+for(let i = 0; i < modalCloseBtns.length; i++){
+  modalCloseBtns[i].addEventListener("click", function(){
+    for(let i = 0; i < modalPanels.length; i++){
+      if(modalPanels[i].style.maxHeight != null){
+        modalPanels[i].style.maxHeight = null;
+      }
+    }
+    var $modalContent = $(this).parents(".modal-content");
+    var $accordions = $modalContent.find(".accordion");
+    $accordions.removeClass("active");
+  })
+}
+$(".example-modal").click(function(e){
+  var $closeBtn = $(this).find(".glyphicon-remove");
+  if(e.target.matches(".example-modal")){
+    $closeBtn.click();
+  }
+})
+/*--- End of Closing all Accordion and Panels ---*/
 
 /*--- Toggle Hamburger Menu ---*/
 var icon = document.getElementById("icon");
@@ -403,13 +425,22 @@ window.onclick = function(e){
 
   /*--- Toggle Img Caption Show/Hide ---*/
   var imgCaptions = document.getElementsByClassName("img-caption");
-  var thirdPageImgs = document.querySelectorAll(".third-page-pics > img");
+  var thirdPageImgs = document.querySelectorAll(".third-page-pics > input[type='image']");
   thirdPageImgs.forEach(function(image){
     image.addEventListener("click", function(e){
       var imgCaption = this.nextElementSibling;
       if(!e.target.matches(".img-caption")){
         imgCaption.classList.toggle("hide-caption");
       }
+    })
+  })
+
+  /*--- Close Modals ---*/
+  var closeModalBtns = document.querySelectorAll(".close-modal-btn");
+  closeModalBtns.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var $modalParent = $(this).parents(".modal");
+      $modalParent.click();
     })
   })
 
