@@ -481,48 +481,33 @@ a.next-page-btn:hover .glyphicon-chevron-right {
 
 
 /*--- Form ---*/
-.form-group {
-  width:100%;
+#values-form {
+	width: 100%;
+	margin-bottom: 0;
 }
 .calc-and-clear {
   width:100%;
-}
-.calc-and-clear:after {
-  content:'';
-  display:table;
-  clear:both;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
 }
 #calculate-btn,
+#clear-btn {
+	border: 2px solid var(--main-black-color);
+	border-radius: 4px;
+	padding: 5px;
+	background-color: transparent;
+	font-weight: bold;
+	color: var(--main-black-color);
+	transition: 0.3s;
+}
 #calculate-btn:hover,
-#calculate-btn:focus {
-  width:47%;
-  float:left;
-  padding:5px;
-  background-color: #F1C40F;
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  border:0;
-  color:black;
-  text-align: center;
-  outline:none !important;
+#clear-btn:hover {
+	background-color: var(--main-yellow-color);
 }
-#calculate-btn:active,
-#clear-btn:active {
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  transform:translateY(3px);
-  outline:none !important;
-}
-#clear-btn,
-#clear-btn:hover,
+#calculate-btn:focus,
 #clear-btn:focus {
-  box-shadow: 0 0 15px rgba(0,0,0,0.9);
-  width:47%;
-  float:right;
-  padding:5px;
-  background-color: black;
-  border:0;
-  color:#F1C40F;
-  text-align: center;
-  outline:none !important;
+	outline: none;
 }
 .yellow-outline {
   box-shadow: 0 0 2px 2px #F1C40F, 0 0 4px 4px #333;
@@ -533,7 +518,7 @@ a.next-page-btn:hover .glyphicon-chevron-right {
 }
 .form-control {
   width: 100%;
-  margin: 10px 0;
+  margin: 10px 0 14px;
   padding: 18px;
   font-size: 1.5rem;
 }
@@ -541,7 +526,7 @@ a.next-page-btn:hover .glyphicon-chevron-right {
 .form-divider {
   width:80%;
   height:2px;
-  margin:0 auto 10px auto;
+  margin: 17px auto;
   background-color:black;
 }
 input[type="radio"] {
@@ -556,16 +541,12 @@ input[type="radio"] {
 
 
 /*--- Equation Pics and Form Controls ---*/
-#solo-image img {
-  border-radius: 10px;
-  box-shadow: 0 0 10px #333;
-}
 #outer-image-container {
   position: relative;
   width: 100%;
-  height: 50%;
-  border-radius: 10px !important;
-  margin-bottom: 10px;
+  height: 122px;
+  border-radius: 4px !important;
+  margin: 16px 0;
   box-shadow: 0 0 10px #333;
   overflow: hidden !important;
 }
@@ -581,37 +562,40 @@ input[type="radio"] {
   width: 100%;
   height: 100%;
 }
-
-#outer-image-container:hover #slide-arrow-btns {
+#slide-arrows-container {
+	width: 94.5%;
+	height: auto;
+	position: absolute;
+	top: 7px;
+	left: 50%;
+	transform: translateX(-50%);
   opacity: 1;
-}
-#slide-arrow-container {
-  opacity: 0;
   transition: opacity 0.5s;
   cursor: pointer;
 }
-#outer-image-container:hover #slide-arrow-container {
-  opacity: 1;
-}
 .slide-arrow-btn {
-  font-size: 5rem;
-  color: #F1C40F;
-  border-radius: 5px;
-  background: rgba(0,0,0,0.3);
-  -webkit-user-select: none;
-  transition: 0.5s;
+	width: 100px;
+  font-size: 1.5rem;
+  color: var(--main-black-color);
+	border: 2px solid var(--main-black-color);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-top: 1px;
+  transition: 0.3s;
+}
+.slide-arrow-btn:hover {
+	background-color: var(--main-yellow-color);
+	color: var(--main-black-color);
 }
 #prev-slide-btn {
   position: absolute;
-  top: 50%;
-  left: 2px;
-  transform: translateY(-50%);
+  top: 0;
+	left: 0;
 }
 #next-slide-btn {
   position: absolute;
-  top: 50%;
-  right: 2px;
-  transform: translateY(-50%);
+  top: 0;
+  right: 0;
 }
 #slide-bar-indicators {
   position: absolute;
@@ -644,6 +628,12 @@ input[type="radio"] {
 .#outer-image-container:hover #next-slide-btn {
   opacity: 1;
   border-radius: 0;
+}
+#solo-image img {
+  width: 100%;
+  height: 122px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #333;
 }
 /*--- End of Equation Pics ---*/
 
@@ -757,8 +747,6 @@ input[type="radio"] {
   font-weight: bold;
 }
 /*--- END OF ABOVE ---*/
-
-
 
 /*--- Practice btn ---*/
 .practice-btn {
@@ -903,6 +891,65 @@ button.accordion.active:after {
 		overflow-x: scroll !important;
 	}
 }
+@media screen and (max-width: 992px){
+  #main-panel,
+	#third-panel {
+		height: auto !important;
+	}
+  #equation-heading {
+    margin: 15px 0 25px;
+  }
+	.form-control {
+		width: 100%;
+		margin: 8px 0;
+		padding: 22px 15px;
+	}
+  #calculate-btn,
+	#clear-btn {
+		padding: 10px;
+		font-size: 1.7rem;
+	}
+	#slide-arrows-container {
+		width: 99.75%;
+		top: -5px;
+	}
+	.slide-arrow-btn {
+		width:150px;
+		padding:8px;
+	}
+	#prev-slide-btn {
+		margin-left:14px;
+	}
+	#next-slide-btn {
+		margin-right:14px;
+	}
+	#equation-heading {
+		padding-top: 5px;
+	}
+	#outer-image-container {
+		width: 100%;
+		height: auto;
+	}
+	#inner-image-container {
+		width:300%;
+	}
+	#inner-image-container img {
+		width: 33.33%;
+	}
+	#slide-bar-indicators {
+		opacity:1;
+	}
+	#solo-image > img {
+		width: 100%;
+		height: 180px;
+	}
+}
+@media screen and (max-width: 745px){
+  #outer-image-container,
+	#solo-image img {
+		height: 178px;
+	}
+}
 @media screen and (max-width: 700px){
   .section-heading {
     width: 100%;
@@ -925,6 +972,10 @@ button.accordion.active:after {
     margin-left: 0;
     width: 100%;
   }
+  #outer-image-container,
+	#solo-image img {
+		height: 155px;
+	}
 }
 @media screen and (max-width: 550px){
   .horizontal-nav {
@@ -933,6 +984,17 @@ button.accordion.active:after {
 	#icon {
 		display: block;
 		opacity: 1;
+	}
+  #outer-image-container,
+	#solo-image {
+		width: 100%;
+	}
+	#outer-image-container,
+	#solo-image > img {
+		height: 120px;
+	}
+  .slide-arrow-btn {
+		width: 70px;
 	}
 }
 @media screen and (max-width: 510px){
@@ -945,9 +1007,25 @@ button.accordion.active:after {
     margin-bottom: 10px;
   }
 }
+@media screen and (max-width: 450px){
+  #outer-image-container,
+	#solo-image > img {
+		height: 100px;
+	}
+}
 @media screen and (max-width: 360px){
   #search-form {
 		margin-left: 0;
 		width: 83%;
+	}
+  #outer-image-container,
+	#solo-image > img {
+		height: 90px;
+	}
+}
+@media screen and (max-width: 320px){
+  #outer-image-container,
+	#solo-image > img {
+		height: 85px;
 	}
 }
