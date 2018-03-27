@@ -898,3 +898,51 @@ button.accordion.active:after {
   background-color:#F1C40F;
   color: #333;
 }
+@media screen and (max-width: 700px){
+  .section-heading {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .pages-nav {
+    width: 85%;
+		text-align: center;
+    float: none;
+		margin: auto;
+  }
+}
+@media screen and (max-width: 650px){
+  #search-form {
+    margin-left: 0;
+    width: 85%;
+  }
+  #search-case-list a {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px){
+  .horizontal-nav {
+		display: none;
+	}
+	#icon {
+		display: block;
+		opacity: 1;
+	}
+}
+@media screen and (max-width: 510px){
+  .prev-page-btn,
+  .next-page-btn {
+    width: 100%;
+    display: block;
+  }
+  .prev-page-btn {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 360px){
+  #search-form {
+		margin-left: 0;
+		width: 83%;
+	}
+}
